@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public abstract class PlayerHandler : IHandler
+public abstract class PlayerHandler
 {
-    private PlayerController player;
+    protected PlayerController _player;
 
     public PlayerHandler(PlayerController p)
     {
-        player = p;
+        _player = p;
     }
 
-    public abstract void Update();
+    public virtual void Enable() { }
+    public virtual void Disable() { }
 }
