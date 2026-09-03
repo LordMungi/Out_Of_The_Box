@@ -1,21 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private List<PlayerHandler> _handlers;
+    private BehaviourFSM _behaviourFSM;
 
-    void Start()
+    private void Awake()
     {
-        _handlers.Add(new MovementHandler(this));
-        _handlers.Add(new JumpHandler(this));
+        _behaviourFSM = new BehaviourFSM(this);
     }
 
     void Update()
     {
-        foreach (PlayerHandler handler in _handlers)
-        {
-            handler.Update();
-        }
+        _behaviourFSM.currentState.Update();
     }
 }
