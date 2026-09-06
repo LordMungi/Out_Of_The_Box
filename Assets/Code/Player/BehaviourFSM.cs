@@ -6,6 +6,7 @@ public class BehaviourFSM
 {
     public enum State
     {
+        Idle,
         Move,
         Jump
     }
@@ -18,10 +19,11 @@ public class BehaviourFSM
 
     public BehaviourFSM(PlayerController p)
     {
+        _states.TryAdd(State.Idle, new IdleState(p));
         _states.TryAdd(State.Move, new MoveState(p));
         _states.TryAdd(State.Jump, new JumpState(p));
 
-        ChangeState(State.Move);
+        ChangeState(State.Idle);
     }
 
     public bool TryChangeState(State newState)
