@@ -16,6 +16,7 @@ public class IdleState : PlayerState
     {
         _playerInput.Enable();
         _playerInput.Player.Move.performed += OnMove;
+        _playerInput.Player.Fire.performed += OnJump;
         base.Enable();
     }
 
@@ -23,6 +24,7 @@ public class IdleState : PlayerState
     {
         _playerInput.Disable();
         _playerInput.Player.Move.performed -= OnMove;
+        _playerInput.Player.Fire.performed -= OnJump;
         base.Disable();
     }
 
@@ -40,5 +42,10 @@ public class IdleState : PlayerState
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
 
+    private void OnJump(InputAction.CallbackContext context)
+    {
+        _nextState = BehaviourFSM.State.Jump;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
 
 }

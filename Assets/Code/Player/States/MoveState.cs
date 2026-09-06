@@ -21,6 +21,7 @@ public class MoveState : PlayerState
     {
         _playerInput.Enable();
         _playerInput.Player.Move.canceled += OnMoveCanceled;
+        _playerInput.Player.Fire.performed += OnJump;
         base.Enable();
     }
 
@@ -28,6 +29,7 @@ public class MoveState : PlayerState
     {
         _playerInput.Disable();
         _playerInput.Player.Move.canceled -= OnMoveCanceled; 
+        _playerInput.Player.Fire.performed -= OnJump;
         base.Disable();
     }
 
@@ -47,5 +49,9 @@ public class MoveState : PlayerState
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
 
-
+    private void OnJump(InputAction.CallbackContext context)
+    {
+        _nextState = BehaviourFSM.State.Jump;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
 }

@@ -8,4 +8,5 @@ public class PlayerConfig : ScriptableObject
     [Header("Jumping")]
     [SerializeField] public float jumpMoveSpeed;
     [SerializeField] public float jumpForce;
+    public Transform feetOrigin;
 }
