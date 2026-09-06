@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerConfig playerConfig;
+    [Header("Parents")]
+    [SerializeField] private Transform feet;
 
     private BehaviourFSM _behaviourFSM;
 
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour
         data.player = this;
         data.body = GetComponent<Rigidbody>();
         data.config = playerConfig;
+
+        data.config.feetOrigin = feet;
 
         _behaviourFSM = new BehaviourFSM(ref data);
     }

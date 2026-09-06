@@ -33,7 +33,7 @@ public class EventBus : IService
 
         if (_events.TryGetValue(eventType, out List<Delegate> subscriptions))
         {
-            foreach (Delegate callback in subscriptions)
+            foreach (Delegate callback in new List<Delegate>(subscriptions))
             {
                 ((EventCallback<T>)callback)?.Invoke(raisingEvent);
             }
