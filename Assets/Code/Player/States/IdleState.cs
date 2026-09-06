@@ -7,7 +7,7 @@ public class IdleState : PlayerState
 
     private DefaultInputActions _playerInput;
 
-    public IdleState(PlayerController p) : base(p)
+    public IdleState(ref PlayerData p) : base(ref p)
     {
         _playerInput = new DefaultInputActions();
     }
@@ -30,10 +30,15 @@ public class IdleState : PlayerState
     {
         Debug.Log("Updating IdleState...");
     }
+    public override void FixedUpdate()
+    {
+    }
 
     private void OnMove(InputAction.CallbackContext context)
     {
         _nextState = BehaviourFSM.State.Move;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
+
+
 }

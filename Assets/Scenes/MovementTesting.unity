@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2878e431ce0f5a4994f839ae9f305f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  playerConfig: {fileID: 11400000, guid: 8d3b0f92d62ade24bb55125b24cbbcd1, type: 2}
 --- !u!1 &1660539318
 GameObject:
   m_ObjectHideFlags: 0

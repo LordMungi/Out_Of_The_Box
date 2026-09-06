@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class PlayerHandler
 {
-    protected PlayerController _player;
+    protected PlayerData _player;
 
-    public PlayerHandler(PlayerController p)
+    public PlayerHandler(ref PlayerData p)
     {
         _player = p;
     }

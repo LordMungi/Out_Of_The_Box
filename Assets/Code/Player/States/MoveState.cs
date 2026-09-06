@@ -5,13 +5,14 @@ public class MoveState : PlayerState
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    private MovementHandler _movementHandler;
+    private MoveHandler _movementHandler;
 
     private DefaultInputActions _playerInput;
 
-    public MoveState(PlayerController p) : base(p)
+
+    public MoveState(ref PlayerData p) : base(ref p)
     {
-        _handlers.Add(_movementHandler = new MovementHandler(p));
+        _handlers.Add(_movementHandler = new MoveHandler(ref p, p.config.moveSpeed));
 
         _playerInput = new DefaultInputActions();
     }
@@ -32,8 +33,12 @@ public class MoveState : PlayerState
 
     public override void Update()
     {
-        _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
         Debug.Log("Updating MoveState...");
+    }
+
+    public override void FixedUpdate()
+    {
+        _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
     }
 
     private void OnMoveCanceled(InputAction.CallbackContext context)
@@ -41,4 +46,6 @@ public class MoveState : PlayerState
         _nextState = BehaviourFSM.State.Idle;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
+
+
 }

@@ -3,16 +3,17 @@ using UnityEngine;
 
 public abstract class PlayerState
 {
-    protected PlayerController _player;
+    protected PlayerData _player;
     protected List<PlayerHandler> _handlers = new List<PlayerHandler>();
     protected BehaviourFSM.State _nextState;
 
-    public PlayerState(PlayerController p)
+    public PlayerState(ref PlayerData p)
     {
         _player = p;
     }
 
     public abstract void Update();
+    public abstract void FixedUpdate();
 
     public virtual void Enable()
     {
