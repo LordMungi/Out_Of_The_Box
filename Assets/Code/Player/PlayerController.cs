@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        ServiceProvider.Instance.AddService<EventBus>(new EventBus());
+
         _behaviourFSM = new BehaviourFSM(this);
     }
 

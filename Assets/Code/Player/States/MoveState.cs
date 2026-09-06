@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MoveState : PlayerState
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     private MovementHandler _movementHandler;
 
     private DefaultInputActions _playerInput;
@@ -37,5 +39,6 @@ public class MoveState : PlayerState
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         _nextState = BehaviourFSM.State.Idle;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
 }
