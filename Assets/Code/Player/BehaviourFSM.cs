@@ -20,11 +20,11 @@ public class BehaviourFSM
 
     private State _currentStateEnum;
 
-    public BehaviourFSM(PlayerController p)
+    public BehaviourFSM(ref PlayerData p)
     {
-        _states.TryAdd(State.Idle, new IdleState(p));
-        _states.TryAdd(State.Move, new MoveState(p));
-        _states.TryAdd(State.Jump, new JumpState(p));
+        _states.TryAdd(State.Idle, new IdleState(ref p));
+        _states.TryAdd(State.Move, new MoveState(ref p));
+        _states.TryAdd(State.Jump, new JumpState(ref p));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
