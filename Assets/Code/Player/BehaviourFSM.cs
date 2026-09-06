@@ -20,6 +20,8 @@ public class BehaviourFSM
     {
         _states.TryAdd(State.Move, new MoveState(p));
         _states.TryAdd(State.Jump, new JumpState(p));
+
+        ChangeState(State.Move);
     }
 
     public bool TryChangeState(State newState)
@@ -54,9 +56,12 @@ public class BehaviourFSM
 
     private void ChangeState(State newState)
     {
+        currentState?.Disable();
+
         if (!_states.TryGetValue(newState, out currentState))
             throw new KeyNotFoundException("State not found in Dictionary");
-        
+
         _currentStateEnum = newState;
+        currentState.Enable();
     }
 }

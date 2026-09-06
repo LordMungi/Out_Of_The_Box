@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class PlayerState
 {
     protected PlayerController _player;
-    protected List<PlayerHandler> _handlers;
+    protected List<PlayerHandler> _handlers = new List<PlayerHandler>();
 
     public PlayerState(PlayerController p)
     {
@@ -13,14 +13,14 @@ public abstract class PlayerState
 
     public abstract void Update();
 
-    public void Enable()
+    public virtual void Enable()
     {
         foreach (PlayerHandler handler in _handlers)
         {
             handler.Enable();
         }
     }
-    public void Disable()
+    public virtual void Disable()
     {
         foreach (PlayerHandler handler in _handlers)
         {
