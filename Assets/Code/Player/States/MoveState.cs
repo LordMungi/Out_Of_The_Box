@@ -11,5 +11,6 @@ public class MoveState : PlayerState
 
     public override void Update()
     {
+
     }
 }

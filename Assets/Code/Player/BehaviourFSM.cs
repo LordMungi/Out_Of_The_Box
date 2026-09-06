@@ -4,13 +4,59 @@ using UnityEngine;
 
 public class BehaviourFSM
 {
-    private Dictionary<Type, PlayerState> _states = new Dictionary<Type, PlayerState>();
-    
+    public enum State
+    {
+        Move,
+        Jump
+    }
+
     public PlayerState currentState;
+
+    private Dictionary<State, PlayerState> _states = new Dictionary<State, PlayerState>();
+
+    private State _currentStateEnum;
 
     public BehaviourFSM(PlayerController p)
     {
-        _states.TryAdd(typeof(MoveState), new MoveState(p));
-        _states.TryAdd(typeof(JumpState), new JumpState(p));
+        _states.TryAdd(State.Move, new MoveState(p));
+        _states.TryAdd(State.Jump, new JumpState(p));
+    }
+
+    public bool TryChangeState(State newState)
+    {
+        bool canChange = false;
+
+        switch (newState)
+        {
+            case State.Move:
+                {
+                    if (_currentStateEnum == State.Jump)
+                    {
+                        canChange = true;
+                    }
+                    break;
+                }
+            case State.Jump:
+                {
+                    if (_currentStateEnum == State.Move)
+                    {
+                        canChange = true;
+                    }
+                    break;
+                }
+        }
+
+        if (canChange)
+            ChangeState(newState);
+
+        return canChange;
+    }
+
+    private void ChangeState(State newState)
+    {
+        if (!_states.TryGetValue(newState, out currentState))
+            throw new KeyNotFoundException("State not found in Dictionary");
+        
+        _currentStateEnum = newState;
     }
 }
