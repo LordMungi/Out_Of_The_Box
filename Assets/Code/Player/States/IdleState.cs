@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class IdleState : PlayerState
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     private DefaultInputActions _playerInput;
 
     public IdleState(PlayerController p) : base(p)
@@ -32,5 +34,6 @@ public class IdleState : PlayerState
     private void OnMove(InputAction.CallbackContext context)
     {
         _nextState = BehaviourFSM.State.Move;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
 }

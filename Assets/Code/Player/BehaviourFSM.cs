@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class BehaviourFSM
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     public enum State
     {
+        NULL,
         Idle,
         Move,
         Jump
@@ -23,37 +26,42 @@ public class BehaviourFSM
         _states.TryAdd(State.Move, new MoveState(p));
         _states.TryAdd(State.Jump, new JumpState(p));
 
+        EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
     }
 
-    public bool TryChangeState(State newState)
+    public void TryChangeState(in OnPlayerStateChangeRequest newStateEvent)
     {
         bool canChange = false;
 
-        switch (newState)
+        switch (newStateEvent.state)
         {
+            case State.NULL:
+                break;
+
+            case State.Idle:
+                {
+                    canChange = _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Jump;
+                    break;
+                }
+
             case State.Move:
                 {
-                    if (_currentStateEnum == State.Jump)
-                    {
-                        canChange = true;
-                    }
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Jump;
                     break;
                 }
             case State.Jump:
                 {
-                    if (_currentStateEnum == State.Move)
-                    {
-                        canChange = true;
-                    }
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
                     break;
                 }
         }
 
         if (canChange)
-            ChangeState(newState);
-
-        return canChange;
+            ChangeState(newStateEvent.state);
     }
 
     private void ChangeState(State newState)
