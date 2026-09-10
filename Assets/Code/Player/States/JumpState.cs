@@ -13,21 +13,20 @@ public class JumpState : PlayerState
     public JumpState(ref PlayerData p)
     {
         _handlers.Add(_movementHandler = new MoveHandler(p.controller, p.config.jumpingMoveData));
-        _handlers.Add(_jumpHandler = new JumpHandler(ref p, p.config.jumpForce));
+        _handlers.Add(_jumpHandler = new JumpHandler(p.controller, p.config.jumpingJumpData));
 
         _playerInput = new DefaultInputActions();
     }
 
     public override void Enable()
     {
-        EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
-        
-        _nextState = BehaviourFSM.State.Idle;
-
-        _playerInput.Enable();
-
         base.Enable();
 
+        EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
+        
+        _playerInput.Enable();
+
+        _nextState = BehaviourFSM.State.Idle;
         _jumpHandler.Jump();
     }
 
@@ -41,8 +40,7 @@ public class JumpState : PlayerState
 
     public override void Update()
     {
-        Debug.Log("Updating JumpState...");
-        _jumpHandler.Update();
+        _jumpHandler.Fall();
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 

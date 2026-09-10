@@ -1,29 +1,41 @@
+using System;
 using UnityEngine;
 
 public class JumpHandler : PlayerHandler
 {
+    [Serializable] public struct Data
+    {
+        public float _jumpForce;
+        public float _fallSpeed;
+    }
+
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    private float _jumpForce;
+    private CharacterController _controller;
+    private Data _data;
 
-    public JumpHandler(ref PlayerData p, float jumpForce)
+    private float _currentVelocity;
+
+    public JumpHandler(CharacterController controller, Data data)
     {
-        _jumpForce = jumpForce;    
+        _controller = controller;
+        _data = data;
+
     }
-    public void Update()
+    public void Fall()
     {
-
-        //Debug.DrawRay(_player.config.feetOrigin.position, Vector3.down, Color.red);
-        //if (Physics.Raycast(new Ray(_player.config.feetOrigin.position, Vector3.down), 0.1f))
-        //{
-
-        //    EventBus.Raise<OnPlayerLanded>();
-        //    Debug.Log("S");
-        //}
+        if (_controller.isGrounded)
+            EventBus.Raise<OnPlayerLanded>();
+        else
+        {
+            _currentVelocity -= _data._fallSpeed * Time.deltaTime;
+            _controller.Move(new Vector3(0, _currentVelocity, 0));
+        }
     }
 
     public void Jump()
     {
-        //_player.body.AddForce(Vector3.up * _jumpForce);
+        _currentVelocity = _data._jumpForce;
+        _controller.Move(new Vector3(0, _currentVelocity, 0));
     }
 }

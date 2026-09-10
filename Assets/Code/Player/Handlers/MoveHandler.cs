@@ -20,6 +20,5 @@ public class MoveHandler : PlayerHandler
     public void Move(Vector2 direction)
     {
         _controller.Move(new Vector3(direction.x, 0, direction.y) * _data.speed * Time.deltaTime);
-        //_player.body.MovePosition(Vector3.MoveTowards(_player.body.position, _player.body.position + new Vector3(direction.x, 0, direction.y), Time.deltaTime * _speed));
     }
 }

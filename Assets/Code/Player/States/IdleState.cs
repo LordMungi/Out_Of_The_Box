@@ -30,7 +30,6 @@ public class IdleState : PlayerState
 
     public override void Update()
     {
-        Debug.Log("Updating IdleState...");
     }
 
     private void OnMove(InputAction.CallbackContext context)

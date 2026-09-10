@@ -7,6 +7,5 @@ public class PlayerConfig : ScriptableObject
     public MoveHandler.Data movingMoveData;
     [Header("Jumping")]
     public MoveHandler.Data jumpingMoveData;
-    [SerializeField] public float jumpForce;
-    public Transform feetOrigin;
+    public JumpHandler.Data jumpingJumpData;
 }
