@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerConfig : ScriptableObject
 {
     [Header("Moving")]
-    [SerializeField] public float moveSpeed;
+    public MoveHandler.Data movingMoveData;
     [Header("Jumping")]
-    [SerializeField] public float jumpMoveSpeed;
+    public MoveHandler.Data jumpingMoveData;
     [SerializeField] public float jumpForce;
     public Transform feetOrigin;
 }

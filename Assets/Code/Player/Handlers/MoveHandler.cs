@@ -1,16 +1,25 @@
+using System;
 using UnityEngine;
 
 public class MoveHandler : PlayerHandler
 {
-    private float _speed;
-
-    public MoveHandler(ref PlayerData p, float speed) : base(ref p) 
+    [Serializable] public struct Data
     {
-        _speed = speed;
+        public float speed;
+    }
+
+    private CharacterController _controller;
+    private Data _data;
+
+    public MoveHandler(CharacterController controller, Data data)
+    {
+        _controller = controller;
+        _data = data;
     }
 
     public void Move(Vector2 direction)
     {
-        _player.body.MovePosition(Vector3.MoveTowards(_player.body.position, _player.body.position + new Vector3(direction.x, 0, direction.y), Time.deltaTime * _speed));
+        _controller.Move(new Vector3(direction.x, 0, direction.y) * _data.speed * Time.deltaTime);
+        //_player.body.MovePosition(Vector3.MoveTowards(_player.body.position, _player.body.position + new Vector3(direction.x, 0, direction.y), Time.deltaTime * _speed));
     }
 }

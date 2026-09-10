@@ -14,7 +14,7 @@ public class BehaviourFSM
         Jump
     }
 
-    public PlayerState currentState;
+    public PlayerState CurrentState { get; private set; }
 
     private Dictionary<State, PlayerState> _states = new Dictionary<State, PlayerState>();
 
@@ -66,12 +66,13 @@ public class BehaviourFSM
 
     private void ChangeState(State newState)
     {
-        currentState?.Disable();
+        CurrentState?.Disable();
 
-        if (!_states.TryGetValue(newState, out currentState))
+        if (!_states.TryGetValue(newState, out PlayerState currentState))
             throw new KeyNotFoundException("State not found in Dictionary");
 
+        CurrentState = currentState;
         _currentStateEnum = newState;
-        currentState.Enable();
+        CurrentState.Enable();
     }
 }

@@ -10,9 +10,9 @@ public class JumpState : PlayerState
 
     private DefaultInputActions _playerInput;
 
-    public JumpState(ref PlayerData p) : base(ref p)
+    public JumpState(ref PlayerData p)
     {
-        _handlers.Add(_movementHandler = new MoveHandler(ref p, p.config.jumpMoveSpeed));
+        _handlers.Add(_movementHandler = new MoveHandler(p.controller, p.config.jumpingMoveData));
         _handlers.Add(_jumpHandler = new JumpHandler(ref p, p.config.jumpForce));
 
         _playerInput = new DefaultInputActions();
@@ -43,10 +43,7 @@ public class JumpState : PlayerState
     {
         Debug.Log("Updating JumpState...");
         _jumpHandler.Update();
-    }
 
-    public override void FixedUpdate()
-    {
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 
         if (inputDirection != Vector2.zero)
