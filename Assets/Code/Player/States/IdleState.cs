@@ -7,7 +7,7 @@ public class IdleState : PlayerState
 
     private DefaultInputActions _playerInput;
 
-    public IdleState(ref PlayerData p) : base(ref p)
+    public IdleState(ref PlayerData p)
     {
         _playerInput = new DefaultInputActions();
     }
@@ -31,9 +31,6 @@ public class IdleState : PlayerState
     public override void Update()
     {
         Debug.Log("Updating IdleState...");
-    }
-    public override void FixedUpdate()
-    {
     }
 
     private void OnMove(InputAction.CallbackContext context)

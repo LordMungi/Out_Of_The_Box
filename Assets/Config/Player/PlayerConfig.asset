@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942d280e9581b244287ef4465265443c, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
-  moveSpeed: 5
-  jumpMoveSpeed: 5
+  movingMoveData:
+    speed: 10
+  jumpingMoveData:
+    speed: 10
   jumpForce: 200
   feetOrigin: {fileID: 0}

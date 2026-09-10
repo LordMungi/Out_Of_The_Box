@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
         PlayerData data;
         data.player = this;
-        data.body = GetComponent<Rigidbody>();
+        data.controller = GetComponent<CharacterController>();
         data.config = playerConfig;
 
         data.config.feetOrigin = feet;
@@ -26,11 +26,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        _behaviourFSM.currentState.Update();
-    }
-
-    private void FixedUpdate()
-    {
-        _behaviourFSM.currentState.FixedUpdate();
+        _behaviourFSM.CurrentState.Update();
     }
 }

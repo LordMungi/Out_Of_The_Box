@@ -3,6 +3,6 @@
 public struct PlayerData
 {
     public PlayerController player;
-    public Rigidbody body;
+    public CharacterController controller;
     public PlayerConfig config;
 }

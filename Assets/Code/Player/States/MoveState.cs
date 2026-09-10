@@ -9,10 +9,9 @@ public class MoveState : PlayerState
 
     private DefaultInputActions _playerInput;
 
-
-    public MoveState(ref PlayerData p) : base(ref p)
+    public MoveState(ref PlayerData p)
     {
-        _handlers.Add(_movementHandler = new MoveHandler(ref p, p.config.moveSpeed));
+        _handlers.Add(_movementHandler = new MoveHandler(p.controller, p.config.movingMoveData));
 
         _playerInput = new DefaultInputActions();
     }
@@ -36,10 +35,6 @@ public class MoveState : PlayerState
     public override void Update()
     {
         Debug.Log("Updating MoveState...");
-    }
-
-    public override void FixedUpdate()
-    {
         _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
     }
 
