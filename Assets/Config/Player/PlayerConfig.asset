@@ -16,5 +16,6 @@ MonoBehaviour:
     speed: 10
   jumpingMoveData:
     speed: 10
-  jumpForce: 200
-  feetOrigin: {fileID: 0}
+  jumpingJumpData:
+    _jumpForce: 0.1
+    _fallSpeed: 0.1
