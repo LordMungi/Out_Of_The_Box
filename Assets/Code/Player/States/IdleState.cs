@@ -5,11 +5,15 @@ public class IdleState : PlayerState
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
+    private MoveHandler _movementHandler;
+
     private DefaultInputActions _playerInput;
 
     public IdleState(ref PlayerData p)
     {
         _playerInput = new DefaultInputActions();
+
+        _handlers.Add(_movementHandler = new MoveHandler(p.controller, p.config.movingMoveData));
     }
 
     public override void Enable()
@@ -30,6 +34,7 @@ public class IdleState : PlayerState
 
     public override void Update()
     {
+        _movementHandler.Fall();
     }
 
     private void OnMove(InputAction.CallbackContext context)

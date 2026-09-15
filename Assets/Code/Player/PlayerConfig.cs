@@ -7,5 +7,4 @@ public class PlayerConfig : ScriptableObject
     public MoveHandler.Data movingMoveData;
     [Header("Jumping")]
     public MoveHandler.Data jumpingMoveData;
-    public JumpHandler.Data jumpingJumpData;
 }
