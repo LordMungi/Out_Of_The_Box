@@ -26,15 +26,14 @@ public class MoveState : PlayerState
 
     public override void Disable()
     {
-        _playerInput.Disable();
         _playerInput.Player.Move.canceled -= OnMoveCanceled; 
         _playerInput.Player.Fire.performed -= OnJump;
+        _playerInput.Disable();
         base.Disable();
     }
 
     public override void Update()
     {
-        Debug.Log("Updating MoveState...");
         _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
     }
 

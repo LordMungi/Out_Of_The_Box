@@ -22,9 +22,9 @@ public class IdleState : PlayerState
 
     public override void Disable()
     {
-        _playerInput.Disable();
         _playerInput.Player.Move.performed -= OnMove;
         _playerInput.Player.Fire.performed -= OnJump;
+        _playerInput.Disable();
         base.Disable();
     }
 
