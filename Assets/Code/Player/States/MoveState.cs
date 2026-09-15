@@ -35,6 +35,7 @@ public class MoveState : PlayerState
     public override void Update()
     {
         _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
+        _movementHandler.Fall();
     }
 
     private void OnMoveCanceled(InputAction.CallbackContext context)
