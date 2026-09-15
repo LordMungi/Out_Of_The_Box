@@ -64,15 +64,15 @@ public class BehaviourFSM
             ChangeState(newStateEvent.state);
     }
 
-    private void ChangeState(State newState)
+    private void ChangeState(State newStateEnum)
     {
         CurrentState?.Disable();
 
-        if (!_states.TryGetValue(newState, out PlayerState currentState))
+        if (!_states.TryGetValue(newStateEnum, out PlayerState newState))
             throw new KeyNotFoundException("State not found in Dictionary");
 
-        CurrentState = currentState;
-        _currentStateEnum = newState;
+        CurrentState = newState;
+        _currentStateEnum = newStateEnum;
         CurrentState.Enable();
     }
 }

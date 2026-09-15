@@ -25,7 +25,9 @@ public class JumpHandler : PlayerHandler
     public void Fall()
     {
         if (_controller.isGrounded)
+        {
             EventBus.Raise<OnPlayerLanded>();
+        }
         else
         {
             _currentVelocity -= _data._fallSpeed * Time.deltaTime;
