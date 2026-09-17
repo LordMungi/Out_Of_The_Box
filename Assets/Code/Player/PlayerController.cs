@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerConfig playerConfig;
+    [SerializeField] private PlayerParents playerParents;
 
     private BehaviourFSM _behaviourFSM;
 
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
         data.controller = GetComponent<CharacterController>();
         data.config = playerConfig;
 
-        _behaviourFSM = new BehaviourFSM(ref data);
+        _behaviourFSM = new BehaviourFSM(ref data, ref playerParents);
     }
 
     void Update()
