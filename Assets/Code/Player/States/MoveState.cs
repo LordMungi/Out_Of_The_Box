@@ -6,12 +6,14 @@ public class MoveState : PlayerState
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private MoveHandler _movementHandler;
+    private GrabHandler _grabHandler;
 
     private DefaultInputActions _playerInput;
 
-    public MoveState(ref PlayerData p)
+    public MoveState(ref PlayerData data, ref PlayerParents parents)
     {
-        _handlers.Add(_movementHandler = new MoveHandler(p.controller, p.config.movingMoveData));
+        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
+        _handlers.Add(_grabHandler = new GrabHandler(ref parents));
 
         _playerInput = new DefaultInputActions();
     }

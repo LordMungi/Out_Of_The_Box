@@ -9,9 +9,9 @@ public class JumpState : PlayerState
 
     private DefaultInputActions _playerInput;
 
-    public JumpState(ref PlayerData p)
+    public JumpState(ref PlayerData data)
     {
-        _handlers.Add(_movementHandler = new MoveHandler(p.controller, p.config.jumpingMoveData));
+        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.jumpingMoveData));
 
         _playerInput = new DefaultInputActions();
     }
