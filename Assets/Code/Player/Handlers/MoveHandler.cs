@@ -9,7 +9,6 @@ public class MoveHandler : PlayerHandler
     {
         public float speed;
         public float jumpForce;
-        public float fallSpeed;
     }
 
     private CharacterController _controller;
@@ -18,6 +17,8 @@ public class MoveHandler : PlayerHandler
     private float _currentVelocityY;
     private bool _wasGrounded = false;
 
+    private const float _gravity = -9.81f;
+    
     public MoveHandler(CharacterController controller, Data data)
     {
         _controller = controller;
@@ -33,23 +34,25 @@ public class MoveHandler : PlayerHandler
     {
         if (_controller.isGrounded)
         {
-            _currentVelocityY = 0;
-
+            _currentVelocityY = 0f;
+            
             if (!_wasGrounded)
                 EventBus.Raise<OnPlayerLanded>();
+            Debug.Log("Grounded");
         }
         else
         {
-            _currentVelocityY -= _data.fallSpeed * Time.deltaTime;
+            _currentVelocityY += _gravity * Time.deltaTime;
+            Debug.Log("Fall");
         }
         _wasGrounded = _controller.isGrounded;
 
-        _controller.Move(new Vector3(0, _currentVelocityY, 0));
+        _controller.Move(new Vector3(0, _data.speed * _currentVelocityY * Time.deltaTime, 0));
     }
 
     public void Jump()
     {
-        _currentVelocityY = _data.jumpForce;
-        _controller.Move(new Vector3(0, _currentVelocityY, 0));
+        _currentVelocityY = Mathf.Sqrt(_data.jumpForce * -2f * _gravity);
+        _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);
     }
 }

@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
   movingMoveData:
     speed: 1
-    jumpForce: 0.01
-    fallSpeed: 0.01
+    jumpForce: 1.5
   jumpingMoveData:
     speed: 1
-    jumpForce: 0.01
-    fallSpeed: 0.01
+    jumpForce: 1.5

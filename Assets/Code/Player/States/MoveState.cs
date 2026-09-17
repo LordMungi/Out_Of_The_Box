@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,7 +16,6 @@ public class MoveState : PlayerState
 
         _playerInput = new DefaultInputActions();
     }
-
     public override void Enable()
     {
         _playerInput.Enable();
