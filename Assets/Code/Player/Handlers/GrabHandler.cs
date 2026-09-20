@@ -10,7 +10,7 @@ public class GrabHandler : PlayerHandler
 
     private GameObject _grabbedItem;
 
-    private List<GameObject> _nearbyItems;
+    private List<GameObject> _nearbyItems = new List<GameObject>();
 
     public GrabHandler(ref PlayerParents parents)
     {
@@ -28,6 +28,7 @@ public class GrabHandler : PlayerHandler
 
     public override void Disable()
     {
+        _nearbyItems.Clear();
         EventBus.Unsubscribe<OnItemGrabbed>(Grab);
         EventBus.Unsubscribe<OnNearbyItemEntered>(OnNearbyItemEntered);
         EventBus.Unsubscribe<OnNearbyItemExit>(OnNearbyItemExit);
@@ -56,6 +57,7 @@ public class GrabHandler : PlayerHandler
     private void AddNearbyItem(GameObject item)
     {
         _nearbyItems.Add(item);
+        Debug.Log("Item added. List size: " + _nearbyItems.Count);
     }
 
     private void OnNearbyItemExit(in OnNearbyItemExit onNearbyItemExit)
@@ -66,6 +68,7 @@ public class GrabHandler : PlayerHandler
     private void RemoveNearbyItem(GameObject item)
     {
         _nearbyItems.Remove(item);
+        Debug.Log("Item removed. List size: " + _nearbyItems.Count);
     }
 
     private GameObject FindNearestItem()
