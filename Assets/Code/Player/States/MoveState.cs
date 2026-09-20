@@ -8,30 +8,32 @@ public class MoveState : PlayerState
     private MoveHandler _movementHandler;
     private GrabHandler _grabHandler;
 
-    private DefaultInputActions _playerInput;
+    private PlayerInputActions _playerInput;
 
     public MoveState(ref PlayerData data, ref PlayerParents parents)
     {
         _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
         _handlers.Add(_grabHandler = new GrabHandler(ref parents));
 
-        _playerInput = new DefaultInputActions();
+        _playerInput = new PlayerInputActions();
     }
 
     public override void Enable()
     {
         _playerInput.Enable();
         _playerInput.Player.Move.canceled += OnMoveCanceled;
-        _playerInput.Player.Fire.performed += OnGrabItem;
-        _playerInput.Player.Fire.canceled += OnReleaseItem;
+        _playerInput.Player.Grab.performed += OnGrabItem;
+        _playerInput.Player.Release.performed += OnReleaseItem;
+        _playerInput.Player.Jump.performed += OnJump;
         base.Enable();
     }
 
     public override void Disable()
     {
         _playerInput.Player.Move.canceled -= OnMoveCanceled; 
-        _playerInput.Player.Fire.performed -= OnGrabItem;
-        _playerInput.Player.Fire.canceled -= OnReleaseItem;
+        _playerInput.Player.Grab.performed -= OnGrabItem;
+        _playerInput.Player.Release.performed -= OnReleaseItem;
+        _playerInput.Player.Jump.performed -= OnJump;
         _playerInput.Disable();
         base.Disable();
     }

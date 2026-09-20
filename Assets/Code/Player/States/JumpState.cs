@@ -7,13 +7,13 @@ public class JumpState : PlayerState
 
     private MoveHandler _movementHandler;
 
-    private DefaultInputActions _playerInput;
+    private PlayerInputActions _playerInput;
 
     public JumpState(ref PlayerData data)
     {
         _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.jumpingMoveData));
 
-        _playerInput = new DefaultInputActions();
+        _playerInput = new PlayerInputActions();
     }
 
     public override void Enable()
