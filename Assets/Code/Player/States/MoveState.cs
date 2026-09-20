@@ -22,14 +22,16 @@ public class MoveState : PlayerState
     {
         _playerInput.Enable();
         _playerInput.Player.Move.canceled += OnMoveCanceled;
-        _playerInput.Player.Fire.performed += OnJump;
+        _playerInput.Player.Fire.performed += OnGrabItem;
+        _playerInput.Player.Fire.canceled += OnReleaseItem;
         base.Enable();
     }
 
     public override void Disable()
     {
         _playerInput.Player.Move.canceled -= OnMoveCanceled; 
-        _playerInput.Player.Fire.performed -= OnJump;
+        _playerInput.Player.Fire.performed -= OnGrabItem;
+        _playerInput.Player.Fire.canceled -= OnReleaseItem;
         _playerInput.Disable();
         base.Disable();
     }
@@ -50,5 +52,15 @@ public class MoveState : PlayerState
     {
         _nextState = BehaviourFSM.State.Jump;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+
+    private void OnGrabItem(InputAction.CallbackContext context)
+    {
+        _grabHandler.Grab();
+    }
+
+    private void OnReleaseItem(InputAction.CallbackContext context)
+    {
+        _grabHandler.Release();
     }
 }
