@@ -8,9 +8,9 @@ public class GrabHandler : PlayerHandler
     private Transform _worldParent;
     private Transform _handParent;
 
-    private GameObject _grabbedItem;
+    private static GameObject _grabbedItem;
 
-    private List<GameObject> _nearbyItems = new List<GameObject>();
+    private static List<GameObject> _nearbyItems = new List<GameObject>();
 
     public GrabHandler(ref PlayerParents parents)
     {
@@ -21,32 +21,36 @@ public class GrabHandler : PlayerHandler
     public override void Enable()
     {
         base.Enable();
-        EventBus.Subscribe<OnItemGrabbed>(Grab);
         EventBus.Subscribe<OnNearbyItemEntered>(OnNearbyItemEntered);
         EventBus.Subscribe<OnNearbyItemExit>(OnNearbyItemExit);
     }
 
     public override void Disable()
     {
-        _nearbyItems.Clear();
-        EventBus.Unsubscribe<OnItemGrabbed>(Grab);
         EventBus.Unsubscribe<OnNearbyItemEntered>(OnNearbyItemEntered);
         EventBus.Unsubscribe<OnNearbyItemExit>(OnNearbyItemExit);
         base.Disable();
     }
 
-    public void Grab(in OnItemGrabbed onItemGrabbed)
+    public void Grab()
     {
-        _grabbedItem = FindNearestItem();
-        _grabbedItem.transform.parent = _handParent;
-        _grabbedItem.transform.position = _handParent.position;
-        RemoveNearbyItem(_grabbedItem);
+        if(_nearbyItems.Count > 0)
+        {
+            Release();
+            _grabbedItem = FindNearestItem();
+            _grabbedItem.transform.parent = _handParent;
+            _grabbedItem.transform.position = _handParent.position;
+            RemoveNearbyItem(_grabbedItem);
+        }
     }
 
     public void Release()
     {
-        _grabbedItem.transform.parent = _worldParent;
-        _grabbedItem = null;
+        if (_grabbedItem)
+        {
+            _grabbedItem.transform.parent = _worldParent;
+            _grabbedItem = null;
+        }
     }
 
     private void OnNearbyItemEntered(in OnNearbyItemEntered onNearbyItemEntered)
@@ -56,8 +60,8 @@ public class GrabHandler : PlayerHandler
 
     private void AddNearbyItem(GameObject item)
     {
-        _nearbyItems.Add(item);
-        Debug.Log("Item added. List size: " + _nearbyItems.Count);
+        if (!_nearbyItems.Contains(item))
+            _nearbyItems.Add(item);
     }
 
     private void OnNearbyItemExit(in OnNearbyItemExit onNearbyItemExit)
@@ -67,8 +71,8 @@ public class GrabHandler : PlayerHandler
 
     private void RemoveNearbyItem(GameObject item)
     {
-        _nearbyItems.Remove(item);
-        Debug.Log("Item removed. List size: " + _nearbyItems.Count);
+        if (_nearbyItems.Contains(item))
+            _nearbyItems.Remove(item);
     }
 
     private GameObject FindNearestItem()
