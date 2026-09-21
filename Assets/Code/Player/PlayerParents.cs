@@ -5,4 +5,6 @@ using UnityEngine;
 {
     public Transform worldParent;
     public Transform handParent;
+    public Transform legPartParent;
+    public Transform armPartParent;
 }

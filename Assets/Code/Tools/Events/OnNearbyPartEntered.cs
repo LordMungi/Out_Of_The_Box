@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public struct OnNearbyItemExit: IEvent
+public struct OnNearbyPartEntered : IEvent
 {
     public RobotPart item;
     public void Assign(params object[] parameters)
