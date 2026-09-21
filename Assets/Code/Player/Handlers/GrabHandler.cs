@@ -8,9 +8,9 @@ public class GrabHandler : PlayerHandler
     private Transform _worldParent;
     private Transform _handParent;
 
-    private static GameObject _grabbedItem;
+    private static RobotPart _grabbedItem;
 
-    private static List<GameObject> _nearbyItems = new List<GameObject>();
+    private static List<RobotPart> _nearbyItems = new List<RobotPart>();
 
     public GrabHandler(ref PlayerParents parents)
     {
@@ -40,6 +40,7 @@ public class GrabHandler : PlayerHandler
             _grabbedItem = FindNearestItem();
             _grabbedItem.transform.parent = _handParent;
             _grabbedItem.transform.position = _handParent.position;
+            _grabbedItem.BeGrabbed();
             RemoveNearbyItem(_grabbedItem);
         }
     }
@@ -49,6 +50,7 @@ public class GrabHandler : PlayerHandler
         if (_grabbedItem)
         {
             _grabbedItem.transform.parent = _worldParent;
+            _grabbedItem.BeReleased();
             _grabbedItem = null;
         }
     }
@@ -58,7 +60,7 @@ public class GrabHandler : PlayerHandler
         AddNearbyItem(onNearbyItemEntered.item);
     }
 
-    private void AddNearbyItem(GameObject item)
+    private void AddNearbyItem(RobotPart item)
     {
         if (!_nearbyItems.Contains(item))
             _nearbyItems.Add(item);
@@ -69,16 +71,16 @@ public class GrabHandler : PlayerHandler
         RemoveNearbyItem(onNearbyItemExit.item);
     }
 
-    private void RemoveNearbyItem(GameObject item)
+    private void RemoveNearbyItem(RobotPart item)
     {
         if (_nearbyItems.Contains(item))
             _nearbyItems.Remove(item);
     }
 
-    private GameObject FindNearestItem()
+    private RobotPart FindNearestItem()
     {
-        GameObject nearestItem = _nearbyItems[0];
-        foreach (GameObject item in _nearbyItems)
+        RobotPart nearestItem = _nearbyItems[0];
+        foreach (RobotPart item in _nearbyItems)
         {
             if (nearestItem == item)
                 continue;
