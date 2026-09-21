@@ -2,10 +2,10 @@
 
 public struct OnNearbyItemEntered : IEvent
 {
-    public GameObject item;
+    public RobotPart item;
     public void Assign(params object[] parameters)
     {
-        item = (GameObject)parameters[0];
+        item = (RobotPart)parameters[0];
     }
 
     public void Reset()

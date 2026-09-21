@@ -7,12 +7,12 @@ public class GrabAreaCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Grabbable"))
-            EventBus.Raise<OnNearbyItemEntered>(other.gameObject);
+            EventBus.Raise<OnNearbyItemEntered>(other.GetComponent<RobotPart>());
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Grabbable"))
-            EventBus.Raise<OnNearbyItemExit>(other.gameObject);
+            EventBus.Raise<OnNearbyItemExit>(other.GetComponent<RobotPart>());
     }
 }
