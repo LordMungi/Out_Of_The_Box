@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RobotPart : MonoBehaviour, IGrabbable
+public class RobotPart : MonoBehaviour
 {
     private Rigidbody _body;
 
@@ -9,16 +9,22 @@ public class RobotPart : MonoBehaviour, IGrabbable
         _body = GetComponent<Rigidbody>();
     }
 
-    public void BeGrabbed()
+    public void Grab()
     {
         _body.isKinematic = true;
         _body.useGravity = false;
     }
 
-    public void BeReleased()
+    public void Release()
     {
         _body.isKinematic = false;
         _body.useGravity = true;
         _body.linearVelocity = Vector3.zero;
+    }
+
+    public void Equip()
+    {
+        _body.isKinematic = true;
+        _body.useGravity = false;
     }
 }

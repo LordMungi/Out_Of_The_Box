@@ -6,14 +6,14 @@ public class MoveState : PlayerState
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private MoveHandler _movementHandler;
-    private GrabHandler _grabHandler;
+    private PartHandler _partHandler;
 
     private PlayerInputActions _playerInput;
 
     public MoveState(ref PlayerData data, ref PlayerParents parents)
     {
         _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
-        _handlers.Add(_grabHandler = new GrabHandler(ref parents));
+        _handlers.Add(_partHandler = new PartHandler(ref parents));
 
         _playerInput = new PlayerInputActions();
     }
@@ -25,6 +25,7 @@ public class MoveState : PlayerState
         _playerInput.Player.Grab.performed += OnGrabItem;
         _playerInput.Player.Release.performed += OnReleaseItem;
         _playerInput.Player.Jump.performed += OnJump;
+        _playerInput.Player.Equip.performed += OnEquipPart;
         base.Enable();
     }
 
@@ -34,6 +35,7 @@ public class MoveState : PlayerState
         _playerInput.Player.Grab.performed -= OnGrabItem;
         _playerInput.Player.Release.performed -= OnReleaseItem;
         _playerInput.Player.Jump.performed -= OnJump;
+        _playerInput.Player.Equip.performed -= OnEquipPart;
         _playerInput.Disable();
         base.Disable();
     }
@@ -58,11 +60,16 @@ public class MoveState : PlayerState
 
     private void OnGrabItem(InputAction.CallbackContext context)
     {
-        _grabHandler.Grab();
+        _partHandler.GrabNearest();
     }
 
     private void OnReleaseItem(InputAction.CallbackContext context)
     {
-        _grabHandler.Release();
+        _partHandler.Release();
+    }
+
+    private void OnEquipPart(InputAction.CallbackContext context)
+    {
+        _partHandler.EquipGrabbed();
     }
 }
