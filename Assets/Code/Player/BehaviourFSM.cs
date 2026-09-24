@@ -24,7 +24,7 @@ public class BehaviourFSM
     {
         _states.TryAdd(State.Idle, new IdleState(ref data, ref parents));
         _states.TryAdd(State.Move, new MoveState(ref data, ref parents));
-        _states.TryAdd(State.Jump, new JumpState(ref data));
+        _states.TryAdd(State.Jump, new JumpState(ref data, ref parents));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);

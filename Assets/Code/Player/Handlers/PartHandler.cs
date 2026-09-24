@@ -1,5 +1,8 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PartHandler : PlayerHandler
 {
@@ -15,12 +18,16 @@ public class PartHandler : PlayerHandler
 
     private static List<RobotPart> _nearbyParts = new List<RobotPart>();
 
-    public PartHandler(ref PlayerParents parents)
+    private PlayerInputActions _inputActions;
+
+    public PartHandler(ref PlayerParents parents, PlayerInputActions inputActions)
     {
         _worldParent = parents.worldParent;
         _handParent = parents.handParent;
         _legPartParent = parents.legPartParent;
         _armPartParent = parents.armPartParent;
+
+        _inputActions = inputActions;
     }
 
     public override void Enable()
@@ -123,5 +130,25 @@ public class PartHandler : PlayerHandler
                 nearestItem = item;
         }
         return nearestItem;
+    }
+
+    private void SubscribeToPartActions(RobotPart part)
+    {
+        for (int i = 0; i < part.actions.Count; i++)
+        {
+            RobotPart.ActionPair newActionPair = part.actions[i];
+            newActionPair.inputAction += newActionPair.triggeredAction;
+            part.actions[i] = newActionPair;
+        }
+    }
+
+    private void UnsubscribeFromPartActions(RobotPart part)
+    {
+        for (int i = 0; i < part.actions.Count; i++)
+        {
+            RobotPart.ActionPair newActionPair = part.actions[i];
+            newActionPair.inputAction -= newActionPair.triggeredAction;
+            part.actions[i] = newActionPair;
+        }
     }
 }
