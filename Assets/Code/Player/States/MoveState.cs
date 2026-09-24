@@ -14,7 +14,7 @@ public class MoveState : PlayerState
     public MoveState(ref PlayerData data, ref PlayerParents parents)
     {
         _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
-        _handlers.Add(_partHandler = new PartHandler(ref parents));
+        _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
 
         _playerInput = new PlayerInputActions();
     }

@@ -6,14 +6,17 @@ public class JumpState : PlayerState
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private MoveHandler _movementHandler;
+    private PartHandler _partHandler;
 
     private PlayerInputActions _playerInput;
 
-    public JumpState(ref PlayerData data)
+    public JumpState(ref PlayerData data, ref PlayerParents parents)
     {
-        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.jumpingMoveData));
-
         _playerInput = new PlayerInputActions();
+
+        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.jumpingMoveData));
+        _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
+
     }
 
     public override void Enable()
