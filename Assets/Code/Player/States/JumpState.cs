@@ -12,7 +12,7 @@ public class JumpState : PlayerState
 
     public JumpState(ref PlayerData data, ref PlayerParents parents)
     {
-        _playerInput = new PlayerInputActions();
+        _playerInput = data.input;
 
         _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.jumpingMoveData));
         _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
@@ -33,9 +33,10 @@ public class JumpState : PlayerState
 
     public override void Disable()
     {
+        EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
+
         _playerInput.Disable();
 
-        EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
         base.Disable();
     }
 
