@@ -141,7 +141,20 @@ public class PartHandler : PlayerHandler
         for (int i = 0; i < part.actions.Count; i++)
         {
             RobotPart.ActionPair newActionPair = part.actions[i];
-            newActionPair.inputAction += newActionPair.triggeredAction;
+            switch (newActionPair.phase)
+            {
+                case RobotPart.ActionPair.Phase.Started:
+                    newActionPair.inputAction.started += newActionPair.triggeredAction;
+                    break;
+                case RobotPart.ActionPair.Phase.Performed:
+                    newActionPair.inputAction.performed += newActionPair.triggeredAction;
+                    break;
+                case RobotPart.ActionPair.Phase.Canceled:
+                    newActionPair.inputAction.canceled += newActionPair.triggeredAction;
+                    break;
+                default:
+                    break;
+            }
             part.actions[i] = newActionPair;
         }
     }
@@ -151,7 +164,20 @@ public class PartHandler : PlayerHandler
         for (int i = 0; i < part.actions.Count; i++)
         {
             RobotPart.ActionPair newActionPair = part.actions[i];
-            newActionPair.inputAction -= newActionPair.triggeredAction;
+            switch (newActionPair.phase)
+            {
+                case RobotPart.ActionPair.Phase.Started:
+                    newActionPair.inputAction.started -= newActionPair.triggeredAction;
+                    break;
+                case RobotPart.ActionPair.Phase.Performed:
+                    newActionPair.inputAction.performed -= newActionPair.triggeredAction;
+                    break;
+                case RobotPart.ActionPair.Phase.Canceled:
+                    newActionPair.inputAction.canceled -= newActionPair.triggeredAction;
+                    break;
+                default:
+                    break;
+            }
             part.actions[i] = newActionPair;
         }
     }

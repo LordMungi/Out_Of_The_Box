@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     [SerializeField] private PlayerConfig playerConfig;
     [SerializeField] private PlayerParents playerParents;
 
+    private PlayerData _playerData;
     private BehaviourFSM _behaviourFSM;
 
     private void Awake()
     {
         ServiceProvider.Instance.AddService<EventBus>(new EventBus());
 
-        PlayerData data;
-        data.player = this;
-        data.controller = GetComponent<CharacterController>();
-        data.input = new PlayerInputActions();
-        data.config = playerConfig;
-        _behaviourFSM = new BehaviourFSM(ref data, ref playerParents);
+        _playerData.player = this;
+        _playerData.controller = GetComponent<CharacterController>();
+        _playerData.input = new PlayerInputActions();
+        _playerData.config = playerConfig;
+
+        _behaviourFSM = new BehaviourFSM(ref _playerData, ref playerParents);
+    }
+
+    private void Start()
+    {
+        EventBus.Raise<OnPlayerInstantiated>(_playerData);
     }
 
     void Update()
