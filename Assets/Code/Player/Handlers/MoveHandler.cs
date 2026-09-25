@@ -38,12 +38,10 @@ public class MoveHandler : PlayerHandler
             
             if (!_wasGrounded)
                 EventBus.Raise<OnPlayerLanded>();
-            Debug.Log("Grounded");
         }
         else
         {
             _currentVelocityY += _gravity * Time.deltaTime;
-            Debug.Log("Fall");
         }
         _wasGrounded = _controller.isGrounded;
 
