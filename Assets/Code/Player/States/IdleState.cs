@@ -12,7 +12,7 @@ public class IdleState : PlayerState
 
     public IdleState(ref PlayerData data, ref PlayerParents parents)
     {
-        _playerInput = new PlayerInputActions();
+        _playerInput = data.input;
 
         _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
         _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
