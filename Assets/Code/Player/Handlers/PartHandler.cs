@@ -74,26 +74,30 @@ public class PartHandler : PlayerHandler
 
     public void EquipGrabbed()
     {
-        RobotPart auxPart = _equippedPart;
+        RobotPart auxGrabbedPart = _grabbedPart;
 
-        if (_grabbedPart)
+        if (_equippedPart)
         {
-            _equippedPart = _grabbedPart;
-            _grabbedPart = null;
-
-            _equippedPart.Equip();
-            _equippedPart.transform.parent = _legPartParent;
-            _equippedPart.transform.position = _legPartParent.position;
+            Grab(_equippedPart);
+            UnsubscribeFromPartActions(_equippedPart);
+            _equippedPart = null;
         }
 
-        if (auxPart)
+        if (auxGrabbedPart)
         {
-            Grab(auxPart);
-            if (auxPart == _equippedPart)
-               _equippedPart = null;
+            Equip(auxGrabbedPart);
+            if (auxGrabbedPart == _grabbedPart)
+                _grabbedPart = null;
         }
+    }
 
-
+    private void Equip(RobotPart part)
+    {
+        _equippedPart = part;
+        _equippedPart.Equip();
+        _equippedPart.transform.parent = _legPartParent;
+        _equippedPart.transform.position = _legPartParent.position;
+        SubscribeToPartActions(_equippedPart);
     }
 
     private void OnNearbyPartEntered(in OnNearbyPartEntered onNearbyItemEntered)
