@@ -5,6 +5,8 @@ class JumperPart : RobotPart
 {
     protected override void SetActionPair()
     {
+        type = Type.Jumper;
+
         actions.Add(new ActionPair(_inputActions.Player.Jump, ActionPair.Phase.Performed, SuperJump));
     }
 

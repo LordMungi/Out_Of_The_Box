@@ -7,6 +7,11 @@ public abstract class RobotPart : MonoBehaviour
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
+    public enum Type
+    {
+        Jumper
+    }
+
     public struct ActionPair
     {
         public enum Phase
@@ -20,7 +25,7 @@ public abstract class RobotPart : MonoBehaviour
         public Phase phase;
         public Action<InputAction.CallbackContext> triggeredAction;
 
-        public ActionPair(InputAction inputAction,  Phase phase, Action<InputAction.CallbackContext> triggeredAction)
+        public ActionPair(InputAction inputAction, Phase phase, Action<InputAction.CallbackContext> triggeredAction)
         {
             this.inputAction = inputAction;
             this.phase = phase;
@@ -28,10 +33,12 @@ public abstract class RobotPart : MonoBehaviour
         }
     }
 
+    public List<ActionPair> actions = new List<ActionPair>();
+    public Type type { get; protected set; }
+
     private Rigidbody _body;
     protected PlayerInputActions _inputActions;
 
-    public List<ActionPair> actions = new List<ActionPair>();
 
     private void Awake()
     {

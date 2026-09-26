@@ -14,7 +14,12 @@ public class PartHandler : PlayerHandler
     private Transform _armPartParent;
 
     private static RobotPart _grabbedPart;
-    private static RobotPart _equippedPart;
+    public static RobotPart _equippedPart;
+
+    public RobotPart EquippedPart
+    {
+        get => _equippedPart;
+    }
 
     private static List<RobotPart> _nearbyParts = new List<RobotPart>();
 
