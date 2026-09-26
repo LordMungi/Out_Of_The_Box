@@ -3,13 +3,16 @@ using UnityEngine.InputSystem;
 
 public class IdleState : PlayerState
 {
+    #region Fields
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private MoveHandler _movementHandler;
     private PartHandler _partHandler;
 
-    private PlayerInputActions _playerInput;
+    private PlayerInputActions _playerInput; 
+    #endregion
 
+    #region Initialization
     public IdleState(ref PlayerData data, ref PlayerParents parents)
     {
         _playerInput = data.input;
@@ -38,12 +41,15 @@ public class IdleState : PlayerState
         _playerInput.Player.Equip.performed -= OnEquipPart;
         _playerInput.Disable();
         base.Disable();
-    }
+    } 
+    #endregion
 
     public override void Update()
     {
         _movementHandler.Fall();
     }
+
+    #region Callbacks
 
     private void OnMove(InputAction.CallbackContext context)
     {
@@ -53,8 +59,11 @@ public class IdleState : PlayerState
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        _nextState = BehaviourFSM.State.Jump;
-        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+        if (_partHandler.EquippedPart?.type != RobotPart.Type.Jumper)
+        {
+            _nextState = BehaviourFSM.State.Jump;
+            EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+        }
     }
 
     private void OnGrabItem(InputAction.CallbackContext context)
@@ -70,5 +79,6 @@ public class IdleState : PlayerState
     private void OnEquipPart(InputAction.CallbackContext context)
     {
         _partHandler.EquipGrabbed();
-    }
+    } 
+    #endregion
 }
