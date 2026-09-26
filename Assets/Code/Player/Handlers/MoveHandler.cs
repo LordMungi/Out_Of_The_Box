@@ -18,13 +18,32 @@ public class MoveHandler : PlayerHandler
     private bool _wasGrounded = false;
 
     private const float _gravity = -9.81f;
-    
+
+    #region Initialization
     public MoveHandler(CharacterController controller, Data data)
     {
         _controller = controller;
         _data = data;
     }
 
+    public override void Enable()
+    {
+        EventBus.Subscribe<OnJumpRequest>(OnJumpRequest);
+        EventBus.Subscribe<OnSuperJumpRequest>(OnSuperJumpRequest);
+        base.Enable();
+    }
+
+    public override void Disable()
+    {
+        EventBus.Unsubscribe<OnJumpRequest>(OnJumpRequest);
+        EventBus.Unsubscribe<OnSuperJumpRequest>(OnSuperJumpRequest);
+        base.Disable();
+    }
+    #endregion
+
+
+
+    #region Methods
     public void Move(Vector2 direction)
     {
         _controller.Move(new Vector3(direction.x, 0, direction.y) * _data.speed * Time.deltaTime);
@@ -35,7 +54,7 @@ public class MoveHandler : PlayerHandler
         if (_controller.isGrounded)
         {
             _currentVelocityY = 0f;
-            
+
             if (!_wasGrounded)
                 EventBus.Raise<OnPlayerLanded>();
         }
@@ -53,4 +72,17 @@ public class MoveHandler : PlayerHandler
         _currentVelocityY = Mathf.Sqrt(_data.jumpForce * -2f * _gravity);
         _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);
     }
+    #endregion
+
+    #region Callbacks
+    private void OnJumpRequest(in OnJumpRequest context)
+    {
+        EventBus.Raise<OnJumpRequestAccepted>();
+    }
+
+    private void OnSuperJumpRequest(in OnSuperJumpRequest context)
+    {
+        EventBus.Raise<OnSuperJumpRequestAccepted>();
+    }
+    #endregion
 }
