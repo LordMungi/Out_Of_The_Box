@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 class JumperPart : RobotPart
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     protected override void SetActionPair()
     {
         type = Type.Jumper;
@@ -12,6 +14,6 @@ class JumperPart : RobotPart
 
     public void SuperJump(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("SuperJump");
+        EventBus.Raise<OnSuperJumpRequest>();
     }
 }
