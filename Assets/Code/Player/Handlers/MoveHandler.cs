@@ -72,6 +72,16 @@ public class MoveHandler : PlayerHandler
         _currentVelocityY = Mathf.Sqrt(_data.jumpForce * -2f * _gravity);
         _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);
     }
+
+    public void StartSuperJumpCharge()
+    {
+        Debug.Log("Start Charge...");
+    }
+
+    public void PerformSuperJump()
+    {
+        Debug.Log("Super Jump!");
+    }
     #endregion
 
     #region Callbacks
@@ -82,7 +92,7 @@ public class MoveHandler : PlayerHandler
 
     private void OnSuperJumpRequest(in OnSuperJumpRequest context)
     {
-        EventBus.Raise<OnSuperJumpRequestAccepted>();
+        EventBus.Raise<OnPartStateChangeAccepted>(BehaviourFSM.State.SuperJump);
     }
     #endregion
 }

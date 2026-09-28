@@ -11,7 +11,8 @@ public class BehaviourFSM
         NULL,
         Idle,
         Move,
-        Jump
+        Jump,
+        SuperJump
     }
 
     public PlayerState CurrentState { get; private set; }
@@ -25,6 +26,7 @@ public class BehaviourFSM
         _states.TryAdd(State.Idle, new IdleState(ref data, ref parents));
         _states.TryAdd(State.Move, new MoveState(ref data, ref parents));
         _states.TryAdd(State.Jump, new JumpState(ref data, ref parents));
+        _states.TryAdd(State.SuperJump, new SuperJumpState(ref data, ref parents));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -42,17 +44,26 @@ public class BehaviourFSM
             case State.Idle:
                 {
                     canChange = _currentStateEnum == State.Move ||
-                                _currentStateEnum == State.Jump;
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.SuperJump;
                     break;
                 }
 
             case State.Move:
                 {
                     canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Jump;
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.SuperJump;
                     break;
                 }
             case State.Jump:
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
+                    break;
+                }
+
+            case State.SuperJump:
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move;

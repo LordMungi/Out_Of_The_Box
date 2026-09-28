@@ -24,8 +24,6 @@ public class JumpState : PlayerState
         base.Enable();
 
         EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
-        
-        _playerInput.Enable();
 
         _nextState = BehaviourFSM.State.Idle;
         _movementHandler.Jump();
@@ -34,8 +32,6 @@ public class JumpState : PlayerState
     public override void Disable()
     {
         EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
-
-        _playerInput.Disable();
 
         base.Disable();
     }

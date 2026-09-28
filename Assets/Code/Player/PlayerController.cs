@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
         _playerData.player = this;
         _playerData.controller = GetComponent<CharacterController>();
         _playerData.input = new PlayerInputActions();
+        _playerData.input.Enable();
         _playerData.config = playerConfig;
 
         _behaviourFSM = new BehaviourFSM(ref _playerData, ref playerParents);
