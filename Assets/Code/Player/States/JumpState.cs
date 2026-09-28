@@ -14,7 +14,7 @@ public class JumpState : PlayerState
     {
         _playerInput = data.input;
 
-        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.jumpingMoveData));
+        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
         _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
 
     }
