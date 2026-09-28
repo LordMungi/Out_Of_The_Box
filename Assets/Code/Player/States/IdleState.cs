@@ -23,7 +23,6 @@ public class IdleState : PlayerState
 
     public override void Enable()
     {
-        _playerInput.Enable();
         _playerInput.Player.Move.performed += OnMove;
         _playerInput.Player.Grab.performed += OnGrabItem;
         _playerInput.Player.Release.performed += OnReleaseItem;
@@ -31,6 +30,7 @@ public class IdleState : PlayerState
         _playerInput.Player.Equip.performed += OnEquipPart;
 
         EventBus.Subscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
+        EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
 
         base.Enable();
     }
@@ -42,8 +42,8 @@ public class IdleState : PlayerState
         _playerInput.Player.Release.performed -= OnReleaseItem;
         _playerInput.Player.Jump.performed -= OnJump;
         _playerInput.Player.Equip.performed -= OnEquipPart;
-        _playerInput.Disable();
 
+        EventBus.Unsubscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
         EventBus.Unsubscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
 
         base.Disable();
@@ -91,6 +91,12 @@ public class IdleState : PlayerState
     private void OnJumpRequestAccepted(in OnJumpRequestAccepted context)
     {
         _nextState = BehaviourFSM.State.Jump;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+
+    private void OnPartStateChangeAccepted(in OnPartStateChangeAccepted onPartStateChangeAccepted)
+    {
+        _nextState = onPartStateChangeAccepted.state;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
     #endregion
