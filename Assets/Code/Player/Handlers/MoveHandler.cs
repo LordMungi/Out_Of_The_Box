@@ -79,7 +79,6 @@ public class MoveHandler : PlayerHandler
     public void StartSuperJumpCharge()
     {
         _superJumpTimer = Time.time;
-        Debug.Log("Start Charge...");
     }
 
     public void PerformSuperJump()
@@ -87,8 +86,7 @@ public class MoveHandler : PlayerHandler
 
         float timePressed = Mathf.Min(_data.superJumpMaxTime, Time.time - _superJumpTimer);
 
-        float superJumpForce = timePressed * _data.superJumpMaxForce / _data.superJumpMaxTime;
-        Debug.Log("Super Jump at: " + timePressed + " (F" + superJumpForce + ")");
+        float superJumpForce = Mathf.Max(timePressed * _data.superJumpMaxForce / _data.superJumpMaxTime, _data.jumpForce);
 
         _currentVelocityY = Mathf.Sqrt(superJumpForce * -2f * _gravity);
         _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);

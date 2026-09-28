@@ -15,6 +15,5 @@ MonoBehaviour:
   movingMoveData:
     speed: 10
     jumpForce: 0.15
-  jumpingMoveData:
-    speed: 10
-    jumpForce: 0.15
+    superJumpMaxForce: 0.4
+    superJumpMaxTime: 1
