@@ -48,6 +48,7 @@ public class SuperJumpState : PlayerState
 
     public override void Update()
     {
+        _movementHandler.Update();
         _movementHandler.Fall();
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
@@ -64,8 +65,11 @@ public class SuperJumpState : PlayerState
     #region Input Callbacks
     private void OnJumpReleased(InputAction.CallbackContext context)
     {
-        _movementHandler.PerformSuperJump();
-        _hasLeftGround = true;
+        if (!_hasLeftGround)
+        {
+            _movementHandler.PerformSuperJump();
+            _hasLeftGround = true;
+        }
     }
     #endregion
 

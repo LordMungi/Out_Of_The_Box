@@ -38,6 +38,7 @@ public class JumpState : PlayerState
 
     public override void Update()
     {
+        _movementHandler.Update();
         _movementHandler.Fall();
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
