@@ -15,7 +15,8 @@ public class MoveHandler : PlayerHandler
 
     private CharacterController _controller;
     private Data _data;
-
+    private Transform _mainCamera;
+    
     private float _currentVelocityY;
     private bool _wasGrounded = false;
     private float _superJumpTimer;
@@ -28,6 +29,7 @@ public class MoveHandler : PlayerHandler
     {
         _controller = controller;
         _data = data;
+        _mainCamera = Camera.main.transform;
     }
 
     public override void Enable()
@@ -59,7 +61,17 @@ public class MoveHandler : PlayerHandler
 
     public void Move(Vector2 direction)
     {
-        _controller.Move(new Vector3(direction.x, 0, direction.y) * _data.speed * Time.deltaTime);
+        Vector3 camForward = _mainCamera.forward;
+        Vector3 camRight = _mainCamera.right;
+
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward.Normalize();
+        camRight.Normalize();
+
+        Vector3 finalMoveDirection = (camForward * direction.y) + (camRight * direction.x);
+
+        _controller.Move(finalMoveDirection * _data.speed * Time.deltaTime);
     }
 
     public void Fall()

@@ -1,38 +1,42 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class MouseTargetPosition : MonoBehaviour
+public class MouseTargetPosition 
 {
-    private Camera _mainCamera;
-    private Plane _groundPlane;
+    private PlayerController.BoneConfig[] _bodyBones;
     
-   private void Start()
+    private float _headRotationSpeed = 25.0f;
+    private float _bodyRotationSpeed = 5.0f; 
+    
+    private Camera _mainCamera;
+
+    public MouseTargetPosition(PlayerController.BoneConfig[] bodyBones, ref PlayerParents parents)
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
         _mainCamera = Camera.main;
-        _groundPlane = new Plane(Vector3.up, Vector3.zero);
+        
+        _bodyBones = bodyBones;
     }
 
-    private void Update()
+    public void Update()
     {
-        if (Mouse.current == null) 
-            return;
+        Vector3 cameraForward = _mainCamera.transform.forward;
+        Quaternion baseTargetRotation = Quaternion.LookRotation(cameraForward.normalized);
 
-        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-
-        Ray ray = _mainCamera.ScreenPointToRay(mouseScreenPosition);
-
-        if (_groundPlane.Raycast(ray, out float rayDistance))
+        foreach (PlayerController.BoneConfig config in _bodyBones)
         {
-            Vector3 hitPoint = ray.GetPoint(rayDistance);
-            Vector3 lookDirection = hitPoint - transform.position;
-            
-            lookDirection.y = 0; 
-
-            if (lookDirection.sqrMagnitude > 0.05f)
+            if (config.bone != null)
             {
-                transform.rotation = Quaternion.LookRotation(lookDirection);
+                Quaternion localOffset = Quaternion.Euler(config.axisOffset);
+                Quaternion correctedRotation = baseTargetRotation * localOffset;
+                
+                config.bone.rotation = Quaternion.Slerp
+                (
+                    config.bone.rotation, 
+                    correctedRotation, 
+                    config.rotationSpeed * Time.deltaTime
+                );
+                
             }
         }
     }
