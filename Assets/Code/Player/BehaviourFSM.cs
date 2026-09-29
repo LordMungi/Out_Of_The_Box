@@ -4,66 +4,86 @@ using UnityEngine;
 
 public class BehaviourFSM
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     public enum State
     {
+        NULL,
         Idle,
         Move,
-        Jump
+        Jump,
+        SuperJump
     }
 
-    public PlayerState currentState;
+    public PlayerState CurrentState { get; private set; }
 
     private Dictionary<State, PlayerState> _states = new Dictionary<State, PlayerState>();
 
     private State _currentStateEnum;
 
-    public BehaviourFSM(PlayerController p)
+    public BehaviourFSM(ref PlayerData data, ref PlayerParents parents)
     {
-        _states.TryAdd(State.Idle, new IdleState(p));
-        _states.TryAdd(State.Move, new MoveState(p));
-        _states.TryAdd(State.Jump, new JumpState(p));
+        _states.TryAdd(State.Idle, new IdleState(ref data, ref parents));
+        _states.TryAdd(State.Move, new MoveState(ref data, ref parents));
+        _states.TryAdd(State.Jump, new JumpState(ref data, ref parents));
+        _states.TryAdd(State.SuperJump, new SuperJumpState(ref data, ref parents));
 
+        EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
     }
 
-    public bool TryChangeState(State newState)
+    public void TryChangeState(in OnPlayerStateChangeRequest newStateEvent)
     {
         bool canChange = false;
 
-        switch (newState)
+        switch (newStateEvent.state)
         {
+            case State.NULL:
+                break;
+
+            case State.Idle:
+                {
+                    canChange = _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.SuperJump;
+                    break;
+                }
+
             case State.Move:
                 {
-                    if (_currentStateEnum == State.Jump)
-                    {
-                        canChange = true;
-                    }
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.SuperJump;
                     break;
                 }
             case State.Jump:
                 {
-                    if (_currentStateEnum == State.Move)
-                    {
-                        canChange = true;
-                    }
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
+                    break;
+                }
+
+            case State.SuperJump:
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
                     break;
                 }
         }
 
         if (canChange)
-            ChangeState(newState);
-
-        return canChange;
+            ChangeState(newStateEvent.state);
     }
 
-    private void ChangeState(State newState)
+    private void ChangeState(State newStateEnum)
     {
-        currentState?.Disable();
+        CurrentState?.Disable();
 
-        if (!_states.TryGetValue(newState, out currentState))
+        if (!_states.TryGetValue(newStateEnum, out PlayerState newState))
             throw new KeyNotFoundException("State not found in Dictionary");
 
-        _currentStateEnum = newState;
-        currentState.Enable();
+        CurrentState = newState;
+        _currentStateEnum = newStateEnum;
+        CurrentState.Enable();
     }
 }

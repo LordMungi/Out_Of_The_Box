@@ -1,41 +1,102 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MoveState : PlayerState
 {
-    private MovementHandler _movementHandler;
+    #region Fields
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    private DefaultInputActions _playerInput;
+    private MoveHandler _movementHandler;
+    private PartHandler _partHandler;
 
-    public MoveState(PlayerController p) : base(p)
+    private PlayerInputActions _playerInput;
+    #endregion
+
+    #region Initialization
+    public MoveState(ref PlayerData data, ref PlayerParents parents)
     {
-        _handlers.Add(_movementHandler = new MovementHandler(p));
+        _playerInput = data.input;
 
-        _playerInput = new DefaultInputActions();
+        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
+        _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
     }
-
     public override void Enable()
     {
-        _playerInput.Enable();
         _playerInput.Player.Move.canceled += OnMoveCanceled;
+        _playerInput.Player.Grab.performed += OnGrabItem;
+        _playerInput.Player.Release.performed += OnReleaseItem;
+        _playerInput.Player.Jump.performed += OnJumpTriggered;
+        _playerInput.Player.Equip.performed += OnEquipPart;
+
+        EventBus.Subscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
+        EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
         base.Enable();
     }
 
     public override void Disable()
     {
-        _playerInput.Disable();
         _playerInput.Player.Move.canceled -= OnMoveCanceled; 
+        _playerInput.Player.Grab.performed -= OnGrabItem;
+        _playerInput.Player.Release.performed -= OnReleaseItem;
+        _playerInput.Player.Jump.performed -= OnJumpTriggered;
+        _playerInput.Player.Equip.performed -= OnEquipPart;
+
+        EventBus.Unsubscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
+        EventBus.Unsubscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
         base.Disable();
     }
+    #endregion
 
     public override void Update()
     {
+        _movementHandler.Update();
         _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
-        Debug.Log("Updating MoveState...");
+        _movementHandler.Fall();
     }
 
+    #region Input Callbacks
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         _nextState = BehaviourFSM.State.Idle;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
+
+    private void OnJumpTriggered(InputAction.CallbackContext context)
+    {
+        if (_partHandler.EquippedPart?.type != RobotPart.Type.Jumper)
+        {
+            EventBus.Raise<OnJumpRequest>();
+        }
+    }
+
+    private void OnGrabItem(InputAction.CallbackContext context)
+    {
+        _partHandler.GrabNearest();
+    }
+
+    private void OnReleaseItem(InputAction.CallbackContext context)
+    {
+        _partHandler.Release();
+    }
+
+    private void OnEquipPart(InputAction.CallbackContext context)
+    {
+        _partHandler.EquipGrabbed();
+    }
+    #endregion
+
+    #region Callbacks
+    private void OnJumpRequestAccepted(in OnJumpRequestAccepted context)
+    {
+        _nextState = BehaviourFSM.State.Jump;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+
+    private void OnPartStateChangeAccepted(in OnPartStateChangeAccepted onPartStateChangeAccepted)
+    {
+        _nextState = onPartStateChangeAccepted.state;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+    #endregion
 }
