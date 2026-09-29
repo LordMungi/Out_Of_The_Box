@@ -52,6 +52,7 @@ public class IdleState : PlayerState
 
     public override void Update()
     {
+        _movementHandler.Update();
         _movementHandler.Fall();
     }
 

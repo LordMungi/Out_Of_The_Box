@@ -19,6 +19,7 @@ public class MoveHandler : PlayerHandler
     private float _currentVelocityY;
     private bool _wasGrounded = false;
     private float _superJumpTimer;
+    private bool _isChargingSuperJump = false;
 
     private const float _gravity = -9.81f;
 
@@ -47,6 +48,15 @@ public class MoveHandler : PlayerHandler
 
 
     #region Methods
+    public void Update()
+    {
+        if (_isChargingSuperJump)
+        {
+            _superJumpTimer += Time.deltaTime;
+            EventBus.Raise<OnSuperJumpChargeUpdated>(_superJumpTimer);
+        }
+    }
+
     public void Move(Vector2 direction)
     {
         _controller.Move(new Vector3(direction.x, 0, direction.y) * _data.speed * Time.deltaTime);
@@ -78,19 +88,21 @@ public class MoveHandler : PlayerHandler
 
     public void StartSuperJumpCharge()
     {
-        _superJumpTimer = Time.time;
+        _superJumpTimer = 0;
+        _isChargingSuperJump = true;
     }
 
     public void PerformSuperJump()
     {
-
-        float timePressed = Mathf.Min(_data.superJumpMaxTime, Time.time - _superJumpTimer);
+        float timePressed = Mathf.Min(_data.superJumpMaxTime, _superJumpTimer);
 
         float superJumpForce = Mathf.Max(timePressed * _data.superJumpMaxForce / _data.superJumpMaxTime, _data.jumpForce);
 
         _currentVelocityY = Mathf.Sqrt(superJumpForce * -2f * _gravity);
         _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);
 
+        _isChargingSuperJump = false;
+        EventBus.Raise<OnSuperJumpChargeEnded>();
     }
     #endregion
 
