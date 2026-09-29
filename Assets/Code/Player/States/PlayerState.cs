@@ -3,14 +3,8 @@ using UnityEngine;
 
 public abstract class PlayerState
 {
-    protected PlayerController _player;
     protected List<PlayerHandler> _handlers = new List<PlayerHandler>();
     protected BehaviourFSM.State _nextState;
-
-    public PlayerState(PlayerController p)
-    {
-        _player = p;
-    }
 
     public abstract void Update();
 

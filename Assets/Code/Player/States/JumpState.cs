@@ -1,17 +1,60 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class JumpState : PlayerState
 {
-    private MovementHandler _movementHandler;
-    private JumpHandler _jumpHandler;
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    public JumpState(PlayerController p) : base(p)
+    private MoveHandler _movementHandler;
+    private PartHandler _partHandler;
+
+    private PlayerInputActions _playerInput;
+
+    public JumpState(ref PlayerData data, ref PlayerParents parents)
     {
-        _handlers.Add(_movementHandler = new MovementHandler(p));
-        _handlers.Add(_jumpHandler = new JumpHandler(p));
+        _playerInput = data.input;
+
+        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
+        _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
+
+    }
+
+    public override void Enable()
+    {
+        base.Enable();
+
+        EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
+
+        _nextState = BehaviourFSM.State.Idle;
+        _movementHandler.Jump();
+    }
+
+    public override void Disable()
+    {
+        EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
+
+        base.Disable();
     }
 
     public override void Update()
     {
+        _movementHandler.Update();
+        _movementHandler.Fall();
+
+        Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
+
+        if (inputDirection != Vector2.zero)
+        {
+            _nextState = BehaviourFSM.State.Move;
+            _movementHandler.Move(inputDirection);
+        }
+        else
+            _nextState = BehaviourFSM.State.Idle;
     }
+
+    private void OnPlayerLanded(in OnPlayerLanded playerLandedEvent)
+    {
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+
 }

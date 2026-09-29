@@ -1,0 +1,8 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "PlayerConfig", menuName = "Scriptable Objects/PlayerConfig")]
+public class PlayerConfig : ScriptableObject
+{
+    [Header("Moving")]
+    public MoveHandler.Data movingMoveData;
+}
