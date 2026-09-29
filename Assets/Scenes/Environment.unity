@@ -3188,10 +3188,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 54.77111, y: 33.68956, z: 45.69599}
-  m_Center: {x: 6.877075, y: 16.34478, z: 0.18270874}
+  m_Size: {x: 54.77111, y: 34.56883, z: 45.69599}
+  m_Center: {x: 6.877075, y: 15.905146, z: 0.18270874}
 --- !u!1 &929836269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +5923,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: 3
+        Gain: 5
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -5934,7 +5934,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: -3
+        Gain: -5
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -5969,10 +5969,10 @@ MonoBehaviour:
     ScreenPosition: {x: 0, y: 0}
     DeadZone:
       Enabled: 0
-      Size: {x: 0.2, y: 0.2}
+      Size: {x: 0.98, y: 0.71}
     HardLimits:
       Enabled: 0
-      Size: {x: 0.8, y: 0.8}
+      Size: {x: 0.98, y: 0.86}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 1.69, z: 0}
