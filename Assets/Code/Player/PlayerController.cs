@@ -1,9 +1,18 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Serializable]
+    public struct BoneConfig
+    {
+        public Transform bone;
+        public Vector3 axisOffset;
+        public float rotationSpeed;
+    }
+    
+    [Header("Bone Config")]
+    public BoneConfig[] bodyBones;
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     [SerializeField] private PlayerConfig playerConfig;
@@ -11,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerData _playerData;
     private BehaviourFSM _behaviourFSM;
+    private MouseTargetPosition _mouseTargetPosition;
 
     private void Awake()
     {
@@ -23,6 +33,7 @@ public class PlayerController : MonoBehaviour
         _playerData.config = playerConfig;
 
         _behaviourFSM = new BehaviourFSM(ref _playerData, ref playerParents);
+        _mouseTargetPosition = new MouseTargetPosition(bodyBones, ref playerParents);
     }
 
     private void Start()
@@ -33,5 +44,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _behaviourFSM.CurrentState.Update();
+        _mouseTargetPosition.Update();
     }
 }
