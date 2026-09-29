@@ -24,8 +24,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        ServiceProvider.Instance.AddService<EventBus>(new EventBus());
-
         _playerData.player = this;
         _playerData.controller = GetComponent<CharacterController>();
         _playerData.input = new PlayerInputActions();

@@ -43,10 +43,6 @@ public abstract class RobotPart : MonoBehaviour
     private void Awake()
     {
         _body = GetComponent<Rigidbody>();
-    }
-
-    private void Start()
-    {
         EventBus.Subscribe<OnPlayerInstantiated>(GetPlayerData);
     }
 
