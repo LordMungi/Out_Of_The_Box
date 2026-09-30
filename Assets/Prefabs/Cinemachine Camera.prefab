@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 2718362605217364108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7329462, y: 0.13654411, z: 0.4223671}
+  m_LocalPosition: {x: 2.5148802, y: -0.031719923, z: 0.71380043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -147,8 +147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4741057996841554576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13688238, y: 0.0000000018779287, z: -2.5949784e-10, w: 0.99058735}
-  m_LocalPosition: {x: 4.014516, y: 1.2529832, z: 18.618082}
+  m_LocalRotation: {x: 0.13862543, y: -0.35019067, z: 0.05248851, w: 0.9248754}
+  m_LocalPosition: {x: 6.931329, y: 1.1926731, z: 20.131882}
   m_LocalScale: {x: 8.665625, y: 8.665625, z: 8.665625}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,8 +314,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7008430358314579056}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.00428006, y: -0.0000001490116, z: -0.0037836204, w: 0.99998367}
+  m_LocalPosition: {x: 4.612419, y: 2.5898025, z: -1.6589642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,8 +340,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 54.77111, y: 34.56883, z: 45.69599}
-  m_Center: {x: 6.877075, y: 15.905146, z: 0.18270874}
+  m_Size: {x: 54.77111, y: 33.98819, z: 45.69599}
+  m_Center: {x: 6.877074, y: 16.195473, z: 0.18270797}
 --- !u!1 &8181264897218995999
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,8 +406,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9215932823803149827}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13688235, y: 0.000000001877928, z: -2.5949662e-10, w: 0.99058735}
-  m_LocalPosition: {x: 2.7329462, y: 3.1700733, z: -4.3462186}
+  m_LocalRotation: {x: 0.13862543, y: -0.35019067, z: 0.052488513, w: 0.9248754}
+  m_LocalPosition: {x: 5.6497593, y: 3.1097631, z: -2.8324184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -490,7 +490,7 @@ MonoBehaviour:
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: 0
+    Value: -41.476883
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -500,7 +500,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 17.5
+    Value: 18.801872
     Center: 17.5
     Range: {x: -85, y: 85}
     Wrap: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
         InputAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
         Gain: -5
         CancelDeltaTime: 0
-      InputValue: 0
+      InputValue: -0
       Driver:
         AccelTime: 0
         DecelTime: 0
