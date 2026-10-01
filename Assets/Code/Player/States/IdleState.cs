@@ -13,12 +13,12 @@ public class IdleState : PlayerState
     #endregion
 
     #region Initialization
-    public IdleState(ref PlayerData data, ref PlayerParents parents)
+    public IdleState(ref PlayerData data)
     {
         _playerInput = data.input;
 
-        _handlers.Add(_movementHandler = new MoveHandler(data.controller, data.config.movingMoveData));
-        _handlers.Add(_partHandler = new PartHandler(ref parents, _playerInput));
+        _handlers.Add(_movementHandler = data.handlers.movement);
+        _handlers.Add(_partHandler = data.handlers.parts);
     }
 
     public override void Enable()
