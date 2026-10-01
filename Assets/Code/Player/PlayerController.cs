@@ -29,9 +29,13 @@ public class PlayerController : MonoBehaviour
         _playerData.input = new PlayerInputActions();
         _playerData.input.Enable();
         _playerData.config = playerConfig;
+        _playerData.parents = playerParents;
 
-        _behaviourFSM = new BehaviourFSM(ref _playerData, ref playerParents);
-        _mouseTargetPosition = new MouseTargetPosition(bodyBones, ref playerParents);
+        _playerData.handlers.movement = new MoveHandler(_playerData.controller, _playerData.config.movingMoveData);
+        _playerData.handlers.parts = new PartHandler(ref _playerData.parents, _playerData.input);
+
+        _behaviourFSM = new BehaviourFSM(ref _playerData);
+        _mouseTargetPosition = new MouseTargetPosition(bodyBones, ref _playerData.parents);
     }
 
     private void Start()

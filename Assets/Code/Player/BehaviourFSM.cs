@@ -21,12 +21,12 @@ public class BehaviourFSM
 
     private State _currentStateEnum;
 
-    public BehaviourFSM(ref PlayerData data, ref PlayerParents parents)
+    public BehaviourFSM(ref PlayerData data)
     {
-        _states.TryAdd(State.Idle, new IdleState(ref data, ref parents));
-        _states.TryAdd(State.Move, new MoveState(ref data, ref parents));
-        _states.TryAdd(State.Jump, new JumpState(ref data, ref parents));
-        _states.TryAdd(State.SuperJump, new SuperJumpState(ref data, ref parents));
+        _states.TryAdd(State.Idle, new IdleState(ref data));
+        _states.TryAdd(State.Move, new MoveState(ref data));
+        _states.TryAdd(State.Jump, new JumpState(ref data));
+        _states.TryAdd(State.SuperJump, new SuperJumpState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
