@@ -26,7 +26,7 @@ public class JumpBar : MonoBehaviour
         if (!bar.enabled)
             bar.enabled = true;
 
-        bar.fillAmount = context.newValue / config.movingMoveData.superJumpMaxTime;
+        bar.fillAmount = context.newValue / config.superJumpMaxTime;
     }
 
     private void OnSuperJumpChargeEnded(in OnSuperJumpChargeEnded context)

@@ -11,12 +11,15 @@ public class MoveState : PlayerState
     private PartHandler _partHandler;
 
     private PlayerInputActions _playerInput;
+    private PlayerConfig _playerConfig;
     #endregion
 
     #region Initialization
     public MoveState(ref PlayerData data)
     {
         _playerInput = data.input;
+        _playerConfig = data.config;
+
         _handlers.Add(_movementHandler = data.handlers.movement);
         _handlers.Add(_partHandler = data.handlers.parts);
     }
@@ -50,8 +53,8 @@ public class MoveState : PlayerState
     public override void Update()
     {
         _movementHandler.Update();
-        _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>());
-        _movementHandler.Fall();
+        _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>(), _playerConfig.moveSpeed);
+        _movementHandler.Fall(_playerConfig.fallSpeed);
     }
 
     #region Input Callbacks

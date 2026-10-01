@@ -5,16 +5,7 @@ public class MoveHandler : PlayerHandler
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    [Serializable] public struct Data
-    {
-        public float speed;
-        public float jumpForce;
-        public float superJumpMaxForce;
-        public float superJumpMaxTime;
-    }
-
     private CharacterController _controller;
-    private Data _data;
     private Transform _mainCamera;
     
     private float _currentVelocityY;
@@ -25,10 +16,9 @@ public class MoveHandler : PlayerHandler
     private const float _gravity = -9.81f;
 
     #region Initialization
-    public MoveHandler(CharacterController controller, Data data)
+    public MoveHandler(CharacterController controller)
     {
         _controller = controller;
-        _data = data;
         _mainCamera = Camera.main.transform;
     }
 
@@ -47,8 +37,6 @@ public class MoveHandler : PlayerHandler
     }
     #endregion
 
-
-
     #region Methods
     public void Update()
     {
@@ -59,7 +47,7 @@ public class MoveHandler : PlayerHandler
         }
     }
 
-    public void Move(Vector2 direction)
+    public void Move(Vector2 direction, float speed)
     {
         Vector3 camForward = _mainCamera.forward;
         Vector3 camRight = _mainCamera.right;
@@ -71,10 +59,10 @@ public class MoveHandler : PlayerHandler
 
         Vector3 finalMoveDirection = (camForward * direction.y) + (camRight * direction.x);
 
-        _controller.Move(finalMoveDirection * _data.speed * Time.deltaTime);
+        _controller.Move(finalMoveDirection * speed * Time.deltaTime);
     }
 
-    public void Fall()
+    public void Fall(float fallSpeed)
     {
         if (_controller.isGrounded)
         {
@@ -89,13 +77,13 @@ public class MoveHandler : PlayerHandler
         }
         _wasGrounded = _controller.isGrounded;
 
-        _controller.Move(new Vector3(0, _data.speed * _currentVelocityY * Time.deltaTime, 0));
+        _controller.Move(new Vector3(0, fallSpeed * _currentVelocityY * Time.deltaTime, 0));
     }
 
-    public void Jump()
+    public void Jump(float jumpForce)
     {
-        _currentVelocityY = Mathf.Sqrt(_data.jumpForce * -2f * _gravity);
-        _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);
+        _currentVelocityY = Mathf.Sqrt(jumpForce * -2f * _gravity);
+        _controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
     }
 
     public void StartSuperJumpCharge()
@@ -104,14 +92,14 @@ public class MoveHandler : PlayerHandler
         _isChargingSuperJump = true;
     }
 
-    public void PerformSuperJump()
+    public void PerformSuperJump(float superJumpMaxTime, float superJumpMaxForce, float superJumpMinForce)
     {
-        float timePressed = Mathf.Min(_data.superJumpMaxTime, _superJumpTimer);
+        float timePressed = Mathf.Min(superJumpMaxTime, _superJumpTimer);
 
-        float superJumpForce = Mathf.Max(timePressed * _data.superJumpMaxForce / _data.superJumpMaxTime, _data.jumpForce);
+        float superJumpForce = Mathf.Max(timePressed * superJumpMaxForce / superJumpMaxTime, superJumpMinForce);
 
         _currentVelocityY = Mathf.Sqrt(superJumpForce * -2f * _gravity);
-        _controller.Move(_data.speed * _currentVelocityY * Time.deltaTime * Vector3.up);
+        _controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
 
         _isChargingSuperJump = false;
         EventBus.Raise<OnSuperJumpChargeEnded>();

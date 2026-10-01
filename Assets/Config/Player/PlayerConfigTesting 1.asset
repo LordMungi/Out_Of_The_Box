@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942d280e9581b244287ef4465265443c, type: 3}
   m_Name: PlayerConfigTesting 1
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
-  movingMoveData:
-    speed: 10
-    jumpForce: 0.15
-    superJumpMaxForce: 0.4
-    superJumpMaxTime: 1
+  moveSpeed: 10
+  airborneSpeed: 10
+  jumpForce: 0.1
+  fallSpeed: 10
+  superJumpMinForce: 0.1
+  superJumpMaxForce: 0.4
+  superJumpMaxTime: 1
