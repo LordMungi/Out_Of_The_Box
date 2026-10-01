@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         _playerData.config = playerConfig;
         _playerData.parents = playerParents;
 
-        _playerData.handlers.movement = new MoveHandler(_playerData.controller, _playerData.config.movingMoveData);
+        _playerData.handlers.movement = new MoveHandler(_playerData.controller);
         _playerData.handlers.parts = new PartHandler(ref _playerData.parents, _playerData.input);
 
         _behaviourFSM = new BehaviourFSM(ref _playerData);

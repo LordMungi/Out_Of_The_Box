@@ -10,6 +10,7 @@ public class SuperJumpState : PlayerState
     private PartHandler _partHandler;
 
     private PlayerInputActions _playerInput;
+    private PlayerConfig _playerConfig;
 
     private bool _hasLeftGround;
     #endregion
@@ -18,6 +19,7 @@ public class SuperJumpState : PlayerState
     public SuperJumpState(ref PlayerData data)
     {
         _playerInput = data.input;
+        _playerConfig = data.config;
 
         _handlers.Add(_movementHandler = data.handlers.movement);
         _handlers.Add(_partHandler = data.handlers.parts);
@@ -49,14 +51,14 @@ public class SuperJumpState : PlayerState
     public override void Update()
     {
         _movementHandler.Update();
-        _movementHandler.Fall();
+        _movementHandler.Fall(_playerConfig.fallSpeed);
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 
         if (inputDirection != Vector2.zero)
         {
             _nextState = BehaviourFSM.State.Move;
-            _movementHandler.Move(inputDirection);
+            _movementHandler.Move(inputDirection, _playerConfig.airborneSpeed);
         }
         else
             _nextState = BehaviourFSM.State.Idle;
@@ -67,7 +69,7 @@ public class SuperJumpState : PlayerState
     {
         if (!_hasLeftGround)
         {
-            _movementHandler.PerformSuperJump();
+            _movementHandler.PerformSuperJump(_playerConfig.superJumpMaxTime, _playerConfig.superJumpMaxForce, _playerConfig.superJumpMinForce);
             _hasLeftGround = true;
         }
     }

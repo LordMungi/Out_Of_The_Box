@@ -9,13 +9,15 @@ public class IdleState : PlayerState
     private MoveHandler _movementHandler;
     private PartHandler _partHandler;
 
-    private PlayerInputActions _playerInput; 
+    private PlayerInputActions _playerInput;
+    private PlayerConfig _playerConfig;
     #endregion
 
     #region Initialization
     public IdleState(ref PlayerData data)
     {
         _playerInput = data.input;
+        _playerConfig = data.config;
 
         _handlers.Add(_movementHandler = data.handlers.movement);
         _handlers.Add(_partHandler = data.handlers.parts);
@@ -53,7 +55,7 @@ public class IdleState : PlayerState
     public override void Update()
     {
         _movementHandler.Update();
-        _movementHandler.Fall();
+        _movementHandler.Fall(_playerConfig.fallSpeed);
     }
 
     #region Input Callbacks
