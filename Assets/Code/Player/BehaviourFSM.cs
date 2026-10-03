@@ -8,11 +8,11 @@ public class BehaviourFSM
 
     public enum State
     {
-        NULL,
         Idle,
         Move,
         Jump,
-        SuperJump
+        SuperJump,
+        NULL
     }
 
     public PlayerState CurrentState { get; private set; }
@@ -72,7 +72,10 @@ public class BehaviourFSM
         }
 
         if (canChange)
+        {
             ChangeState(newStateEvent.state);
+            EventBus.Raise<OnPlayerStateChange>(newStateEvent.state);
+        }
     }
 
     private void ChangeState(State newStateEnum)

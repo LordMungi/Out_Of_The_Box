@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerConfig playerConfig;
     [SerializeField] private PlayerParents playerParents;
+    [SerializeField] private Animator playerAnimator;
 
     private PlayerData _playerData;
     private BehaviourFSM _behaviourFSM;
+    private PlayerAnimator _playerAnimationController;
     private MouseTargetPosition _mouseTargetPosition;
 
     private void Awake()
@@ -34,7 +36,9 @@ public class PlayerController : MonoBehaviour
         _playerData.handlers.movement = new MoveHandler(_playerData.controller);
         _playerData.handlers.parts = new PartHandler(ref _playerData.parents, _playerData.input);
 
+        _playerAnimationController = new PlayerAnimator(playerAnimator);
         _behaviourFSM = new BehaviourFSM(ref _playerData);
+
         _mouseTargetPosition = new MouseTargetPosition(bodyBones, ref _playerData.parents);
     }
 
