@@ -15,16 +15,16 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.5220557, g: 0.28746888, b: 0.7169812, a: 1}
-  m_FogMode: 1
+  m_FogColor: {r: 1, g: 0.13679248, b: 0.7110539, a: 1}
+  m_FogMode: 2
   m_FogDensity: 0.002
   m_LinearFogStart: -51.1
   m_LinearFogEnd: 2885.43
   m_AmbientSkyColor: {r: 0.735849, g: 0.5077676, b: 0.38527945, a: 1}
-  m_AmbientEquatorColor: {r: 0.8679245, g: 0.79525304, b: 0.7737629, a: 1}
-  m_AmbientGroundColor: {r: 1, g: 0.32549024, b: 0.37716708, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientEquatorColor: {r: 0.51686543, g: 0.59692895, b: 0.9528302, a: 1}
+  m_AmbientGroundColor: {r: 0.504717, g: 0.5960371, b: 1, a: 1}
+  m_AmbientIntensity: 1.47
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.89199895, g: 0.89328325, b: 0.8962264, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 9101868a3590e96428be52313614dcc1, type: 2}
   m_HaloStrength: 0
@@ -6864,6 +6864,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635174266}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1645298721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.14606842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0007332479
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9892727
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0017201531
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737254352412016769, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423871474061969665, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_Name
+      value: Robot 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615489409768495106, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.197742
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615489409768495106, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.232108
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615489409768495106, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5736132
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
 --- !u!4 &1668609556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 44352747828235940, guid: 33165de86976807468bdd7dc20c9b450, type: 3}
@@ -10243,3 +10312,4 @@ SceneRoots:
   - {fileID: 1118602650}
   - {fileID: 1034926235}
   - {fileID: 178246216}
+  - {fileID: 1645298721}
