@@ -20,7 +20,7 @@ public class BehaviourFSM
     private Dictionary<State, PlayerState> _states = new Dictionary<State, PlayerState>();
 
     private State _currentStateEnum;
-
+    
     public BehaviourFSM(ref PlayerData data)
     {
         _states.TryAdd(State.Idle, new IdleState(ref data));

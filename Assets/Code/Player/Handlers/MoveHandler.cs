@@ -15,6 +15,8 @@ public class MoveHandler : PlayerHandler
 
     private const float _gravity = -9.81f;
 
+    private Vector3 _currentHorizontalMove = Vector3.zero;
+    
     #region Initialization
     public MoveHandler(CharacterController controller)
     {
@@ -56,17 +58,16 @@ public class MoveHandler : PlayerHandler
         camRight.y = 0f;
         camForward.Normalize();
         camRight.Normalize();
-
-        Vector3 finalMoveDirection = (camForward * direction.y) + (camRight * direction.x);
-
-        _controller.Move(finalMoveDirection * speed * Time.deltaTime);
+        
+        Vector3 direction3D = (camForward * direction.y) + (camRight * direction.x);
+        _currentHorizontalMove = direction3D * speed;
     }
 
     public void Fall(float fallSpeed)
     {
-        if (_controller.isGrounded)
+        if (_controller.isGrounded && _currentVelocityY < 0.0f) 
         {
-            _currentVelocityY = 0f;
+            _currentVelocityY = -2.0f; 
 
             if (!_wasGrounded)
                 EventBus.Raise<OnPlayerLanded>();
@@ -75,9 +76,15 @@ public class MoveHandler : PlayerHandler
         {
             _currentVelocityY += _gravity * Time.deltaTime;
         }
+        
         _wasGrounded = _controller.isGrounded;
 
-        _controller.Move(new Vector3(0, fallSpeed * _currentVelocityY * Time.deltaTime, 0));
+        Vector3 finalMovement = _currentHorizontalMove;
+        finalMovement.y = fallSpeed * _currentVelocityY;
+
+        _controller.Move(finalMovement * Time.deltaTime);
+
+        _currentHorizontalMove = Vector3.zero;
     }
 
     public void Jump(float jumpForce)
