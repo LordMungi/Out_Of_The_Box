@@ -4,12 +4,12 @@ using UnityEngine.InputSystem;
 
 public class FreeCam : MonoBehaviour
 {
-    public float flySpeed = 10.0f;
-    public float lookSpeed = 0.2f;
+    private float _flySpeed = 10.0f;
+    private float _lookSpeed = 0.2f;
     
     public static bool IsActive { get; private set; } = false;
     
-    public Key toggleKey = Key.F1;
+    private Key _toggleKey = Key.F1;
 
     private CinemachineCamera _freeCam;
 
@@ -28,7 +28,7 @@ public class FreeCam : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current != null && Keyboard.current[toggleKey].wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current[_toggleKey].wasPressedThisFrame)
         {
             IsActive = !IsActive;
             _freeCam.enabled = IsActive;
@@ -56,8 +56,8 @@ public class FreeCam : MonoBehaviour
         if (Mouse.current != null)
         {
             Vector2 mouseDelta = Mouse.current.delta.ReadValue();
-            _yaw += mouseDelta.x * lookSpeed;
-            _pitch -= mouseDelta.y * lookSpeed;
+            _yaw += mouseDelta.x * _lookSpeed;
+            _pitch -= mouseDelta.y * _lookSpeed;
 
             _pitch = Mathf.Clamp(_pitch, -89.0f, 89.0f);
             transform.eulerAngles = new Vector3(_pitch, _yaw, 0.0f);
@@ -89,7 +89,7 @@ public class FreeCam : MonoBehaviour
             if (move.magnitude > 1.0f)
                 move.Normalize();
 
-            transform.Translate(move * flySpeed * Time.deltaTime, Space.Self);
+            transform.Translate(move * _flySpeed * Time.deltaTime, Space.Self);
         }
     }
 }
