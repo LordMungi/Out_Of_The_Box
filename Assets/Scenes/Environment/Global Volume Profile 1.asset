@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.FilmGrain
   active: 1
   type:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.271
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -56,13 +56,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.62184685, g: 0.5330188, b: 1, a: 1}
+    m_Value: {r: 0.37159523, g: 0.2775454, b: 0.764151, a: 1}
   highlights:
     m_OverrideState: 0
     m_Value: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 12.3
+    m_Value: -35
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
