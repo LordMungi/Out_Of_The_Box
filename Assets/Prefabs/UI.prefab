@@ -217,8 +217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -511, y: -334}
-  m_SizeDelta: {x: 775.098, y: 463.493}
+  m_AnchoredPosition: {x: -273.64514, y: -406.79987}
+  m_SizeDelta: {x: 1249.8077, y: 609.0928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9177838862804099307
 CanvasRenderer:
@@ -270,7 +270,9 @@ MonoBehaviour:
     Q to release
 
     F
-    to equip/unequip'
+    to equip/unequip
+
+    F1 to activate/deactivate free camera '
 --- !u!1 &5647857028604033236
 GameObject:
   m_ObjectHideFlags: 0
