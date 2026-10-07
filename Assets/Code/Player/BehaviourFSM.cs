@@ -12,6 +12,7 @@ public class BehaviourFSM
         Move,
         Jump,
         SuperJump,
+        Push,
         NULL
     }
 

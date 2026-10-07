@@ -21,6 +21,7 @@ public class IdleState : PlayerState
 
         _handlers.Add(_movementHandler = data.handlers.movement);
         _handlers.Add(_partHandler = data.handlers.parts);
+        _handlers.Add(data.handlers.interactions);
     }
 
     public override void Enable()
