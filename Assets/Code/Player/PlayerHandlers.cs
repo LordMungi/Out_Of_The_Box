@@ -2,4 +2,5 @@
 {
     public MoveHandler movement;
     public PartHandler parts;
+    public InteractionsHandler interactions;
 }
