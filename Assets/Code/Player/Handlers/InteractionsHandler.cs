@@ -6,12 +6,12 @@ public class InteractionsHandler : PlayerHandler
     #region Fields
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    private PlayerParents _playerParents;
+    private Transform _handParent;
+    private Transform _worldParent;
 
     private List<PushableObject> _nearbyPushableObjects = new List<PushableObject>();
 
     private PushableObject _grabbedPushableObejct;
-    private Vector3 _offsetFromPushableObject;
     private Direction _directionFromPushableObject;
 
     private enum Direction
@@ -26,7 +26,8 @@ public class InteractionsHandler : PlayerHandler
     #region Initialization
     public InteractionsHandler(ref PlayerParents parents)
     {
-        _playerParents = parents;
+        _handParent = parents.handParent;
+        _worldParent = parents.worldParent;
 
         _grabbedPushableObejct = null;
     }
@@ -67,31 +68,39 @@ public class InteractionsHandler : PlayerHandler
     public void GrabNearestPushableObject(Vector3 playerPosition)
     {
         PushableObject nearestObject = FindNearestPushableObject();
-        nearestObject.Grab();
-        _grabbedPushableObejct = nearestObject;
-        _offsetFromPushableObject = _grabbedPushableObejct.transform.position - playerPosition;
+        Grab(nearestObject);
 
-        Vector2 absOffset = new Vector2(Mathf.Abs(_offsetFromPushableObject.x), Mathf.Abs(_offsetFromPushableObject.z));
+        Vector3 offsetFromPushableObject = _grabbedPushableObejct.transform.position - playerPosition;
+
+        Vector2 absOffset = new Vector2(Mathf.Abs(offsetFromPushableObject.x), Mathf.Abs(offsetFromPushableObject.z));
 
         if (absOffset.x > absOffset.y)
         {
-            if (_offsetFromPushableObject.x > 0)
+            if (offsetFromPushableObject.x > 0)
                 _directionFromPushableObject = Direction.Left;
             else
                 _directionFromPushableObject = Direction.Right;
         }
         else
         {
-            if (_offsetFromPushableObject.z > 0)
+            if (offsetFromPushableObject.z > 0)
                 _directionFromPushableObject = Direction.Front;
             else
                 _directionFromPushableObject = Direction.Back;
         }
     }
 
+    private void Grab(PushableObject pushableObject)
+    {
+        _grabbedPushableObejct = pushableObject;
+        _grabbedPushableObejct.Grab();
+        _grabbedPushableObejct.transform.parent = _handParent;
+    }
+
     public void ReleasePushableObject()
     {
         _grabbedPushableObejct?.Release();
+        _grabbedPushableObejct.transform.parent = _worldParent;
         _grabbedPushableObejct = null;
     }
 
@@ -117,14 +126,6 @@ public class InteractionsHandler : PlayerHandler
         }
         _grabbedPushableObejct.Move(moveVector * Time.deltaTime * speed);
     }
-    public Vector3 GetOffsetedPositionFromPushableObejct()
-    {
-        if (_grabbedPushableObejct)
-        {
-            return _grabbedPushableObejct.transform.position - _offsetFromPushableObject;
-        }
-        return Vector3.zero;
-    }
 
     private PushableObject FindNearestPushableObject()
     {
@@ -134,7 +135,7 @@ public class InteractionsHandler : PlayerHandler
             if (nearestItem == item)
                 continue;
 
-            if (Vector3.Distance(_playerParents.handParent.position, item.transform.position) < Vector3.Distance(_playerParents.handParent.position, item.transform.position))
+            if (Vector3.Distance(_handParent.position, item.transform.position) < Vector3.Distance(_handParent.position, item.transform.position))
                 nearestItem = item;
         }
         return nearestItem;

@@ -47,8 +47,9 @@ public class PushState : PlayerState
 
         if (delta.y != 0)
         {
-            _interactionsHandler.PushObject(delta.y, _playerConfig.pushSpeed);
-            _movementHandler.SetPosition(_interactionsHandler.GetOffsetedPositionFromPushableObejct());
+            _movementHandler.Move(new Vector2(0, delta.y), _playerConfig.pushSpeed);
+            //_interactionsHandler.PushObject(delta.y, _playerConfig.pushSpeed);
+            //_movementHandler.SetPosition(_interactionsHandler.GetOffsetedPositionFromPushableObejct());
         }
     }
 
