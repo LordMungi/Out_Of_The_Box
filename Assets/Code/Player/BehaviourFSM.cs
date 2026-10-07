@@ -47,6 +47,7 @@ public class BehaviourFSM
                 {
                     canChange = _currentStateEnum == State.Move ||
                                 _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump;
                     break;
                 }
@@ -55,6 +56,7 @@ public class BehaviourFSM
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump;
                     break;
                 }
