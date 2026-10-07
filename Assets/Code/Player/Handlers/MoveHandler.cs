@@ -62,6 +62,11 @@ public class MoveHandler : PlayerHandler
         _controller.Move(finalMoveDirection * speed * Time.deltaTime);
     }
 
+    public void SetPosition(Vector3 position)
+    {
+        _controller.transform.position = position;
+    }
+
     public void Fall(float fallSpeed)
     {
         if (_controller.isGrounded)
