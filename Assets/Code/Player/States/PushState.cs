@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PushState : PlayerState
 {
     #region Fields
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     private PlayerInputActions _playerInput;
     private PlayerConfig _playerConfig;
 
@@ -23,13 +26,18 @@ public class PushState : PlayerState
 
     public override void Enable()
     {
-        _interactionsHandler.GrabNearestPushableObject();
+        _interactionsHandler.GrabNearestPushableObject(_movementHandler.Position);
+
+        _playerInput.Player.Release.performed += OnObjectReleased;
         base.Enable();
     }
 
     public override void Disable()
     {
         base.Disable();
+        _playerInput.Player.Release.performed -= OnObjectReleased;
+
+        _interactionsHandler.ReleasePushableObject();
     }
 
     #endregion
@@ -43,4 +51,12 @@ public class PushState : PlayerState
             _movementHandler.SetPosition(_interactionsHandler.GetOffsetedPositionFromPushableObejct());
         }
     }
+
+    #region Input Callbacks
+    private void OnObjectReleased(InputAction.CallbackContext context)
+    {
+        _nextState = BehaviourFSM.State.Idle;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+    #endregion
 }

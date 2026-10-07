@@ -5,6 +5,15 @@ public class MoveHandler : PlayerHandler
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
+    public Vector3 Position
+    {
+        get
+        {
+            return _controller.transform.position;
+        }
+        private set { }
+    }
+
     private CharacterController _controller;
     private Transform _mainCamera;
     

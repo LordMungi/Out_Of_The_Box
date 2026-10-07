@@ -11,6 +11,16 @@ public class InteractionsHandler : PlayerHandler
     private List<PushableObject> _nearbyPushableObjects = new List<PushableObject>();
 
     private PushableObject _grabbedPushableObejct;
+    private Vector3 _offsetFromPushableObject;
+    private Direction _directionFromPushableObject;
+
+    private enum Direction
+    {
+        Front,
+        Back,
+        Left,
+        Right
+    }
     #endregion
 
     #region Initialization
@@ -54,11 +64,29 @@ public class InteractionsHandler : PlayerHandler
             EventBus.Raise<OnPushRequestInteractionsAccepted>();
     }
 
-    public void GrabNearestPushableObject()
+    public void GrabNearestPushableObject(Vector3 playerPosition)
     {
         PushableObject nearestObject = FindNearestPushableObject();
         nearestObject.Grab();
         _grabbedPushableObejct = nearestObject;
+        _offsetFromPushableObject = _grabbedPushableObejct.transform.position - playerPosition;
+
+        Vector2 absOffset = new Vector2(Mathf.Abs(_offsetFromPushableObject.x), Mathf.Abs(_offsetFromPushableObject.z));
+
+        if (absOffset.x > absOffset.y)
+        {
+            if (_offsetFromPushableObject.x > 0)
+                _directionFromPushableObject = Direction.Left;
+            else
+                _directionFromPushableObject = Direction.Right;
+        }
+        else
+        {
+            if (_offsetFromPushableObject.z > 0)
+                _directionFromPushableObject = Direction.Front;
+            else
+                _directionFromPushableObject = Direction.Back;
+        }
     }
 
     public void ReleasePushableObject()
@@ -69,14 +97,31 @@ public class InteractionsHandler : PlayerHandler
 
     public void PushObject(float delta, float speed)
     {
-        _grabbedPushableObejct.Move(new Vector2(0, delta) * Time.deltaTime * speed);
+        Vector2 moveVector;
+        switch (_directionFromPushableObject)
+        {
+            case Direction.Front:
+                moveVector = new Vector2(0, delta);
+                break;
+            case Direction.Back:
+                moveVector = new Vector2(0, -delta);
+                break;
+            case Direction.Left:
+                moveVector = new Vector2(delta, 0);
+                break;
+           case Direction.Right:
+                moveVector = new Vector2(-delta, 0);
+                break; 
+            default:                moveVector = new Vector2();
+                break; 
+        }
+        _grabbedPushableObejct.Move(moveVector * Time.deltaTime * speed);
     }
-
-    public Vector3 GetOffsetedPositionFromPushableObejct()
+    public Vector3 GetOffsetedPositionFromPushableObejct()
     {
         if (_grabbedPushableObejct)
         {
-            return _grabbedPushableObejct.transform.position - new Vector3(0, 0, 1);
+            return _grabbedPushableObejct.transform.position - _offsetFromPushableObject;
         }
         return Vector3.zero;
     }
