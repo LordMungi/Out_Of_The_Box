@@ -40,12 +40,14 @@ public class PartHandler : PlayerHandler
         base.Enable();
         EventBus.Subscribe<OnNearbyPartEntered>(OnNearbyPartEntered);
         EventBus.Subscribe<OnNearbyPartExit>(OnNearbyPartExit);
+        EventBus.Subscribe<OnPushRequest>(OnPushRequest);
     }
 
     public override void Disable()
     {
         EventBus.Unsubscribe<OnNearbyPartEntered>(OnNearbyPartEntered);
         EventBus.Unsubscribe<OnNearbyPartExit>(OnNearbyPartExit);
+        EventBus.Unsubscribe<OnPushRequest>(OnPushRequest);
         base.Disable();
     }
 
@@ -185,5 +187,11 @@ public class PartHandler : PlayerHandler
             }
             part.actions[i] = newActionPair;
         }
+    }
+
+    private void OnPushRequest(in OnPushRequest context)
+    {
+        if (_grabbedPart == null)
+            EventBus.Raise<OnPushRequestPartsAccepted>();
     }
 }
