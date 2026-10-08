@@ -7,6 +7,16 @@ public class ShooterPart : RobotPart
 
     private ConcurrentPool _bulletPool;
 
+    private PlayerConfig _config;
+    private PlayerParents _parents;
+
+    public override void GetPlayerData(in OnPlayerInstantiated onPlayerInstantiated)
+    {
+        base.GetPlayerData(onPlayerInstantiated);
+        _config = onPlayerInstantiated.playerData.config;
+        _parents = onPlayerInstantiated.playerData.parents;
+    }
+
     protected override void SetActionPair()
     {
         type = Type.Shooter;
@@ -19,7 +29,7 @@ public class ShooterPart : RobotPart
     private void Shoot(InputAction.CallbackContext callbackContext)
     {
         Debug.Log("Pow!");
-        Bullet b = _bulletPool.GetMono<Bullet>(bulletPrefab, new Vector3(1, 0, 0));
+        Bullet b = _bulletPool.GetMono(bulletPrefab, _parents.handParent.position, _parents.handParent.forward, _config.bulletSpeed);
     }
 
     private void Aim(InputAction.CallbackContext callbackContext)
