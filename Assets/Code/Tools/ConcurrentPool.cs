@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using UnityEngine;
 
 public class ConcurrentPool
 {
@@ -24,6 +25,31 @@ public class ConcurrentPool
         else
         {
             value = (T)Activator.CreateInstance(resettableType);
+        }
+
+        value.Assign(parameters);
+        return value;
+    }
+
+    public T GetMono<T>(T prefab, params object[] parameters) where T : MonoBehaviour, IResettable
+    {
+        Type resettableType = typeof(T);
+
+        // If the pool doesn't contain a stack of the desired type, create it
+        if (!concurrentPool.ContainsKey(resettableType))
+            concurrentPool.TryAdd(resettableType, new ConcurrentStack<IResettable>());
+
+        T value;
+        // If the pool's stack contains 1 or more of the desired type, pop it
+        if (concurrentPool[resettableType].Count > 0)
+        {
+            concurrentPool[resettableType].TryPop(out IResettable resettable);
+            value = (T)resettable;
+        }
+        // Else, instantiate it
+        else
+        {
+            value = UnityEngine.Object.Instantiate<T>(prefab);
         }
 
         value.Assign(parameters);
