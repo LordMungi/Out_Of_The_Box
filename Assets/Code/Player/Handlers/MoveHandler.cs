@@ -4,10 +4,11 @@ using UnityEngine;
 public class MoveHandler : PlayerHandler
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
-
+    public bool IsGrounded => _controller.isGrounded;
+    
     private CharacterController _controller;
     private Transform _mainCamera;
-    
+
     private float _currentVelocityY;
     private bool _wasGrounded = false;
     private float _superJumpTimer;
@@ -16,8 +17,9 @@ public class MoveHandler : PlayerHandler
     private const float _gravity = -9.81f;
 
     private Vector3 _currentHorizontalMove = Vector3.zero;
-    
+
     #region Initialization
+
     public MoveHandler(CharacterController controller)
     {
         _controller = controller;
@@ -28,6 +30,8 @@ public class MoveHandler : PlayerHandler
     {
         EventBus.Subscribe<OnJumpRequest>(OnJumpRequest);
         EventBus.Subscribe<OnSuperJumpRequest>(OnSuperJumpRequest);
+        EventBus.Subscribe<OnGlideRequest>(OnGlideRequest);
+
         base.Enable();
     }
 
@@ -35,11 +39,15 @@ public class MoveHandler : PlayerHandler
     {
         EventBus.Unsubscribe<OnJumpRequest>(OnJumpRequest);
         EventBus.Unsubscribe<OnSuperJumpRequest>(OnSuperJumpRequest);
+        EventBus.Unsubscribe<OnGlideRequest>(OnGlideRequest);
+
         base.Disable();
     }
+
     #endregion
 
     #region Methods
+
     public void Update()
     {
         if (_isChargingSuperJump)
@@ -58,16 +66,16 @@ public class MoveHandler : PlayerHandler
         camRight.y = 0f;
         camForward.Normalize();
         camRight.Normalize();
-        
+
         Vector3 direction3D = (camForward * direction.y) + (camRight * direction.x);
         _currentHorizontalMove = direction3D * speed;
     }
 
     public void Fall(float fallSpeed)
     {
-        if (_controller.isGrounded && _currentVelocityY < 0.0f) 
+        if (_controller.isGrounded && _currentVelocityY < 0.0f)
         {
-            _currentVelocityY = -2.0f; 
+            _currentVelocityY = -2.0f;
 
             if (!_wasGrounded)
                 EventBus.Raise<OnPlayerLanded>();
@@ -76,7 +84,7 @@ public class MoveHandler : PlayerHandler
         {
             _currentVelocityY += _gravity * Time.deltaTime;
         }
-        
+
         _wasGrounded = _controller.isGrounded;
 
         Vector3 finalMovement = _currentHorizontalMove;
@@ -87,6 +95,26 @@ public class MoveHandler : PlayerHandler
         _currentHorizontalMove = Vector3.zero;
     }
 
+    public void GlideFall(float maxGlideFallSpeed)
+    {
+        if (_currentVelocityY < -maxGlideFallSpeed)
+        {
+            _currentVelocityY = -maxGlideFallSpeed;
+        }
+        else
+        {
+            _currentVelocityY += _gravity * Time.deltaTime;
+        }
+
+        _wasGrounded = _controller.isGrounded;
+
+        Vector3 finalMovement = _currentHorizontalMove;
+        finalMovement.y = _currentVelocityY;
+
+        _controller.Move(finalMovement * Time.deltaTime);
+        _currentHorizontalMove = Vector3.zero;
+    }
+    
     public void Jump(float jumpForce)
     {
         _currentVelocityY = Mathf.Sqrt(jumpForce * -2f * _gravity);
@@ -111,17 +139,31 @@ public class MoveHandler : PlayerHandler
         _isChargingSuperJump = false;
         EventBus.Raise<OnSuperJumpChargeEnded>();
     }
+
     #endregion
 
     #region Callbacks
+
     private void OnJumpRequest(in OnJumpRequest context)
     {
-        EventBus.Raise<OnJumpRequestAccepted>();
+        if (_controller.isGrounded)
+        {
+            EventBus.Raise<OnJumpRequestAccepted>();
+        }
+    }
+
+    private void OnGlideRequest(in OnGlideRequest context)
+    {
+        if (!_controller.isGrounded && _currentVelocityY <= 0.0f)
+        {
+            EventBus.Raise<OnGlideRequestAccepted>();
+        }
     }
 
     private void OnSuperJumpRequest(in OnSuperJumpRequest context)
     {
         EventBus.Raise<OnPartStateChangeAccepted>(BehaviourFSM.State.SuperJump);
     }
+
     #endregion
 }

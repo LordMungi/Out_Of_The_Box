@@ -25,14 +25,22 @@ public class JumpState : PlayerState
         base.Enable();
 
         EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
-
+        EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
+        EventBus.Subscribe<OnGlideRequestAccepted>(OnGlideRequestAccepted);
+        
         _nextState = BehaviourFSM.State.Idle;
-        _movementHandler.Jump(_playerConfig.jumpForce);
+        
+        if (_movementHandler.IsGrounded)
+        {
+            _movementHandler.Jump(_playerConfig.jumpForce);
+        }
     }
 
     public override void Disable()
     {
         EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
+        EventBus.Unsubscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
+        EventBus.Unsubscribe<OnGlideRequestAccepted>(OnGlideRequestAccepted);
 
         base.Disable();
     }
@@ -51,6 +59,14 @@ public class JumpState : PlayerState
         }
         else
             _nextState = BehaviourFSM.State.Idle;
+        
+        if (_partHandler.EquippedPart?.type == RobotPart.Type.Glider)
+        {
+            if (_playerInput.Player.Jump.IsPressed())
+            {
+                EventBus.Raise<OnGlideRequest>(); 
+            }
+        }
     }
 
     private void OnPlayerLanded(in OnPlayerLanded playerLandedEvent)
@@ -58,4 +74,19 @@ public class JumpState : PlayerState
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
 
+    private void OnGlideRequestAccepted(in OnGlideRequestAccepted playerGlideRequestAcceptedEvent)
+    {
+        _nextState = BehaviourFSM.State.Glide;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+
+    #region Callbacks
+    
+    private void OnPartStateChangeAccepted(in OnPartStateChangeAccepted onPartStateChangeAccepted)
+    {
+        _nextState = onPartStateChangeAccepted.state;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+    
+    #endregion
 }
