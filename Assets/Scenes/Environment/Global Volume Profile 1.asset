@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
   m_Name: FilmGrain
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.FilmGrain
-  active: 0
+  active: 1
   type:
     m_OverrideState: 1
     m_Value: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     m_Value: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -13
+    m_Value: -26
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,13 +100,13 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 2.31
+    m_Value: 2.79
   intensity:
     m_OverrideState: 1
-    m_Value: 2.07
+    m_Value: 0.65
   scatter:
     m_OverrideState: 1
-    m_Value: 0.517
+    m_Value: 0.273
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -187,7 +187,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.38
+    m_Value: 0.65
   contrast:
     m_OverrideState: 1
     m_Value: 7.7
