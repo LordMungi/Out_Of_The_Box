@@ -10,6 +10,8 @@ public class GrabAreaCollider : MonoBehaviour
             EventBus.Raise<OnNearbyPartEntered>(other.GetComponent<RobotPart>());
         if (other.CompareTag("Pushable"))
             EventBus.Raise<OnPushableObjectEntered>(other.GetComponent<PushableObject>());
+        if (other.CompareTag("Climbable"))
+            EventBus.Raise<OnClimbableObjectEntered>(other.GetComponent<ClimbableObject>());
     }
 
     private void OnTriggerExit(Collider other)
@@ -18,5 +20,7 @@ public class GrabAreaCollider : MonoBehaviour
             EventBus.Raise<OnNearbyPartExit>(other.GetComponent<RobotPart>());
         if (other.CompareTag("Pushable"))
             EventBus.Raise<OnPushableObjectExit>(other.GetComponent<PushableObject>());
+        if (other.CompareTag("Climbable"))
+            EventBus.Raise<OnClimbableObjectExit>(other.GetComponent<ClimbableObject>());
     }
 }

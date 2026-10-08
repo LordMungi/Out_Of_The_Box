@@ -12,7 +12,8 @@ public abstract class RobotPart : MonoBehaviour
         Jumper,
         Glider,
         Pusher,
-        Shooter
+        Shooter,
+        Climber
     }
 
     public struct ActionPair

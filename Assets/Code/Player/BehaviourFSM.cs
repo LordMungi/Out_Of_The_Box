@@ -15,6 +15,7 @@ public class BehaviourFSM
         SuperJump,
         Glide,
         Push,
+        Climb,
         NULL
     }
 

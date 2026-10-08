@@ -10,7 +10,7 @@ public class InteractionsHandler : PlayerHandler
     private Transform _worldParent;
 
     private List<PushableObject> _nearbyPushableObjects = new List<PushableObject>();
-    private List<ClimbableObject> _nearbyClimbableObject = new List<ClimbableObject>();
+    private List<ClimbableObject> _nearbyClimbableObjects = new List<ClimbableObject>();
 
     private PushableObject _grabbedPushableObejct;
     private Vector2 _directionVectorPushableObject;
@@ -39,18 +39,25 @@ public class InteractionsHandler : PlayerHandler
         base.Enable();
         EventBus.Subscribe<OnPushableObjectEntered>(AddPushableObject);
         EventBus.Subscribe<OnPushableObjectExit>(RemovePushableObject);
+        EventBus.Subscribe<OnClimbableObjectEntered>(AddClimbableObject);
+        EventBus.Subscribe<OnClimbableObjectExit>(RemoveClimbableObject);
         EventBus.Subscribe<OnPushRequest>(OnPushRequest);
+        EventBus.Subscribe<OnClimbRequest>(OnClimbRequest);
     }
 
     public override void Disable()
     {
         EventBus.Unsubscribe<OnPushableObjectEntered>(AddPushableObject);
         EventBus.Unsubscribe<OnPushableObjectExit>(RemovePushableObject);
+        EventBus.Unsubscribe<OnClimbableObjectEntered>(AddClimbableObject);
+        EventBus.Unsubscribe<OnClimbableObjectExit>(RemoveClimbableObject);
         EventBus.Unsubscribe<OnPushRequest>(OnPushRequest);
+        EventBus.Unsubscribe<OnClimbRequest>(OnClimbRequest);
         base.Disable();
-    } 
+    }
     #endregion
 
+    #region Callbacks
     private void AddPushableObject(in OnPushableObjectEntered context)
     {
         _nearbyPushableObjects.Add(context.pushableObject);
@@ -61,12 +68,31 @@ public class InteractionsHandler : PlayerHandler
         _nearbyPushableObjects.Remove(context.pushableObject);
     }
 
+    private void AddClimbableObject(in OnClimbableObjectEntered context)
+    {
+        _nearbyClimbableObjects.Add(context.climbableObject);
+    }
+
+    private void RemoveClimbableObject(in OnClimbableObjectExit context)
+    {
+        _nearbyClimbableObjects.Remove(context.climbableObject);
+    }
+
     private void OnPushRequest(in OnPushRequest context)
     {
         if (_nearbyPushableObjects.Count > 0)
             EventBus.Raise<OnPushRequestInteractionsAccepted>();
     }
 
+    private void OnClimbRequest(in OnClimbRequest context)
+    {
+        Debug.Log("Climb Request: " + _nearbyClimbableObjects.Count);
+        if (_nearbyClimbableObjects.Count > 0)
+            EventBus.Raise<OnPartStateChangeAccepted>(BehaviourFSM.State.Climb);
+    }
+    #endregion
+
+    #region Pushable Objects
     public void GrabNearestPushableObject(Vector3 playerPosition)
     {
         PushableObject nearestObject = FindNearestObject(_nearbyPushableObjects);
@@ -109,7 +135,8 @@ public class InteractionsHandler : PlayerHandler
     public bool CanPushObject(Vector2 delta)
     {
         return _grabbedPushableObejct.CanMove(delta);
-    }
+    } 
+    #endregion
 
     private T FindNearestObject<T>(List<T> list) where T : MonoBehaviour
     {
