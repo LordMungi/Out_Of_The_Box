@@ -43,13 +43,14 @@ public class PushState : PlayerState
     #endregion
     public override void Update()
     {
-        Vector2 delta = _playerInput.Player.Move.ReadValue<Vector2>();
+        Vector2 inputDelta = _playerInput.Player.Move.ReadValue<Vector2>();
 
-        if (delta.y != 0)
+        if (inputDelta.y != 0)
         {
-            if(_interactionsHandler.CanPushObject(new Vector2(0, delta.y) * Time.deltaTime * _playerConfig.pushSpeed))
-                _movementHandler.Move(new Vector2(0, delta.y), _playerConfig.pushSpeed);
-            Debug.Log(_interactionsHandler.CanPushObject(new Vector2(0, delta.y)));
+            Vector2 movementDelta = _interactionsHandler.DirectionVectorPushableObject * inputDelta.y * Time.deltaTime * _playerConfig.pushSpeed;
+
+            if(_interactionsHandler.CanPushObject(movementDelta))
+                _movementHandler.MoveLinear(movementDelta);
         }
     }
 
