@@ -47,44 +47,51 @@ public class BehaviourFSM
                 break;
 
             case State.Idle:
-            {
-                canChange = _currentStateEnum == State.Move ||
-                            _currentStateEnum == State.Jump ||
-                            _currentStateEnum == State.Push ||
-                            _currentStateEnum == State.SuperJump;
-                break;
-            }
+                {
+                    canChange = _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Push ||
+                                _currentStateEnum == State.SuperJump;
+                    break;
+                }
 
             case State.Move:
-            {
-                canChange = _currentStateEnum == State.Idle ||
-                            _currentStateEnum == State.Jump ||
-                            _currentStateEnum == State.Push ||
-                            _currentStateEnum == State.SuperJump;
-                break;
-            }
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Push ||
+                                _currentStateEnum == State.SuperJump;
+                    break;
+                }
             case State.Jump:
-            {
-                canChange = _currentStateEnum == State.Idle ||
-                            _currentStateEnum == State.Move ||
-                            _currentStateEnum == State.Glide;
-                break;
-            }
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Glide;
+                    break;
+                }
 
             case State.SuperJump:
-            {
-                canChange = _currentStateEnum == State.Idle ||
-                            _currentStateEnum == State.Move ||
-                            _currentStateEnum == State.Glide;
-                break;
-            }
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Glide;
+                    break;
+                }
             case State.Glide:
-            {
-                canChange = _currentStateEnum == State.Jump ||
-                            _currentStateEnum == State.Move;
+                {
+                    canChange = _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Move;
 
-                break;
-            }
+                    break;
+                }
+
+            case State.Push:
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
+                    break;
+                }
         }
 
         if (canChange)
