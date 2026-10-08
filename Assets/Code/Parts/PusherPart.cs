@@ -41,7 +41,6 @@ public class PusherPart : RobotPart
     private void OnPartsAccepted(in OnPushRequestPartsAccepted context)
     {
         _partsHasAccepted = true;
-        Debug.Log("Parts Accepted");
 
         if (AllRequestsAccepted())
             RaisePushAccepted();
@@ -50,7 +49,6 @@ public class PusherPart : RobotPart
     private void OnInteractionsAccepted (in OnPushRequestInteractionsAccepted context)
     {
         _interactionsHasAccepted = true;
-        Debug.Log("Interactions Accepted");
 
         if (AllRequestsAccepted())
             RaisePushAccepted();
