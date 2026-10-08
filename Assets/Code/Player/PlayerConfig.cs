@@ -12,4 +12,6 @@ public class PlayerConfig : ScriptableObject
     [field: SerializeField] public float superJumpMaxTime;
     [field: SerializeField] public float glidingSpeed;
     [field: SerializeField] public float pushSpeed;
+    [field: SerializeField] public float bulletSpeed;
+    [field: SerializeField] public float fireRate;
 }

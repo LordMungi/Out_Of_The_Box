@@ -49,7 +49,7 @@ public abstract class RobotPart : MonoBehaviour
         EventBus.Subscribe<OnPlayerInstantiated>(GetPlayerData);
     }
 
-    public void GetPlayerData(in OnPlayerInstantiated onPlayerInstantiated)
+    public virtual void GetPlayerData(in OnPlayerInstantiated onPlayerInstantiated)
     {
         _inputActions = onPlayerInstantiated.playerData.input;
         SetActionPair();
