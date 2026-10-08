@@ -101,7 +101,7 @@ public class BehaviourFSM
         CurrentState = newState;
         _currentStateEnum = newStateEnum;
         CurrentState.Enable();
-
-        Debug.Log("State changed to " + _currentStateEnum.ToString());
+        
+         Debug.Log("State changed to " + _currentStateEnum.ToString());
     }
 }
