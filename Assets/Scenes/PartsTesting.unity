@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c04e61a7a0dfe45be630aa2268554c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShooterPart
+  bulletPrefab: {fileID: 2666327074115987636, guid: 331a06d2390a0e54e92452f9042446ba, type: 3}
 --- !u!54 &265604151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -501,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8552674037399627382, guid: 29fcc7731f89d1142ac2aa30cf2dfadc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.57486
+      value: 5.96
       objectReference: {fileID: 0}
     - target: {fileID: 8552674037399627382, guid: 29fcc7731f89d1142ac2aa30cf2dfadc, type: 3}
       propertyPath: m_LocalPosition.y
