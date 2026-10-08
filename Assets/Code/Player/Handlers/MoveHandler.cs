@@ -71,6 +71,11 @@ public class MoveHandler : PlayerHandler
         _controller.Move(finalMoveDirection * speed * Time.deltaTime);
     }
 
+    public void MoveLinear(Vector2 delta)
+    {
+        _controller.Move(delta);
+    }
+
     public void SetPosition(Vector3 position)
     {
         _controller.transform.position = position;
