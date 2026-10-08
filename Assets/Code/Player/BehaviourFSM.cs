@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BehaviourFSM
 {
@@ -12,6 +13,7 @@ public class BehaviourFSM
         Move,
         Jump,
         SuperJump,
+        Glide,
         NULL
     }
 
@@ -20,13 +22,14 @@ public class BehaviourFSM
     private Dictionary<State, PlayerState> _states = new Dictionary<State, PlayerState>();
 
     private State _currentStateEnum;
-    
+
     public BehaviourFSM(ref PlayerData data)
     {
         _states.TryAdd(State.Idle, new IdleState(ref data));
         _states.TryAdd(State.Move, new MoveState(ref data));
         _states.TryAdd(State.Jump, new JumpState(ref data));
         _states.TryAdd(State.SuperJump, new SuperJumpState(ref data));
+        _states.TryAdd(State.Glide, new GlideState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -42,33 +45,43 @@ public class BehaviourFSM
                 break;
 
             case State.Idle:
-                {
-                    canChange = _currentStateEnum == State.Move ||
-                                _currentStateEnum == State.Jump ||
-                                _currentStateEnum == State.SuperJump;
-                    break;
-                }
+            {
+                canChange = _currentStateEnum == State.Move ||
+                            _currentStateEnum == State.Jump ||
+                            _currentStateEnum == State.SuperJump;
+
+                break;
+            }
 
             case State.Move:
-                {
-                    canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Jump ||
-                                _currentStateEnum == State.SuperJump;
-                    break;
-                }
+            {
+                canChange = _currentStateEnum == State.Idle ||
+                            _currentStateEnum == State.Jump ||
+                            _currentStateEnum == State.SuperJump;
+                break;
+            }
             case State.Jump:
-                {
-                    canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
-                    break;
-                }
+            {
+                canChange = _currentStateEnum == State.Idle ||
+                            _currentStateEnum == State.Move ||
+                            _currentStateEnum == State.Glide;
+                break;
+            }
 
             case State.SuperJump:
-                {
-                    canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
-                    break;
-                }
+            {
+                canChange = _currentStateEnum == State.Idle ||
+                            _currentStateEnum == State.Move ||
+                            _currentStateEnum == State.Glide;
+                break;
+            }
+            case State.Glide:
+            {
+                canChange = _currentStateEnum == State.Jump ||
+                            _currentStateEnum == State.Move;
+
+                break;
+            }
         }
 
         if (canChange)
@@ -88,5 +101,7 @@ public class BehaviourFSM
         CurrentState = newState;
         _currentStateEnum = newStateEnum;
         CurrentState.Enable();
+
+        Debug.Log("State changed to " + _currentStateEnum.ToString());
     }
 }

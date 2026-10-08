@@ -10,5 +10,6 @@ public class PlayerConfig : ScriptableObject
     [field: SerializeField] public float superJumpMinForce;
     [field: SerializeField] public float superJumpMaxForce;
     [field: SerializeField] public float superJumpMaxTime;
+    [field: SerializeField] public float glidingSpeed;
 
 }
