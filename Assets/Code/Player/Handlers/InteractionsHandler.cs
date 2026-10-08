@@ -10,6 +10,7 @@ public class InteractionsHandler : PlayerHandler
     private Transform _worldParent;
 
     private List<PushableObject> _nearbyPushableObjects = new List<PushableObject>();
+    private List<ClimbableObject> _nearbyClimbableObject = new List<ClimbableObject>();
 
     private PushableObject _grabbedPushableObejct;
     private Vector2 _directionVectorPushableObject;
@@ -33,7 +34,6 @@ public class InteractionsHandler : PlayerHandler
 
         _grabbedPushableObejct = null;
     }
-
     public override void Enable()
     {
         base.Enable();
@@ -69,7 +69,7 @@ public class InteractionsHandler : PlayerHandler
 
     public void GrabNearestPushableObject(Vector3 playerPosition)
     {
-        PushableObject nearestObject = FindNearestPushableObject();
+        PushableObject nearestObject = FindNearestObject(_nearbyPushableObjects);
         Grab(nearestObject);
 
         Vector3 offsetFromPushableObject = _grabbedPushableObejct.transform.position - playerPosition;
@@ -111,10 +111,10 @@ public class InteractionsHandler : PlayerHandler
         return _grabbedPushableObejct.CanMove(delta);
     }
 
-    private PushableObject FindNearestPushableObject()
+    private T FindNearestObject<T>(List<T> list) where T : MonoBehaviour
     {
-        PushableObject nearestItem = _nearbyPushableObjects[0];
-        foreach (PushableObject item in _nearbyPushableObjects)
+        T nearestItem = list[0];
+        foreach (T item in list)
         {
             if (nearestItem == item)
                 continue;
