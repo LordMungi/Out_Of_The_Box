@@ -127,6 +127,11 @@ public class InteractionsHandler : PlayerHandler
         _grabbedPushableObejct.Move(moveVector * Time.deltaTime * speed);
     }
 
+    public bool CanPushObject(Vector2 delta)
+    {
+        return _grabbedPushableObejct.CanMove(delta);
+    }
+
     private PushableObject FindNearestPushableObject()
     {
         PushableObject nearestItem = _nearbyPushableObjects[0];
