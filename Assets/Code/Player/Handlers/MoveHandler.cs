@@ -6,6 +6,15 @@ public class MoveHandler : PlayerHandler
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
     public bool IsGrounded => _controller.isGrounded;
     
+    public Vector3 Position
+    {
+        get
+        {
+            return _controller.transform.position;
+        }
+        private set { }
+    }
+
     private CharacterController _controller;
     private Transform _mainCamera;
 
@@ -69,6 +78,16 @@ public class MoveHandler : PlayerHandler
 
         Vector3 direction3D = (camForward * direction.y) + (camRight * direction.x);
         _currentHorizontalMove = direction3D * speed;
+    }
+
+    public void MoveLinear(Vector2 delta)
+    {
+        _controller.Move(new Vector3(delta.x, 0, delta.y));
+    }
+
+    public void SetPosition(Vector3 position)
+    {
+        _controller.transform.position = position;
     }
 
     public void Fall(float fallSpeed)

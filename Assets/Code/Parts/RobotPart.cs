@@ -10,7 +10,8 @@ public abstract class RobotPart : MonoBehaviour
     public enum Type
     {
         Jumper,
-        Glider
+        Glider,
+        Pusher
     }
 
     public struct ActionPair
