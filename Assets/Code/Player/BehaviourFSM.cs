@@ -33,6 +33,7 @@ public class BehaviourFSM
         _states.TryAdd(State.SuperJump, new SuperJumpState(ref data));
         _states.TryAdd(State.Glide, new GlideState(ref data));
         _states.TryAdd(State.Push, new PushState(ref data));
+        _states.TryAdd(State.Climb, new ClimbState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -52,7 +53,8 @@ public class BehaviourFSM
                     canChange = _currentStateEnum == State.Move ||
                                 _currentStateEnum == State.Jump ||
                                 _currentStateEnum == State.Push ||
-                                _currentStateEnum == State.SuperJump;
+                                _currentStateEnum == State.SuperJump ||
+                                _currentStateEnum == State.Climb;
                     break;
                 }
 
@@ -61,7 +63,8 @@ public class BehaviourFSM
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Jump ||
                                 _currentStateEnum == State.Push ||
-                                _currentStateEnum == State.SuperJump;
+                                _currentStateEnum == State.SuperJump ||
+                                _currentStateEnum == State.Climb;
                     break;
                 }
             case State.Jump:
@@ -92,6 +95,13 @@ public class BehaviourFSM
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move;
                     break;
+                }
+
+            case State.Climb:
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
+                break;
                 }
         }
 
