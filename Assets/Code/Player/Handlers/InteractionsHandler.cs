@@ -86,7 +86,6 @@ public class InteractionsHandler : PlayerHandler
 
     private void OnClimbRequest(in OnClimbRequest context)
     {
-        Debug.Log("Climb Request: " + _nearbyClimbableObjects.Count);
         if (_nearbyClimbableObjects.Count > 0)
             EventBus.Raise<OnPartStateChangeAccepted>(BehaviourFSM.State.Climb);
     }
