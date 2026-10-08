@@ -19,3 +19,4 @@ MonoBehaviour:
   superJumpMinForce: 0.1
   superJumpMaxForce: 0.4
   superJumpMaxTime: 1
+  glidingSpeed: 4
