@@ -5,7 +5,7 @@ public class ShooterPart : RobotPart
 {
     [SerializeField] private Bullet bulletPrefab;
 
-    private ConcurrentPool _bulletPool;
+    private BulletManager _bulletManager;
 
     private PlayerConfig _config;
     private PlayerParents _parents;
@@ -23,13 +23,12 @@ public class ShooterPart : RobotPart
 
         actions.Add(new ActionPair(_inputActions.Player.Attack, ActionPair.Phase.Performed, Shoot));
 
-        _bulletPool = new ConcurrentPool();
+        _bulletManager = new BulletManager();
     }
 
     private void Shoot(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("Pow!");
-        Bullet b = _bulletPool.GetMono(bulletPrefab, _parents.handParent.position, _parents.handParent.forward, _config.bulletSpeed);
+        _bulletManager.Shoot(bulletPrefab, _parents.handParent.transform, _config.bulletSpeed);
     }
 
     private void Aim(InputAction.CallbackContext callbackContext)
