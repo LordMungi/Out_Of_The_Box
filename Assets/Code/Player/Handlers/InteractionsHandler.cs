@@ -12,7 +12,9 @@ public class InteractionsHandler : PlayerHandler
     private List<PushableObject> _nearbyPushableObjects = new List<PushableObject>();
 
     private PushableObject _grabbedPushableObejct;
-    private Direction _directionFromPushableObject;
+    private Vector2 _directionVectorPushableObject;
+
+    public Vector2 DirectionVectorPushableObject { get { return _directionVectorPushableObject; } private set { } }
 
     private enum Direction
     {
@@ -77,16 +79,16 @@ public class InteractionsHandler : PlayerHandler
         if (absOffset.x > absOffset.y)
         {
             if (offsetFromPushableObject.x > 0)
-                _directionFromPushableObject = Direction.Left;
+                _directionVectorPushableObject = new Vector2(1, 0); // Left
             else
-                _directionFromPushableObject = Direction.Right;
+                _directionVectorPushableObject = new Vector2(-1, 0); // Right
         }
         else
         {
             if (offsetFromPushableObject.z > 0)
-                _directionFromPushableObject = Direction.Front;
+                _directionVectorPushableObject = new Vector2(0, 1); // Front 
             else
-                _directionFromPushableObject = Direction.Back;
+                _directionVectorPushableObject = new Vector2(0, -1); // Back
         }
     }
 
@@ -102,29 +104,6 @@ public class InteractionsHandler : PlayerHandler
         _grabbedPushableObejct?.Release();
         _grabbedPushableObejct.transform.parent = _worldParent;
         _grabbedPushableObejct = null;
-    }
-
-    public void PushObject(float delta, float speed)
-    {
-        Vector2 moveVector;
-        switch (_directionFromPushableObject)
-        {
-            case Direction.Front:
-                moveVector = new Vector2(0, delta);
-                break;
-            case Direction.Back:
-                moveVector = new Vector2(0, -delta);
-                break;
-            case Direction.Left:
-                moveVector = new Vector2(delta, 0);
-                break;
-           case Direction.Right:
-                moveVector = new Vector2(-delta, 0);
-                break; 
-            default:                moveVector = new Vector2();
-                break; 
-        }
-        _grabbedPushableObejct.Move(moveVector * Time.deltaTime * speed);
     }
 
     public bool CanPushObject(Vector2 delta)
