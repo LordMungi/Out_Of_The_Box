@@ -21,3 +21,5 @@ MonoBehaviour:
   superJumpMaxTime: 1
   glidingSpeed: 4
   pushSpeed: 5
+  bulletSpeed: 10
+  fireRate: 1

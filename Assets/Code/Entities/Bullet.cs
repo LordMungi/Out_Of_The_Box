@@ -2,6 +2,10 @@
 
 public class Bullet : MonoBehaviour, IResettable
 {
+    [SerializeField] private Rigidbody body;
+
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     private Vector3 _direction;
     private float _speed;
 
@@ -21,8 +25,15 @@ public class Bullet : MonoBehaviour, IResettable
         gameObject.SetActive(false);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(_direction * Time.deltaTime * _speed);
+        body.MovePosition(body.position + _direction * Time.fixedDeltaTime * _speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision: " + other.name);
+        if (!other.CompareTag("Player") && !other.CompareTag("MainCamera"))
+            EventBus.Raise<OnBulletCollision>(this);
     }
 }
