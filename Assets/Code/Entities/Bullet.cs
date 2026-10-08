@@ -32,7 +32,6 @@ public class Bullet : MonoBehaviour, IResettable
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision: " + other.name);
         if (!other.CompareTag("Player") && !other.CompareTag("MainCamera"))
             EventBus.Raise<OnBulletCollision>(this);
     }
