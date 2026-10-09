@@ -15,6 +15,9 @@ public class InteractionsHandler : PlayerHandler
     private PushableObject _grabbedPushableObejct;
     private Vector2 _directionVectorPushableObject;
 
+    private ClimbableObject _grabbedClimbableObject;
+    public ClimbableObject GrabbedClimbableObject { get { return _grabbedClimbableObject; } private set { } }
+
     public Vector2 DirectionVectorPushableObject { get { return _directionVectorPushableObject; } private set { } }
 
     private enum Direction
@@ -134,7 +137,24 @@ public class InteractionsHandler : PlayerHandler
     public bool CanPushObject(Vector2 delta)
     {
         return _grabbedPushableObejct.CanMove(delta);
-    } 
+    }
+    #endregion
+
+    #region Climbable Objects
+    public void ClimbNearestObject()
+    {
+        _grabbedClimbableObject = FindNearestObject(_nearbyClimbableObjects);
+    }
+
+    public void StopClimbing()
+    {
+        _grabbedClimbableObject = null;
+    }
+
+    public bool ShouldGetOffOnTop()
+    {
+        return _grabbedClimbableObject.IsPlayerOnTop;
+    }
     #endregion
 
     private T FindNearestObject<T>(List<T> list) where T : MonoBehaviour
