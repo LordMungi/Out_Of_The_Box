@@ -100,7 +100,11 @@ public class MoveHandler : PlayerHandler
 
     public void SetPosition(Vector3 position)
     {
+        _controller.enabled = false;
         _controller.transform.position = position;
+        _controller.enabled = true;
+        _currentVelocityY = 0;
+
         _hasTeleportedThisFrame = true;
     }
 

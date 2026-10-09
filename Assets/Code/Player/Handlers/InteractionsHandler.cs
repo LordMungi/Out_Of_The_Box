@@ -155,6 +155,17 @@ public class InteractionsHandler : PlayerHandler
     {
         return _grabbedClimbableObject.IsPlayerOnTop;
     }
+
+    public Vector3 GetOffsetedPosition(Vector3 position)
+    {
+        return _grabbedClimbableObject.WallPlane.ClosestPointOnPlane(position) + _grabbedClimbableObject.WallPlane.normal * _grabbedClimbableObject.OffsetFromWall;
+    }
+
+    public Vector3 GetOffsetedTopPosition(Vector3 position)
+    {
+        Vector3 newVector = _grabbedClimbableObject.WallPlane.ClosestPointOnPlane(position) + _grabbedClimbableObject.WallPlane.normal * _grabbedClimbableObject.OffsetFromTop;
+        return new Vector3(newVector.x, _grabbedClimbableObject.TopOffset.position.y, newVector.z);
+    }
     #endregion
 
     private T FindNearestObject<T>(List<T> list) where T : MonoBehaviour
