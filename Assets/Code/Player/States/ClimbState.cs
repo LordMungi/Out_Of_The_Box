@@ -27,13 +27,13 @@ public class ClimbState : PlayerState
         _playerInput.Player.Release.performed += StopClimb;
 
         _interactionsHandler.ClimbNearestObject();
-        _movementHandler.SetPosition(_interactionsHandler.GrabbedClimbableObject.ClimbOffset.position);
+        _movementHandler.SetPosition(_interactionsHandler.GetOffsetedPosition(_movementHandler.Position));
     }
 
     public override void Disable()
     {
         if (_interactionsHandler.ShouldGetOffOnTop())
-            _movementHandler.SetPosition(_interactionsHandler.GrabbedClimbableObject.TopOffset.position);
+            _movementHandler.SetPosition(_interactionsHandler.GetOffsetedTopPosition(_movementHandler.Position));
 
         _interactionsHandler.StopClimbing();
 
