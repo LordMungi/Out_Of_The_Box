@@ -84,6 +84,10 @@ public class MoveHandler : PlayerHandler
     {
         _controller.Move(new Vector3(delta.x, 0, delta.y));
     }
+    public void MoveLinear(Vector3 delta)
+    {
+        _controller.Move(delta);
+    }
 
     public void SetPosition(Vector3 position)
     {

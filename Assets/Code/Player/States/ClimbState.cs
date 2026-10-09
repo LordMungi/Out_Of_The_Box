@@ -1,4 +1,5 @@
-﻿using UnityEngine.InputSystem;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ClimbState : PlayerState
 {
@@ -33,6 +34,9 @@ public class ClimbState : PlayerState
 
     public override void Update()
     {
+        Vector2 inputDelta = _playerInput.Player.Move.ReadValue<Vector2>();
+
+        _movementHandler.MoveLinear(new Vector3(0, inputDelta.y, 0) * Time.deltaTime * _playerConfig.climbSpeed);
     }
 
     private void StopClimb(InputAction.CallbackContext callbackContext)
