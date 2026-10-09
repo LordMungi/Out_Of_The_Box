@@ -104,20 +104,22 @@ public class InteractionsHandler : PlayerHandler
         offsetFromPushableObject = new Vector3(offsetFromPushableObject.x, 0, offsetFromPushableObject.z);
 
         Vector3 newDirection;
-        if (Mathf.Abs(offsetFromPushableObject.x) > Mathf.Abs(offsetFromPushableObject.z))
-        {
-            if (offsetFromPushableObject.x > 0)
-                newDirection = nearestObject.transform.right; // Left
-            else
-                newDirection = -nearestObject.transform.right; // Right
-        }
+
+        float dotFront = Vector3.Dot(offsetFromPushableObject, nearestObject.transform.forward);
+        float dotBack = Vector3.Dot(offsetFromPushableObject, -nearestObject.transform.forward);
+        float dotRight = Vector3.Dot(offsetFromPushableObject, nearestObject.transform.right);
+        float dotLeft = Vector3.Dot(offsetFromPushableObject, -nearestObject.transform.right);
+
+        float maxDot = Mathf.Max(dotFront, dotBack, dotRight, dotLeft);
+        
+        if (maxDot == dotFront)
+            newDirection = nearestObject.transform.forward; // Front 
+        else if (maxDot == dotBack)
+            newDirection = -nearestObject.transform.forward; // Back
+        else if (maxDot == dotRight)
+            newDirection = nearestObject.transform.right; // Right
         else
-        {
-            if (offsetFromPushableObject.z > 0)
-                newDirection = nearestObject.transform.forward; // Front 
-            else
-                newDirection = -nearestObject.transform.forward; // Back
-        }
+            newDirection = -nearestObject.transform.right; // Left
 
         _directionVectorPushableObject = new Vector2(newDirection.x, newDirection.z);
     }
