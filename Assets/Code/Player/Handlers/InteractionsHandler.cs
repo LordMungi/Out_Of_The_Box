@@ -101,23 +101,25 @@ public class InteractionsHandler : PlayerHandler
         Grab(nearestObject);
 
         Vector3 offsetFromPushableObject = _grabbedPushableObejct.transform.position - playerPosition;
+        offsetFromPushableObject = new Vector3(offsetFromPushableObject.x, 0, offsetFromPushableObject.z);
 
-        Vector2 absOffset = new Vector2(Mathf.Abs(offsetFromPushableObject.x), Mathf.Abs(offsetFromPushableObject.z));
-
-        if (absOffset.x > absOffset.y)
+        Vector3 newDirection;
+        if (Mathf.Abs(offsetFromPushableObject.x) > Mathf.Abs(offsetFromPushableObject.z))
         {
             if (offsetFromPushableObject.x > 0)
-                _directionVectorPushableObject = new Vector2(1, 0); // Left
+                newDirection = nearestObject.transform.right; // Left
             else
-                _directionVectorPushableObject = new Vector2(-1, 0); // Right
+                newDirection = -nearestObject.transform.right; // Right
         }
         else
         {
             if (offsetFromPushableObject.z > 0)
-                _directionVectorPushableObject = new Vector2(0, 1); // Front 
+                newDirection = nearestObject.transform.forward; // Front 
             else
-                _directionVectorPushableObject = new Vector2(0, -1); // Back
+                newDirection = -nearestObject.transform.forward; // Back
         }
+
+        _directionVectorPushableObject = new Vector2(newDirection.x, newDirection.z);
     }
 
     private void Grab(PushableObject pushableObject)
