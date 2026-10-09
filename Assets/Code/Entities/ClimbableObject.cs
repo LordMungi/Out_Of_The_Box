@@ -26,9 +26,6 @@ public class ClimbableObject : MonoBehaviour
 
         _wallPlane = new Plane(-offsetFromFront, transform.position);
 
-        Debug.Log(TopOffset.position);
-        Debug.Log(_wallPlane.ClosestPointOnPlane(TopOffset.position));
         _offsetFromTop = (TopOffset.position - _wallPlane.ClosestPointOnPlane(TopOffset.position)).magnitude;
-        Debug.Log(_offsetFromTop);
     }
 }
