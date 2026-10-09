@@ -25,10 +25,20 @@ public class ClimbState : PlayerState
     {
         base.Enable();
         _playerInput.Player.Release.performed += StopClimb;
+
+        _interactionsHandler.ClimbNearestObject();
+        //_movementHandler.SetPosition(_interactionsHandler.GrabbedClimbableObject.ClimbOffset.position);
     }
 
     public override void Disable()
     {
+        /*
+        if (_interactionsHandler.ShouldGetOffOnTop())
+            _movementHandler.SetPosition(_interactionsHandler.GrabbedClimbableObject.TopOffset.position);
+         */
+
+        _interactionsHandler.StopClimbing();
+
         base.Disable();
     }
 
@@ -36,7 +46,10 @@ public class ClimbState : PlayerState
     {
         Vector2 inputDelta = _playerInput.Player.Move.ReadValue<Vector2>();
 
-        _movementHandler.MoveLinear(new Vector3(0, inputDelta.y, 0) * Time.deltaTime * _playerConfig.climbSpeed);
+        if (!_interactionsHandler.GrabbedClimbableObject.IsPlayerOnTop)
+            _movementHandler.MoveLinear(new Vector3(0, inputDelta.y, 0) * Time.deltaTime * _playerConfig.climbSpeed);
+
+        _movementHandler.Update();
     }
 
     private void StopClimb(InputAction.CallbackContext callbackContext)
