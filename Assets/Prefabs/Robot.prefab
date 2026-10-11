@@ -113,21 +113,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2878e431ce0f5a4994f839ae9f305f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  bodyBones:
-  - bone: {fileID: 0}
-    axisOffset: {x: -10.5, y: 0, z: 0}
-    rotationSpeed: 20
-  - bone: {fileID: 0}
-    axisOffset: {x: 2.82, y: 96.55, z: 168.2}
-    rotationSpeed: 100
-  playerConfig: {fileID: 11400000, guid: b195c62744fc9654283d7f03e5f56b82, type: 2}
-  playerParents:
-    worldParent: {fileID: 0}
-    handParent: {fileID: 2190001052426430870}
-    legPartParent: {fileID: 1128296600121638704}
-    armPartParent: {fileID: 8133393346899222268}
-  playerAnimator: {fileID: 2956657023041673802}
-  playerRootBone: {fileID: 4728488173929737197}
+  _playerData:
+    player: {fileID: 234382246448471051}
+    controller: {fileID: 5646481105737060134}
+    config: {fileID: 11400000, guid: b195c62744fc9654283d7f03e5f56b82, type: 2}
+    animator: {fileID: 2956657023041673802}
+    rootBone: {fileID: 4728488173929737197}
+    cameras: []
+    parents:
+      worldParent: {fileID: 0}
+      handParent: {fileID: 2190001052426430870}
+      legPartParent: {fileID: 1128296600121638704}
+      armPartParent: {fileID: 8133393346899222268}
 --- !u!143 &5646481105737060134
 CharacterController:
   m_ObjectHideFlags: 0
