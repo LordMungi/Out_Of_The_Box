@@ -23,10 +23,12 @@ public class PlayerController : MonoBehaviour
     private PlayerData _playerData;
     private BehaviourFSM _behaviourFSM;
     private PlayerAnimator _playerAnimationController;
-    private MouseTargetPosition _mouseTargetPosition;
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         _playerData.player = this;
         _playerData.controller = GetComponent<CharacterController>();
         _playerData.input = new PlayerInputActions();
@@ -41,8 +43,6 @@ public class PlayerController : MonoBehaviour
 
         _playerAnimationController = new PlayerAnimator(playerAnimator);
         _behaviourFSM = new BehaviourFSM(ref _playerData);
-
-        _mouseTargetPosition = new MouseTargetPosition(playerRootBone, ref _playerData.parents);
     }
 
     private void Start()
@@ -56,10 +56,5 @@ public class PlayerController : MonoBehaviour
             return;
         
         _behaviourFSM.CurrentState.Update();
-    }
-
-    private void LateUpdate()
-    {
-        _mouseTargetPosition.Update();
     }
 }
