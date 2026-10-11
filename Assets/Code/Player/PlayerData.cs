@@ -6,6 +6,7 @@ public struct PlayerData
     public CharacterController controller;
     public PlayerInputActions input;
     public PlayerConfig config;
+    public Transform rootBone;
     public PlayerParents parents;
     public PlayerHandlers handlers;
 }

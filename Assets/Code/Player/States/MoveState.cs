@@ -54,7 +54,7 @@ public class MoveState : PlayerState
     public override void Update()
     {
         _movementHandler.Update();
-        _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>(), _playerConfig.moveSpeed);
+        _movementHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>(), _playerConfig.moveSpeed, _playerConfig.bodyRotationSpeed);
         _movementHandler.Fall(_playerConfig.fallSpeed);
     }
 

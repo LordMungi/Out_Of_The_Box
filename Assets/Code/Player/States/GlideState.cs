@@ -58,7 +58,7 @@ public class GlideState : PlayerState
         if (inputDirection != Vector2.zero)
         {
             _nextState = BehaviourFSM.State.Move;
-            _movementHandler.Move(inputDirection, _playerConfig.airborneSpeed);
+            _movementHandler.Move(inputDirection, _playerConfig.airborneSpeed, _playerConfig.bodyRotationSpeed);
         }
         else
         {

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerConfig playerConfig;
     [SerializeField] private PlayerParents playerParents;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private Transform playerRootBone;
 
     private PlayerData _playerData;
     private BehaviourFSM _behaviourFSM;
@@ -30,17 +31,18 @@ public class PlayerController : MonoBehaviour
         _playerData.controller = GetComponent<CharacterController>();
         _playerData.input = new PlayerInputActions();
         _playerData.input.Enable();
+        _playerData.rootBone = playerRootBone;
         _playerData.config = playerConfig;
         _playerData.parents = playerParents;
 
-        _playerData.handlers.movement = new MoveHandler(_playerData.controller);
+        _playerData.handlers.movement = new MoveHandler(_playerData.controller, _playerData.rootBone);
         _playerData.handlers.parts = new PartHandler(ref _playerData.parents, _playerData.input);
         _playerData.handlers.interactions = new InteractionsHandler(ref _playerData.parents);
 
         _playerAnimationController = new PlayerAnimator(playerAnimator);
         _behaviourFSM = new BehaviourFSM(ref _playerData);
 
-        _mouseTargetPosition = new MouseTargetPosition(bodyBones, ref _playerData.parents);
+        _mouseTargetPosition = new MouseTargetPosition(playerRootBone, ref _playerData.parents);
     }
 
     private void Start()
@@ -54,6 +56,10 @@ public class PlayerController : MonoBehaviour
             return;
         
         _behaviourFSM.CurrentState.Update();
+    }
+
+    private void LateUpdate()
+    {
         _mouseTargetPosition.Update();
     }
 }
