@@ -16,6 +16,7 @@ public class MoveHandler : PlayerHandler
     }
 
     private CharacterController _controller;
+    private Transform _rootBone;
     private Transform _mainCamera;
 
     private float _currentVelocityY;
@@ -31,9 +32,10 @@ public class MoveHandler : PlayerHandler
 
     #region Initialization
 
-    public MoveHandler(CharacterController controller)
+    public MoveHandler(CharacterController controller, Transform rootBone)
     {
         _controller = controller;
+        _rootBone = rootBone;
         _mainCamera = Camera.main.transform;
     }
 
@@ -69,7 +71,7 @@ public class MoveHandler : PlayerHandler
         _hasTeleportedThisFrame = false;
     }
 
-    public void Move(Vector2 direction, float speed)
+    public void Move(Vector2 direction, float speed, float bodyRotationSpeed)
     {
         if (_hasTeleportedThisFrame)
             return;
@@ -84,6 +86,15 @@ public class MoveHandler : PlayerHandler
 
         Vector3 direction3D = (camForward * direction.y) + (camRight * direction.x);
         _currentHorizontalMove = direction3D * speed;
+
+        Quaternion baseTargetRotation = Quaternion.LookRotation(direction3D.normalized);
+
+        _rootBone.rotation = Quaternion.Slerp
+        (
+            _rootBone.rotation,
+            baseTargetRotation,
+            bodyRotationSpeed * Time.deltaTime
+        );
     }
 
     public void MoveLinear(Vector2 delta)
