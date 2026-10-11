@@ -11,17 +11,12 @@ public class PlayerController : MonoBehaviour
         public float rotationSpeed;
     }
     
-    [Header("Bone Config")]
-    public BoneConfig[] bodyBones;
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    [SerializeField] private PlayerConfig playerConfig;
-    [SerializeField] private PlayerParents playerParents;
-    [SerializeField] private Animator playerAnimator;
-    [SerializeField] private Transform playerRootBone;
+    [SerializeField] private PlayerData _playerData;
 
-    private PlayerData _playerData;
     private BehaviourFSM _behaviourFSM;
+
     private PlayerAnimator _playerAnimationController;
 
     private void Awake()
@@ -29,19 +24,16 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        _playerData.player = this;
-        _playerData.controller = GetComponent<CharacterController>();
         _playerData.input = new PlayerInputActions();
         _playerData.input.Enable();
-        _playerData.rootBone = playerRootBone;
-        _playerData.config = playerConfig;
-        _playerData.parents = playerParents;
 
         _playerData.handlers.movement = new MoveHandler(_playerData.controller, _playerData.rootBone);
         _playerData.handlers.parts = new PartHandler(ref _playerData.parents, _playerData.input);
         _playerData.handlers.interactions = new InteractionsHandler(ref _playerData.parents);
+        _playerData.handlers.camera = new CameraHandler(ref _playerData.cameras);
 
-        _playerAnimationController = new PlayerAnimator(playerAnimator);
+        _playerAnimationController = new PlayerAnimator(_playerData.animator); // Convertir en handler
+
         _behaviourFSM = new BehaviourFSM(ref _playerData);
     }
 
