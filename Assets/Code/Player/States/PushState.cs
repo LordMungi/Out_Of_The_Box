@@ -5,28 +5,14 @@ public class PushState : PlayerState
 {
     #region Fields
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
-
-    private PlayerInputActions _playerInput;
-    private PlayerConfig _playerConfig;
-
-    private MoveHandler _movementHandler;
-    private InteractionsHandler _interactionsHandler;
     #endregion
 
     #region Initialization
-    public PushState(ref PlayerData data)
-    {
-        _playerInput = data.input;
-        _playerConfig = data.config;
-
-        _handlers.Add(_movementHandler = data.handlers.movement);
-        _handlers.Add(data.handlers.parts);
-        _handlers.Add(_interactionsHandler = data.handlers.interactions);
-    }
+    public PushState(ref PlayerData data) : base(ref data) {}
 
     public override void Enable()
     {
-        _interactionsHandler.GrabNearestPushableObject(_movementHandler.Position);
+        _interactionsHandler.GrabNearestPushableObject(_moveHandler.Position);
 
         _playerInput.Player.Release.performed += OnObjectReleased;
         base.Enable();
@@ -50,7 +36,7 @@ public class PushState : PlayerState
             Vector2 movementDelta = _interactionsHandler.DirectionVectorPushableObject * inputDelta.y * Time.deltaTime * _playerConfig.pushSpeed;
 
             if(_interactionsHandler.CanPushObject(movementDelta))
-                _movementHandler.MoveLinear(movementDelta);
+                _moveHandler.MoveLinear(movementDelta);
         }
     }
 

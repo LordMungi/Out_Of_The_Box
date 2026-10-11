@@ -5,21 +5,7 @@ public class JumpState : PlayerState
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    private MoveHandler _movementHandler;
-    private PartHandler _partHandler;
-
-    private PlayerInputActions _playerInput;
-    private PlayerConfig _playerConfig;
-
-    public JumpState(ref PlayerData data)
-    {
-        _playerInput = data.input;
-        _playerConfig = data.config;
-
-        _handlers.Add(_movementHandler = data.handlers.movement);
-        _handlers.Add(_partHandler = data.handlers.parts);
-        _handlers.Add(data.handlers.interactions);
-    }
+    public JumpState(ref PlayerData data) : base(ref data) {}
 
     public override void Enable()
     {
@@ -31,9 +17,9 @@ public class JumpState : PlayerState
         
         _nextState = BehaviourFSM.State.Idle;
         
-        if (_movementHandler.IsGrounded)
+        if (_moveHandler.IsGrounded)
         {
-            _movementHandler.Jump(_playerConfig.jumpForce);
+            _moveHandler.Jump(_playerConfig.jumpForce);
         }
     }
 
@@ -48,15 +34,15 @@ public class JumpState : PlayerState
 
     public override void Update()
     {
-        _movementHandler.Update();
-        _movementHandler.Fall(_playerConfig.fallSpeed);
+        _moveHandler.Update();
+        _moveHandler.Fall(_playerConfig.fallSpeed);
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 
         if (inputDirection != Vector2.zero)
         {
             _nextState = BehaviourFSM.State.Move;
-            _movementHandler.Move(inputDirection, _playerConfig.airborneSpeed, _playerConfig.bodyRotationSpeed);
+            _moveHandler.Move(inputDirection, _playerConfig.airborneSpeed, _playerConfig.bodyRotationSpeed);
         }
         else
             _nextState = BehaviourFSM.State.Idle;
