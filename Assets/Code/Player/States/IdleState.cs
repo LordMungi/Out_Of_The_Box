@@ -5,24 +5,10 @@ public class IdleState : PlayerState
 {
     #region Fields
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
-
-    private MoveHandler _movementHandler;
-    private PartHandler _partHandler;
-
-    private PlayerInputActions _playerInput;
-    private PlayerConfig _playerConfig;
     #endregion
 
     #region Initialization
-    public IdleState(ref PlayerData data)
-    {
-        _playerInput = data.input;
-        _playerConfig = data.config;
-
-        _handlers.Add(_movementHandler = data.handlers.movement);
-        _handlers.Add(_partHandler = data.handlers.parts);
-        _handlers.Add(data.handlers.interactions);
-    }
+    public IdleState(ref PlayerData data) : base(ref data) {}
 
     public override void Enable()
     {
@@ -55,8 +41,8 @@ public class IdleState : PlayerState
 
     public override void Update()
     {
-        _movementHandler.Fall(_playerConfig.fallSpeed);
-        _movementHandler.Update();
+        _moveHandler.Fall(_playerConfig.fallSpeed);
+        _moveHandler.Update();
     }
 
     #region Input Callbacks
