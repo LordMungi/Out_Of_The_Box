@@ -11,6 +11,7 @@ using UnityEngine;
     public Animator animator;
     public Transform rootBone;
     public CinemachineCamera[] cameras;
+    public EquippedPart[] parts;
     public PlayerParents parents;
     public PlayerHandlers handlers;
 }
