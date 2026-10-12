@@ -63,6 +63,7 @@ public class PartHandler : PlayerHandler
         _grabbedPart.transform.position = _handParent.position;
         _grabbedPart.transform.rotation = _handParent.rotation;
         _grabbedPart.Grab();
+        EventBus.Raise<OnPartGrabbed>(_grabbedPart);
         RemoveNearbyItem(_grabbedPart);
     }
 
