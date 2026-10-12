@@ -8,6 +8,8 @@ public class CameraHandler : PlayerHandler
 
     private List<CinemachineCamera> _cameras;
     private CinemachineCamera _defaultCamera;
+    private CinemachineCamera _currentCamera;
+    private CinemachineCamera _previousCamera;
 
     private Transform _trackParent;
     
@@ -43,11 +45,51 @@ public class CameraHandler : PlayerHandler
             foreach (CinemachineCamera camera in _cameras)
             {
                 if (camera == newCamera)
+                {
                     camera.enabled = true;
+                    _currentCamera = camera;
+                }
                 else
                     camera.enabled = false;
             }
         }
+    }
+
+    public void SwapToCamera(string cameraName)
+    {
+        foreach (CinemachineCamera camera in _cameras)
+        {
+            if (camera.gameObject.name == cameraName)
+            {
+                camera.enabled = true;
+                _currentCamera = camera;
+            }
+            else
+                camera.enabled = false;
+        }
+    }
+
+    public void EnableFreeCamera()
+    {
+        _previousCamera = _currentCamera;
+        SwapToCamera("Free");
+    }
+
+    public void DisableFreeCamera()
+    {
+        SwapToCamera(_previousCamera);
+        _previousCamera = null;
+    }
+
+    public void ResetCamera()
+    {
+        _trackParent.position = _trackParent.parent.position;
+    }
+
+    public void MoveCamera(Vector3 delta, float speed)
+    {
+        Vector3 movement = _currentCamera.transform.right * delta.x + _currentCamera.transform.up * delta.y + _currentCamera.transform.forward * delta.z;
+        _trackParent.position += movement * Time.deltaTime * speed;
     }
 
     private void EnterCamera(in OnCameraTriggerEnter context)
@@ -55,7 +97,7 @@ public class CameraHandler : PlayerHandler
         SwapToCamera(context.camera);
     }
 
-    public void ExitCamera(in OnCameraTriggerExit context)
+    private void ExitCamera(in OnCameraTriggerExit context)
     {
         SwapToCamera(_defaultCamera);
     }

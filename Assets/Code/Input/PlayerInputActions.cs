@@ -190,6 +190,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwapCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""05687785-e043-4724-b2f8-9616dec19e53"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraMove"",
+                    ""type"": ""Value"",
+                    ""id"": ""b7514125-89de-4dfc-83c0-5c04646b56fe"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -599,6 +617,182 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Equip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f1b2690-5d3b-4ad2-88c3-ac5f98163c76"",
+                    ""path"": ""<Keyboard>/f1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SwapCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""193545b2-e373-4cec-9ca5-53fdc5ad1a0d"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwapCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASDEQ"",
+                    ""id"": ""09f3d954-34d8-42ed-82c7-163612f3ca97"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""00e3a715-96b5-403d-84ef-e81cd3950418"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""211d10c2-3ab6-4967-bfb3-4b68effebe53"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""a2fee8b2-0316-4743-bdb3-a0aa003bc5b3"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""1d5fe6e3-d5be-4817-91ab-c99630a4ef57"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Forward"",
+                    ""id"": ""83077544-447c-476e-b070-8c008ccbc205"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Backward"",
+                    ""id"": ""238d75a3-4375-4254-a9a4-720d18cdebbf"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""ece5d95a-b12d-4d37-99a9-3be5931b4428"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""43c091e8-cbe9-405a-8c2b-7b86338f22b2"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""31caa6b3-437f-4b00-a2e1-01eeb5b8f37d"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ce653cb2-c0e5-4cd4-b5be-6d48945ee03f"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1050bc85-ff3b-4f7b-ad9a-3ba4ea01bb03"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""forward"",
+                    ""id"": ""2588a43c-3066-4a41-8595-39d19d1068e9"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""backward"",
+                    ""id"": ""6d5a801a-b1d5-4a90-838c-d432d1e24203"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1195,6 +1389,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_SwapCamera = m_Player.FindAction("SwapCamera", throwIfNotFound: true);
+        m_Player_CameraMove = m_Player.FindAction("CameraMove", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1299,6 +1495,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_SwapCamera;
+    private readonly InputAction m_Player_CameraMove;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1354,6 +1552,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SwapCamera".
+        /// </summary>
+        public InputAction @SwapCamera => m_Wrapper.m_Player_SwapCamera;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CameraMove".
+        /// </summary>
+        public InputAction @CameraMove => m_Wrapper.m_Player_CameraMove;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1413,6 +1619,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @SwapCamera.started += instance.OnSwapCamera;
+            @SwapCamera.performed += instance.OnSwapCamera;
+            @SwapCamera.canceled += instance.OnSwapCamera;
+            @CameraMove.started += instance.OnCameraMove;
+            @CameraMove.performed += instance.OnCameraMove;
+            @CameraMove.canceled += instance.OnCameraMove;
         }
 
         /// <summary>
@@ -1457,6 +1669,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @SwapCamera.started -= instance.OnSwapCamera;
+            @SwapCamera.performed -= instance.OnSwapCamera;
+            @SwapCamera.canceled -= instance.OnSwapCamera;
+            @CameraMove.started -= instance.OnCameraMove;
+            @CameraMove.performed -= instance.OnCameraMove;
+            @CameraMove.canceled -= instance.OnCameraMove;
         }
 
         /// <summary>
@@ -1834,6 +2052,20 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SwapCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSwapCamera(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CameraMove" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCameraMove(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
