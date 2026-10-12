@@ -18,7 +18,6 @@ public class FreeCameraState : PlayerState
 
     public override void Disable()
     {
-        _cameraHandler.ResetCamera();
         _cameraHandler.DisableFreeCamera();
                 
         _playerInput.Player.SwapCamera.performed -= OnExitStatePressed;
