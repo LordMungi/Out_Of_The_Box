@@ -17,6 +17,7 @@ public class IdleState : PlayerState
         _playerInput.Player.Release.performed += OnReleaseItem;
         _playerInput.Player.Jump.performed += OnJump;
         _playerInput.Player.Equip.performed += OnEquipPart;
+        _playerInput.Player.SwapCamera.performed += OnSwapCamera;
 
         EventBus.Subscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
         EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
@@ -31,6 +32,7 @@ public class IdleState : PlayerState
         _playerInput.Player.Release.performed -= OnReleaseItem;
         _playerInput.Player.Jump.performed -= OnJump;
         _playerInput.Player.Equip.performed -= OnEquipPart;
+        _playerInput.Player.SwapCamera.performed -= OnSwapCamera;
 
         EventBus.Unsubscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
         EventBus.Unsubscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
@@ -74,6 +76,12 @@ public class IdleState : PlayerState
     private void OnEquipPart(InputAction.CallbackContext context)
     {
         _partHandler.EquipGrabbed();
+    }
+
+    private void OnSwapCamera(InputAction.CallbackContext context)
+    {
+        _nextState = BehaviourFSM.State.FreeCamera;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
     #endregion
 

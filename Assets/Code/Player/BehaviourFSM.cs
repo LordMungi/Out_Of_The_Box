@@ -16,6 +16,7 @@ public class BehaviourFSM
         Glide,
         Push,
         Climb,
+        FreeCamera,
         NULL
     }
 
@@ -34,6 +35,7 @@ public class BehaviourFSM
         _states.TryAdd(State.Glide, new GlideState(ref data));
         _states.TryAdd(State.Push, new PushState(ref data));
         _states.TryAdd(State.Climb, new ClimbState(ref data));
+        _states.TryAdd(State.FreeCamera, new FreeCameraState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -54,7 +56,8 @@ public class BehaviourFSM
                                 _currentStateEnum == State.Jump ||
                                 _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump ||
-                                _currentStateEnum == State.Climb;
+                                _currentStateEnum == State.Climb ||
+                                _currentStateEnum == State.FreeCamera;
                     break;
                 }
 
@@ -101,7 +104,13 @@ public class BehaviourFSM
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move;
-                break;
+                    break;
+                }
+
+            case State.FreeCamera:
+                {
+                    canChange = _currentStateEnum == State.Idle;
+                    break;
                 }
         }
 
