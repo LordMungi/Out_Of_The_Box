@@ -15,6 +15,7 @@ public class SearchingPartState : PlayerState
         Cursor.visible = true;
 
         _playerInput.Player.Release.performed += OnLeaveState;
+        _playerInput.Player.Equip.performed += OnEquipPart;
 
         EventBus.Subscribe<OnPartGrabRequest>(OnPartGrabRequest);
     }
@@ -24,6 +25,7 @@ public class SearchingPartState : PlayerState
         EventBus.Unsubscribe<OnPartGrabRequest>(OnPartGrabRequest);
 
         _playerInput.Player.Release.performed -= OnLeaveState;
+        _playerInput.Player.Equip.performed -= OnEquipPart;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -40,6 +42,12 @@ public class SearchingPartState : PlayerState
         _nextState = BehaviourFSM.State.Idle;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
+
+    private void OnEquipPart(InputAction.CallbackContext callbackContext)
+    {
+        _partHandler.EquipGrabbed();
+    }
+
 
     private void OnPartGrabRequest(in OnPartGrabRequest context)
     {

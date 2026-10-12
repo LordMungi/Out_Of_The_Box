@@ -70,7 +70,8 @@ public class PartHandler : PlayerHandler
     public void GrabAndRelease(RobotPart part)
     {
         Release();
-        Grab(part);
+        if (part != _equippedPartArms && part != _equippedPartLegs)
+            Grab(part);
     }
 
     public bool GrabNearest()
