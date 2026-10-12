@@ -13,7 +13,7 @@ public class IdleState : PlayerState
     public override void Enable()
     {
         _playerInput.Player.Move.performed += OnMove;
-        _playerInput.Player.Grab.performed += OnGrabItem;
+        _playerInput.Player.Grab.performed += OnInteract;
         _playerInput.Player.Release.performed += OnReleaseItem;
         _playerInput.Player.Jump.performed += OnJump;
         _playerInput.Player.Equip.performed += OnEquipPart;
@@ -28,7 +28,7 @@ public class IdleState : PlayerState
     public override void Disable()
     {
         _playerInput.Player.Move.performed -= OnMove;
-        _playerInput.Player.Grab.performed -= OnGrabItem;
+        _playerInput.Player.Grab.performed -= OnInteract;
         _playerInput.Player.Release.performed -= OnReleaseItem;
         _playerInput.Player.Jump.performed -= OnJump;
         _playerInput.Player.Equip.performed -= OnEquipPart;
@@ -63,9 +63,20 @@ public class IdleState : PlayerState
         }
     }
 
-    private void OnGrabItem(InputAction.CallbackContext context)
+    private void OnInteract(InputAction.CallbackContext context)
     {
-        _partHandler.GrabNearest();
+        if (!_partHandler.GrabNearest())
+        {
+            Debug.Log(_interactionsHandler.Interact());
+            switch (_interactionsHandler.Interact())
+            {
+                case InteractionsHandler.Type.Toybox:
+                    _nextState = BehaviourFSM.State.SearchingPart;
+                    EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+                    break;
+            }
+        }
+
     }
 
     private void OnReleaseItem(InputAction.CallbackContext context)

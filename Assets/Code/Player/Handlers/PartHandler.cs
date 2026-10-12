@@ -67,13 +67,15 @@ public class PartHandler : PlayerHandler
         RemoveNearbyItem(_grabbedPart);
     }
 
-    public void GrabNearest()
+    public bool GrabNearest()
     {
         if (_nearbyParts.Count > 0)
         {
             Release();
             Grab(FindNearestPart());
+            return true;
         }
+        return false;
     }
 
     public void Release()

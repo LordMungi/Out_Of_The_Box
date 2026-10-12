@@ -4,6 +4,14 @@ using UnityEngine;
 public class InteractionsHandler : PlayerHandler
 {
     #region Fields
+    public enum Type
+    {
+        Toybox,
+        Pushable,
+        Climbable,
+        NULL
+    }
+
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private Transform _handParent;
@@ -11,6 +19,7 @@ public class InteractionsHandler : PlayerHandler
 
     private List<PushableObject> _nearbyPushableObjects = new List<PushableObject>();
     private List<ClimbableObject> _nearbyClimbableObjects = new List<ClimbableObject>();
+    private bool _nearToybox = false;
 
     private PushableObject _grabbedPushableObejct;
     private Vector2 _directionVectorPushableObject;
@@ -46,6 +55,8 @@ public class InteractionsHandler : PlayerHandler
         EventBus.Subscribe<OnClimbableObjectExit>(RemoveClimbableObject);
         EventBus.Subscribe<OnPushRequest>(OnPushRequest);
         EventBus.Subscribe<OnClimbRequest>(OnClimbRequest);
+        EventBus.Subscribe<OnToyboxEntered>(ToyboxEntered);
+        EventBus.Subscribe<OnToyboxExit>(ToyboxExit);
     }
 
     public override void Disable()
@@ -56,9 +67,28 @@ public class InteractionsHandler : PlayerHandler
         EventBus.Unsubscribe<OnClimbableObjectExit>(RemoveClimbableObject);
         EventBus.Unsubscribe<OnPushRequest>(OnPushRequest);
         EventBus.Unsubscribe<OnClimbRequest>(OnClimbRequest);
+        EventBus.Unsubscribe<OnToyboxEntered>(ToyboxEntered);
+        EventBus.Unsubscribe<OnToyboxExit>(ToyboxExit);
         base.Disable();
     }
     #endregion
+
+    public bool Interact(Type type)
+    {
+        return Interact() == type;
+    }
+
+    public Type Interact()
+    {
+        if (_nearToybox)
+            return Type.Toybox;
+        if (_nearbyPushableObjects.Count > 0)
+            return Type.Pushable;
+        if (_nearbyClimbableObjects.Count > 0)
+            return Type.Climbable;
+        
+        return Type.NULL;
+    }
 
     #region Callbacks
     private void AddPushableObject(in OnPushableObjectEntered context)
@@ -79,6 +109,16 @@ public class InteractionsHandler : PlayerHandler
     private void RemoveClimbableObject(in OnClimbableObjectExit context)
     {
         _nearbyClimbableObjects.Remove(context.climbableObject);
+    }
+
+    private void ToyboxEntered(in OnToyboxEntered context)
+    {
+        _nearToybox = true;
+    }
+
+    private void ToyboxExit(in OnToyboxExit context)
+    {
+        _nearToybox = false;
     }
 
     private void OnPushRequest(in OnPushRequest context)

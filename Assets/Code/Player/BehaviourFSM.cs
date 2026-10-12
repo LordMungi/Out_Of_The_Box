@@ -17,6 +17,7 @@ public class BehaviourFSM
         Push,
         Climb,
         FreeCamera,
+        SearchingPart,
         NULL
     }
 
@@ -36,6 +37,7 @@ public class BehaviourFSM
         _states.TryAdd(State.Push, new PushState(ref data));
         _states.TryAdd(State.Climb, new ClimbState(ref data));
         _states.TryAdd(State.FreeCamera, new FreeCameraState(ref data));
+        _states.TryAdd(State.SearchingPart, new SearchingPartState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -57,7 +59,8 @@ public class BehaviourFSM
                                 _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump ||
                                 _currentStateEnum == State.Climb ||
-                                _currentStateEnum == State.FreeCamera;
+                                _currentStateEnum == State.FreeCamera ||
+                                _currentStateEnum == State.SearchingPart;
                     break;
                 }
 
@@ -112,6 +115,13 @@ public class BehaviourFSM
                     canChange = _currentStateEnum == State.Idle;
                     break;
                 }
+
+            case State.SearchingPart:
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
+                    break;
+                }
         }
 
         if (canChange)
@@ -131,7 +141,7 @@ public class BehaviourFSM
         CurrentState = newState;
         _currentStateEnum = newStateEnum;
         CurrentState.Enable();
-        
-         //Debug.Log("State changed to " + _currentStateEnum.ToString());
+
+        //Debug.Log("State changed to " + _currentStateEnum.ToString());
     }
 }
