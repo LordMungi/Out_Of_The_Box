@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         _playerData.handlers.movement = new MoveHandler(_playerData.controller, _playerData.rootBone);
         _playerData.handlers.parts = new PartHandler(ref _playerData.parents, _playerData.input);
         _playerData.handlers.interactions = new InteractionsHandler(ref _playerData.parents);
-        _playerData.handlers.camera = new CameraHandler(ref _playerData.cameras, _playerData.parents.cameraTrackParent);
+        _playerData.handlers.camera = new CameraHandler(ref _playerData.cameras);
 
         _playerAnimationController = new PlayerAnimator(_playerData.animator); // Convertir en handler
 

@@ -7,5 +7,4 @@ using UnityEngine;
     public Transform handParent;
     public Transform legPartParent;
     public Transform armPartParent;
-    public Transform cameraTrackParent;
 }

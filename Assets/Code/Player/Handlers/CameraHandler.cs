@@ -10,16 +10,12 @@ public class CameraHandler : PlayerHandler
     private CinemachineCamera _defaultCamera;
     private CinemachineCamera _currentCamera;
     private CinemachineCamera _previousCamera;
-
-    private Transform _trackParent;
-    
-    public CameraHandler(ref CinemachineCamera[] cameras, Transform cameraTrackParent)
+        
+    public CameraHandler(ref CinemachineCamera[] cameras)
     {
         _cameras = new List<CinemachineCamera>(cameras);
         _defaultCamera = _cameras[0];
         SwapToCamera(_defaultCamera);
-
-        _trackParent = cameraTrackParent;
     }
 
     public override void Enable()
@@ -46,11 +42,11 @@ public class CameraHandler : PlayerHandler
             {
                 if (camera == newCamera)
                 {
-                    camera.enabled = true;
+                    camera.gameObject.SetActive(true);
                     _currentCamera = camera;
                 }
                 else
-                    camera.enabled = false;
+                    camera.gameObject.SetActive(false);
             }
         }
     }
@@ -61,11 +57,11 @@ public class CameraHandler : PlayerHandler
         {
             if (camera.gameObject.name == cameraName)
             {
-                camera.enabled = true;
+                camera.gameObject.SetActive(true);
                 _currentCamera = camera;
             }
             else
-                camera.enabled = false;
+                camera.gameObject.SetActive(false);
         }
     }
 
@@ -81,15 +77,10 @@ public class CameraHandler : PlayerHandler
         _previousCamera = null;
     }
 
-    public void ResetCamera()
-    {
-        _trackParent.position = _trackParent.parent.position;
-    }
-
     public void MoveCamera(Vector3 delta, float speed)
     {
         Vector3 movement = _currentCamera.transform.right * delta.x + _currentCamera.transform.up * delta.y + _currentCamera.transform.forward * delta.z;
-        _trackParent.position += movement * Time.deltaTime * speed;
+        _currentCamera.Target.TrackingTarget.position += movement * Time.deltaTime * speed;
     }
 
     private void EnterCamera(in OnCameraTriggerEnter context)
