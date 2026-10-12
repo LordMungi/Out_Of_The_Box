@@ -75,7 +75,6 @@ public class IdleState : PlayerState
                     break;
             }
         }
-
     }
 
     private void OnReleaseItem(InputAction.CallbackContext context)

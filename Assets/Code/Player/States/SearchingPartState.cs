@@ -18,10 +18,14 @@ public class SearchingPartState : PlayerState
         _playerInput.Player.Equip.performed += OnEquipPart;
 
         EventBus.Subscribe<OnPartGrabRequest>(OnPartGrabRequest);
+
+        EventBus.Raise<OnToyboxStateEnabled>();
     }
 
     public override void Disable()
     {
+        EventBus.Raise<OnToyboxStateDisabled>();
+
         EventBus.Unsubscribe<OnPartGrabRequest>(OnPartGrabRequest);
 
         _playerInput.Player.Release.performed -= OnLeaveState;
