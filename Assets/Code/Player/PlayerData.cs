@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
 [Serializable] public struct PlayerData
@@ -9,7 +10,7 @@ using UnityEngine;
     public PlayerConfig config;
     public Animator animator;
     public Transform rootBone;
-    public Camera[] cameras;
+    public CinemachineCamera[] cameras;
     public PlayerParents parents;
     public PlayerHandlers handlers;
 }
