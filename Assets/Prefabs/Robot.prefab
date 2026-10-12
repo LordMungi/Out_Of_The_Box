@@ -129,8 +129,6 @@ MonoBehaviour:
       handParent: {fileID: 2190001052426430870}
       legPartParent: {fileID: 1128296600121638704}
       armPartParent: {fileID: 8133393346899222268}
-      cameraTrackParent: {fileID: 521712274972726684}
-      freeCameraTrackParent: {fileID: 0}
 --- !u!143 &5646481105737060134
 CharacterController:
   m_ObjectHideFlags: 0
