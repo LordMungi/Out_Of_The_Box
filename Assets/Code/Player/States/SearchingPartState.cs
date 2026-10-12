@@ -1,4 +1,5 @@
-﻿using UnityEngine.InputSystem;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SearchingPartState : PlayerState
 {
@@ -10,12 +11,18 @@ public class SearchingPartState : PlayerState
     {
         base.Enable();
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         _playerInput.Player.Release.performed += OnLeaveState;
     }
 
     public override void Disable()
     {
         _playerInput.Player.Release.performed -= OnLeaveState;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         base.Disable();
     }

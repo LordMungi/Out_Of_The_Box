@@ -17,6 +17,11 @@ public class ToyBox : MonoBehaviour
         EventBus.Unsubscribe<OnPartGrabbed>(OnPartGrabbed);
     }
 
+    public void GrabPart(RobotPart part)
+    {
+        Debug.Log("Grab " + part.type + " part");
+    }
+
     private void OnPartGrabbed(in OnPartGrabbed context)
     {
         if (!_availableParts.ContainsKey(context.part.type))
