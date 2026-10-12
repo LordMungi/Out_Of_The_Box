@@ -54,7 +54,7 @@ public class MoveState : PlayerState
 
     private void OnJumpTriggered(InputAction.CallbackContext context)
     {
-        if (_partHandler.EquippedPart?.type != RobotPart.Type.Jumper)
+        if (_partHandler.EquippedPartArms?.type != RobotPart.Type.Jumper)
         {
             EventBus.Raise<OnJumpRequest>();
         }

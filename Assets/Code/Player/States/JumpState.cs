@@ -47,7 +47,7 @@ public class JumpState : PlayerState
         else
             _nextState = BehaviourFSM.State.Idle;
         
-        if (_partHandler.EquippedPart?.type == RobotPart.Type.Glider)
+        if (_partHandler.EquippedPartArms?.type == RobotPart.Type.Glider)
         {
             if (_playerInput.Player.Jump.IsPressed())
             {

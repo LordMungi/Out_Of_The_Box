@@ -9,6 +9,8 @@ public abstract class RobotPart : MonoBehaviour
 
     public enum Type
     {
+        ArmBase,
+        LegBase,
         Jumper,
         Glider,
         Pusher,

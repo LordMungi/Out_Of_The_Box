@@ -9,28 +9,33 @@ public class PartHandler : PlayerHandler
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private Transform _worldParent;
+    private Transform _underWorldParent;
     private Transform _handParent;
-    private Transform _legPartParent;
-    private Transform _armPartParent;
+    private List<EquippedPart> _equippedParts;
 
-    private static RobotPart _grabbedPart;
-    public static RobotPart _equippedPart;
+    private RobotPart _grabbedPart;
+    public RobotPart _equippedPartArms;
+    public RobotPart _equippedPartLegs;
 
-    public RobotPart EquippedPart
+    public RobotPart EquippedPartArms
     {
-        get => _equippedPart;
+        get => _equippedPartArms;
+    }
+    public RobotPart EquippedPartLegs
+    {
+        get => _equippedPartLegs;
     }
 
     private static List<RobotPart> _nearbyParts = new List<RobotPart>();
 
     private PlayerInputActions _inputActions;
 
-    public PartHandler(ref PlayerParents parents, PlayerInputActions inputActions)
+    public PartHandler(ref PlayerParents parents, EquippedPart[] equippedParts, PlayerInputActions inputActions)
     {
         _worldParent = parents.worldParent;
+        _underWorldParent = parents.underWorldParent;
         _handParent = parents.handParent;
-        _legPartParent = parents.legPartParent;
-        _armPartParent = parents.armPartParent;
+        _equippedParts = new List<EquippedPart>(equippedParts);
 
         _inputActions = inputActions;
     }
@@ -56,6 +61,7 @@ public class PartHandler : PlayerHandler
         _grabbedPart = part;
         _grabbedPart.transform.parent = _handParent;
         _grabbedPart.transform.position = _handParent.position;
+        _grabbedPart.transform.rotation = _handParent.rotation;
         _grabbedPart.Grab();
         RemoveNearbyItem(_grabbedPart);
     }
@@ -83,28 +89,63 @@ public class PartHandler : PlayerHandler
     {
         RobotPart auxGrabbedPart = _grabbedPart;
 
-        if (_equippedPart)
+        if (_equippedPartArms)
         {
-            Grab(_equippedPart);
-            UnsubscribeFromPartActions(_equippedPart);
-            _equippedPart = null;
+            Grab(_equippedPartArms);
+            UnsubscribeFromPartActions(_equippedPartArms);
+            _equippedPartArms = null;
         }
 
         if (auxGrabbedPart)
         {
-            Equip(auxGrabbedPart);
+            EquipOnArms(auxGrabbedPart);
             if (auxGrabbedPart == _grabbedPart)
                 _grabbedPart = null;
         }
+
+        SwapPartModels();
     }
 
-    private void Equip(RobotPart part)
+    private void EquipOnArms(RobotPart part)
     {
-        _equippedPart = part;
-        _equippedPart.Equip();
-        _equippedPart.transform.parent = _legPartParent;
-        _equippedPart.transform.position = _legPartParent.position;
-        SubscribeToPartActions(_equippedPart);
+        _equippedPartArms = part;
+        _equippedPartArms.Equip();
+        _equippedPartArms.transform.parent = _underWorldParent;
+        _equippedPartArms.transform.position = _underWorldParent.position;
+        SubscribeToPartActions(_equippedPartArms);
+    }
+
+    private void EquipOnLegs(RobotPart part)
+    {
+        _equippedPartLegs = part;
+        _equippedPartLegs.Equip();
+        _equippedPartLegs.transform.parent = _underWorldParent;
+        _equippedPartLegs.transform.position = _underWorldParent.position;
+        SubscribeToPartActions(_equippedPartLegs);
+    }
+
+    private void SwapPartModels()
+    {
+        bool legPartEquipped = _equippedPartLegs != null;
+        bool armPartEquipped = _equippedPartArms != null;
+
+        foreach (EquippedPart part in _equippedParts)
+        {
+            part.gameObject.SetActive(false);
+
+            if (!legPartEquipped)
+            {
+                if (part.type == RobotPart.Type.LegBase)
+                    part.gameObject.SetActive(true);
+            }
+            if (!armPartEquipped)
+            {
+                if (part.type == RobotPart.Type.ArmBase)
+                    part.gameObject.SetActive(true);
+            }
+            if (part.type == _equippedPartArms?.type || part.type == _equippedPartLegs?.type)
+                part.gameObject.SetActive(true);
+        }
     }
 
     private void OnNearbyPartEntered(in OnNearbyPartEntered onNearbyItemEntered)
@@ -114,7 +155,7 @@ public class PartHandler : PlayerHandler
 
     private void AddNearbyItem(RobotPart part)
     {
-        if (!_nearbyParts.Contains(part) && part != _grabbedPart && part != _equippedPart)
+        if (!_nearbyParts.Contains(part) && part != _grabbedPart && part != _equippedPartArms)
             _nearbyParts.Add(part);
     }
 
