@@ -68,7 +68,7 @@ public class PartHandler : PlayerHandler
 
     public void GrabNearest()
     {
-        if(_nearbyParts.Count > 0)
+        if (_nearbyParts.Count > 0)
         {
             Release();
             Grab(FindNearestPart());
@@ -87,20 +87,47 @@ public class PartHandler : PlayerHandler
 
     public void EquipGrabbed()
     {
-        RobotPart auxGrabbedPart = _grabbedPart;
-
-        if (_equippedPartArms)
+        if (_grabbedPart)
         {
-            Grab(_equippedPartArms);
-            UnsubscribeFromPartActions(_equippedPartArms);
-            _equippedPartArms = null;
+            RobotPart auxGrabbedPart = _grabbedPart;
+            bool isLegPart = _grabbedPart?.type == RobotPart.Type.Jumper ||
+                             _grabbedPart?.type == RobotPart.Type.Climber ||
+                             _grabbedPart?.type == RobotPart.Type.Glider;
+
+            RobotPart targetPart = isLegPart ? _equippedPartLegs : _equippedPartArms;
+
+            if (targetPart)
+            {
+                Grab(targetPart);
+                UnsubscribeFromPartActions(targetPart);
+                targetPart = null;
+            }
+
+            if (auxGrabbedPart)
+            {
+                if (isLegPart)
+                    EquipOnLegs(auxGrabbedPart);
+                else
+                    EquipOnArms(auxGrabbedPart);
+
+                if (auxGrabbedPart == _grabbedPart)
+                    _grabbedPart = null;
+            }
         }
-
-        if (auxGrabbedPart)
+        else
         {
-            EquipOnArms(auxGrabbedPart);
-            if (auxGrabbedPart == _grabbedPart)
-                _grabbedPart = null;
+            if (_equippedPartArms)
+            {
+                Grab(_equippedPartArms);
+                UnsubscribeFromPartActions(_equippedPartArms);
+                _equippedPartArms = null;
+            }
+            else if (_equippedPartLegs)
+            {
+                Grab(_equippedPartLegs);
+                UnsubscribeFromPartActions(_equippedPartLegs);
+                _equippedPartLegs = null;
+            }
         }
 
         SwapPartModels();
