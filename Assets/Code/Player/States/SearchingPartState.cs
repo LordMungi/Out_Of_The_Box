@@ -15,10 +15,14 @@ public class SearchingPartState : PlayerState
         Cursor.visible = true;
 
         _playerInput.Player.Release.performed += OnLeaveState;
+
+        EventBus.Subscribe<OnPartGrabRequest>(OnPartGrabRequest);
     }
 
     public override void Disable()
     {
+        EventBus.Unsubscribe<OnPartGrabRequest>(OnPartGrabRequest);
+
         _playerInput.Player.Release.performed -= OnLeaveState;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -35,5 +39,10 @@ public class SearchingPartState : PlayerState
     {
         _nextState = BehaviourFSM.State.Idle;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+
+    private void OnPartGrabRequest(in OnPartGrabRequest context)
+    {
+        _partHandler.GrabAndRelease(context.part);
     }
 }
