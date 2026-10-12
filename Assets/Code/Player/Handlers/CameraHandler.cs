@@ -7,13 +7,17 @@ public class CameraHandler : PlayerHandler
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private List<CinemachineCamera> _cameras;
-
     private CinemachineCamera _defaultCamera;
 
-    public CameraHandler(ref CinemachineCamera[] cameras)
+    private Transform _trackParent;
+    
+    public CameraHandler(ref CinemachineCamera[] cameras, Transform cameraTrackParent)
     {
         _cameras = new List<CinemachineCamera>(cameras);
         _defaultCamera = _cameras[0];
+        SwapToCamera(_defaultCamera);
+
+        _trackParent = cameraTrackParent;
     }
 
     public override void Enable()
@@ -39,9 +43,9 @@ public class CameraHandler : PlayerHandler
             foreach (CinemachineCamera camera in _cameras)
             {
                 if (camera == newCamera)
-                    camera.gameObject.SetActive(true);
+                    camera.enabled = true;
                 else
-                    camera.gameObject.SetActive(false);
+                    camera.enabled = false;
             }
         }
     }
