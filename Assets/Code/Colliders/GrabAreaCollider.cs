@@ -12,6 +12,8 @@ public class GrabAreaCollider : MonoBehaviour
             EventBus.Raise<OnPushableObjectEntered>(other.GetComponent<PushableObject>());
         if (other.CompareTag("Climbable"))
             EventBus.Raise<OnClimbableObjectEntered>(other.GetComponent<ClimbableObject>());
+        if (other.CompareTag("ToyBox"))
+            EventBus.Raise<OnToyboxEntered>();
     }
 
     private void OnTriggerExit(Collider other)
@@ -22,5 +24,7 @@ public class GrabAreaCollider : MonoBehaviour
             EventBus.Raise<OnPushableObjectExit>(other.GetComponent<PushableObject>());
         if (other.CompareTag("Climbable"))
             EventBus.Raise<OnClimbableObjectExit>(other.GetComponent<ClimbableObject>());
+        if (other.CompareTag("ToyBox"))
+            EventBus.Raise<OnToyboxExit>();
     }
 }
