@@ -5,7 +5,7 @@ public class PartButton : MonoBehaviour
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    [SerializeField] private RobotPart.Type type;
+    [SerializeField] public RobotPart.Type type;
 
     private Button _button;
 
