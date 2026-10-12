@@ -67,7 +67,6 @@ public class IdleState : PlayerState
     {
         if (!_partHandler.GrabNearest())
         {
-            Debug.Log(_interactionsHandler.Interact());
             switch (_interactionsHandler.Interact())
             {
                 case InteractionsHandler.Type.Toybox:

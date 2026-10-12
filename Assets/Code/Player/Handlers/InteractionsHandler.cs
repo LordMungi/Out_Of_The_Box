@@ -123,13 +123,13 @@ public class InteractionsHandler : PlayerHandler
 
     private void OnPushRequest(in OnPushRequest context)
     {
-        if (_nearbyPushableObjects.Count > 0)
+        if (Interact(Type.Pushable))
             EventBus.Raise<OnPushRequestInteractionsAccepted>();
     }
 
     private void OnClimbRequest(in OnClimbRequest context)
     {
-        if (_nearbyClimbableObjects.Count > 0)
+        if (Interact(Type.Climbable))
             EventBus.Raise<OnPartStateChangeAccepted>(BehaviourFSM.State.Climb);
     }
     #endregion

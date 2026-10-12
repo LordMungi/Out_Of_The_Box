@@ -8,6 +8,7 @@ TagManager:
   - Pushable
   - Projectile
   - Climbable
+  - ToyBox
   layers:
   - Default
   - TransparentFX
