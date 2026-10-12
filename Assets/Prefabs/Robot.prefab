@@ -99,6 +99,7 @@ Transform:
   m_Children:
   - {fileID: 2136019986957862641}
   - {fileID: 6453295312751717280}
+  - {fileID: 521712274972726684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &234382246448471051
@@ -119,12 +120,16 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: b195c62744fc9654283d7f03e5f56b82, type: 2}
     animator: {fileID: 2956657023041673802}
     rootBone: {fileID: 4728488173929737197}
-    cameras: []
+    cameras:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     parents:
       worldParent: {fileID: 0}
       handParent: {fileID: 2190001052426430870}
       legPartParent: {fileID: 1128296600121638704}
       armPartParent: {fileID: 8133393346899222268}
+      cameraTrackParent: {fileID: 521712274972726684}
 --- !u!143 &5646481105737060134
 CharacterController:
   m_ObjectHideFlags: 0
@@ -180,6 +185,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4728488173929737197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7363763554740507241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521712274972726684}
+  m_Layer: 0
+  m_Name: Camera Track
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521712274972726684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363763554740507241}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1572537662728520520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7525148824982676304
 GameObject:
