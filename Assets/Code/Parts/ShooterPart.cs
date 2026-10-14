@@ -28,7 +28,7 @@ public class ShooterPart : RobotPart
 
     private void Shoot(InputAction.CallbackContext callbackContext)
     {
-        _bulletManager.Shoot(bulletPrefab, _parents.handParent.transform, _config.bulletSpeed);
+        _bulletManager.Shoot(bulletPrefab, _parents.gunParent.transform, _config.bulletSpeed);
     }
 
     private void Aim(InputAction.CallbackContext callbackContext)

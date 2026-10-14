@@ -22,6 +22,6 @@ MonoBehaviour:
   <superJumpMaxTime>k__BackingField: 1
   <glidingSpeed>k__BackingField: 4
   <pushSpeed>k__BackingField: 5
-  <bulletSpeed>k__BackingField: 10
+  <bulletSpeed>k__BackingField: 30
   <fireRate>k__BackingField: 10
   <climbSpeed>k__BackingField: 5

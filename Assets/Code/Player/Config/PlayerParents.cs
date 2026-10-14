@@ -6,6 +6,7 @@ using UnityEngine;
     public Transform worldParent;
     public Transform underWorldParent;
     public Transform handParent;
+    public Transform gunParent;
     public Transform legPartParent;
     public Transform armPartParent;
 }
