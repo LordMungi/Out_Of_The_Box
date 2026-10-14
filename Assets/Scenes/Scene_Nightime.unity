@@ -7067,7 +7067,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.97, y: 9.27, z: 17.96}
   m_LocalScale: {x: 11.143217, y: 11.143217, z: 11.143217}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 45781619}
   - {fileID: 1322563824}
@@ -9739,15 +9739,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0008974069
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0008974069
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0008974069
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9755,7 +9755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2063767
+      value: -1.204
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9789,10 +9789,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1b8bf8ae2783ea24889eaa369fe2f468, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5626114137119388220, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
     - target: {fileID: 919132149155446097, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
       propertyPath: m_Name
       value: perfume
@@ -9839,8 +9847,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 159.47144, y: 276.59863, z: 161.41522}
-  m_Center: {x: 0, y: 138.29932, z: 0}
+  m_Size: {x: 0.14311077, y: 0.24822152, z: 0.14485513}
+  m_Center: {x: -0.0000014305115, y: 0.12411076, z: 0.0000019073486}
 --- !u!4 &1746742821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 008a9b9f9290c234486e5d551dbc6edb, type: 3}
