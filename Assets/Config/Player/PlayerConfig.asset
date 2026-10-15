@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03542b9a17e9dae469862c66fff6f26a, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
-  <moveSpeed>k__BackingField: 0
+  <maxMoveSpeed>k__BackingField: 10
+  <acceleration>k__BackingField: 200
+  <decceleration>k__BackingField: 100
   <bodyRotationSpeed>k__BackingField: 10
-  <airborneSpeed>k__BackingField: 0
-  <jumpForce>k__BackingField: 20
+  <airborneAcceleration>k__BackingField: 20
+  <airborneFriction>k__BackingField: 0
+  <jumpForce>k__BackingField: 15
   <fallSpeed>k__BackingField: 0.5
   <superJumpMinForce>k__BackingField: 20
   <superJumpMaxForce>k__BackingField: 60
