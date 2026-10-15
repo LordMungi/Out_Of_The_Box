@@ -39,6 +39,8 @@ public class SuperJumpState : PlayerState
     {
         _moveHandler.Update();
         _moveHandler.UpdateGravity(_playerConfig.fallSpeed);
+        if (!_hasLeftGround)
+            _moveHandler.UpdateFriction(_playerConfig.decceleration);
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 
