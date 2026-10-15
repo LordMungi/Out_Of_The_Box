@@ -19,7 +19,8 @@ public class MoveHandler : PlayerHandler
     private Transform _rootBone;
     private Transform _mainCamera;
 
-    private float _currentVelocityY;
+    private Vector3 _velocity;
+
     private bool _wasGrounded = false;
     private float _superJumpTimer;
     private bool _isChargingSuperJump = false;
@@ -27,8 +28,6 @@ public class MoveHandler : PlayerHandler
     private bool _hasTeleportedThisFrame = false;
 
     private const float _gravity = -9.81f;
-
-    private Vector3 _currentHorizontalMove = Vector3.zero;
 
     #region Initialization
 
@@ -69,6 +68,9 @@ public class MoveHandler : PlayerHandler
             EventBus.Raise<OnSuperJumpChargeUpdated>(_superJumpTimer);
         }
         _hasTeleportedThisFrame = false;
+
+        _controller.Move(_velocity * Time.deltaTime);
+        _velocity = Vector3.zero;
     }
 
     public void Move(Vector2 direction, float speed, float bodyRotationSpeed)
@@ -85,7 +87,8 @@ public class MoveHandler : PlayerHandler
         camRight.Normalize();
 
         Vector3 direction3D = (camForward * direction.y) + (camRight * direction.x);
-        _currentHorizontalMove = direction3D * speed;
+        direction3D *= speed;
+        _velocity = new Vector3(direction3D.x, _velocity.y, direction3D.z);
 
         Quaternion baseTargetRotation = Quaternion.LookRotation(direction3D.normalized);
 
@@ -114,7 +117,7 @@ public class MoveHandler : PlayerHandler
         _controller.enabled = false;
         _controller.transform.position = position;
         _controller.enabled = true;
-        _currentVelocityY = 0;
+        _velocity = Vector3.zero;
 
         _hasTeleportedThisFrame = true;
     }
@@ -124,58 +127,54 @@ public class MoveHandler : PlayerHandler
         if (_hasTeleportedThisFrame)
             return;
 
-        if (_controller.isGrounded && _currentVelocityY < 0.0f)
+        if (_controller.isGrounded && _velocity.y < 0.0f)
         {
-            _currentVelocityY = -2.0f;
+            _velocity.y = -2.0f;
 
             if (!_wasGrounded)
                 EventBus.Raise<OnPlayerLanded>();
         }
         else
         {
-            _currentVelocityY += _gravity * Time.deltaTime;
+            _velocity.y += _gravity * Time.deltaTime;
         }
 
         _wasGrounded = _controller.isGrounded;
 
-        Vector3 finalMovement = _currentHorizontalMove;
-        finalMovement.y = fallSpeed * _currentVelocityY;
+        _velocity.y *= fallSpeed;
 
-        _controller.Move(finalMovement * Time.deltaTime);
-
-        _currentHorizontalMove = Vector3.zero;
     }
 
     public void GlideFall(float maxGlideFallSpeed)
     {
-        if (_hasTeleportedThisFrame)
-            return;
+        //if (_hasTeleportedThisFrame)
+        //    return;
 
-        if (_currentVelocityY < -maxGlideFallSpeed)
-        {
-            _currentVelocityY = -maxGlideFallSpeed;
-        }
-        else
-        {
-            _currentVelocityY += _gravity * Time.deltaTime;
-        }
+        //if (_currentVelocityY < -maxGlideFallSpeed)
+        //{
+        //    _currentVelocityY = -maxGlideFallSpeed;
+        //}
+        //else
+        //{
+        //    _currentVelocityY += _gravity * Time.deltaTime;
+        //}
 
-        _wasGrounded = _controller.isGrounded;
+        //_wasGrounded = _controller.isGrounded;
 
-        Vector3 finalMovement = _currentHorizontalMove;
-        finalMovement.y = _currentVelocityY;
+        //Vector3 finalMovement = _currentHorizontalMove;
+        //finalMovement.y = _currentVelocityY;
 
-        _controller.Move(finalMovement * Time.deltaTime);
-        _currentHorizontalMove = Vector3.zero;
+        //_controller.Move(finalMovement * Time.deltaTime);
+        //_currentHorizontalMove = Vector3.zero;
     }
-    
+
     public void Jump(float jumpForce)
     {
-        if (_hasTeleportedThisFrame)
-            return;
+        //if (_hasTeleportedThisFrame)
+        //    return;
 
-        _currentVelocityY = Mathf.Sqrt(jumpForce * -2f * _gravity);
-        _controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
+        //_currentVelocityY = Mathf.Sqrt(jumpForce * -2f * _gravity);
+        //_controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
     }
 
     public void StartSuperJumpCharge()
@@ -186,18 +185,18 @@ public class MoveHandler : PlayerHandler
 
     public void PerformSuperJump(float superJumpMaxTime, float superJumpMaxForce, float superJumpMinForce)
     {
-        if (_hasTeleportedThisFrame)
-            return;
+        //if (_hasTeleportedThisFrame)
+        //    return;
 
-        float timePressed = Mathf.Min(superJumpMaxTime, _superJumpTimer);
+        //float timePressed = Mathf.Min(superJumpMaxTime, _superJumpTimer);
 
-        float superJumpForce = Mathf.Max(timePressed * superJumpMaxForce / superJumpMaxTime, superJumpMinForce);
+        //float superJumpForce = Mathf.Max(timePressed * superJumpMaxForce / superJumpMaxTime, superJumpMinForce);
 
-        _currentVelocityY = Mathf.Sqrt(superJumpForce * -2f * _gravity);
-        _controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
+        //_currentVelocityY = Mathf.Sqrt(superJumpForce * -2f * _gravity);
+        //_controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
 
-        _isChargingSuperJump = false;
-        EventBus.Raise<OnSuperJumpChargeEnded>();
+        //_isChargingSuperJump = false;
+        //EventBus.Raise<OnSuperJumpChargeEnded>();
     }
 
     #endregion
@@ -214,7 +213,7 @@ public class MoveHandler : PlayerHandler
 
     private void OnGlideRequest(in OnGlideRequest context)
     {
-        if (!_controller.isGrounded && _currentVelocityY <= 0.0f)
+        if (!_controller.isGrounded && _velocity.y <= 0.0f)
         {
             EventBus.Raise<OnGlideRequestAccepted>();
         }
