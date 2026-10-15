@@ -39,7 +39,6 @@ public class BehaviourFSM
         _states.TryAdd(State.Climb, new ClimbState(ref data));
         _states.TryAdd(State.FreeCamera, new FreeCameraState(ref data));
         _states.TryAdd(State.SearchingPart, new SearchingPartState(ref data));
-        _states.TryAdd(State.Grab, new GrabberState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
