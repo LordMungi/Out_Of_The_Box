@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{450A3BD7-4FEB-4745-96BD-59AD91E10E04}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{450A3BD7-4FEB-4745-96BD-59AD91E10E04}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_595465__siliconesound__boing_sound" ID="{E5281E6A-A689-4FCE-9A7E-F4FCB39B8D24}">
+					<ChildrenList>
+						<Action Name="" ID="{F52DFA08-DA9E-4B9A-ADCC-BF66F02EBC44}" ShortID="121107587">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="595465__siliconesound__boing-sound" ID="{530BE32E-EBB9-46B2-98DA-8349CBFA30E5}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

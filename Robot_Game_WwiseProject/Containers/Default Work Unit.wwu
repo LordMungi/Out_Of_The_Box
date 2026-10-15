@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AB119826-8BF1-47B8-846D-6E5945042E5D}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{AB119826-8BF1-47B8-846D-6E5945042E5D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="595465__siliconesound__boing-sound" ID="{530BE32E-EBB9-46B2-98DA-8349CBFA30E5}" ShortID="887249395">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B75181D1-940F-4D34-A9FF-0CEE469901A5}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FB9A160C-F810-4133-B67C-348F9E0D615E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="595465__siliconesound__boing-sound" ID="{EBBB7A7D-F4CC-4836-9422-847E6BC5FFCD}">
+							<Language>SFX</Language>
+							<AudioFile>595465__siliconesound__boing-sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="699928076"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="595465__siliconesound__boing-sound" ID="{EBBB7A7D-F4CC-4836-9422-847E6BC5FFCD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>
