@@ -18,7 +18,6 @@ public class BehaviourFSM
         Climb,
         FreeCamera,
         SearchingPart,
-        Grab,
         NULL
     }
 
@@ -39,7 +38,6 @@ public class BehaviourFSM
         _states.TryAdd(State.Climb, new ClimbState(ref data));
         _states.TryAdd(State.FreeCamera, new FreeCameraState(ref data));
         _states.TryAdd(State.SearchingPart, new SearchingPartState(ref data));
-        _states.TryAdd(State.Grab, new GrabberState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -62,8 +60,7 @@ public class BehaviourFSM
                             _currentStateEnum == State.SuperJump ||
                             _currentStateEnum == State.Climb ||
                             _currentStateEnum == State.FreeCamera ||
-                            _currentStateEnum == State.SearchingPart ||
-                            _currentStateEnum == State.Grab;
+                            _currentStateEnum == State.SearchingPart;
                     break;
                 }
 
@@ -120,12 +117,6 @@ public class BehaviourFSM
                 }
 
             case State.SearchingPart:
-                {
-                    canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
-                    break;
-                }
-            case State.Grab:
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move;
