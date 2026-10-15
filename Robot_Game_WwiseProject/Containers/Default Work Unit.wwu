@@ -20,9 +20,16 @@
 								<MediaID ID="699928076"/>
 							</MediaIDList>
 						</AudioFileSource>
+						<AudioFileSource Name="595465__siliconesound__boing-sound" ID="{B37F0F30-F8D2-4597-BD69-F007F4234D76}">
+							<Language>SFX</Language>
+							<AudioFile>595465__siliconesound__boing-sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="699928076"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="595465__siliconesound__boing-sound" ID="{EBBB7A7D-F4CC-4836-9422-847E6BC5FFCD}" Platform="Linked"/>
+						<ActiveSource Name="595465__siliconesound__boing-sound" ID="{B37F0F30-F8D2-4597-BD69-F007F4234D76}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
