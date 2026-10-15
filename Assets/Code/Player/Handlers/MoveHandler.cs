@@ -151,25 +151,25 @@ public class MoveHandler : PlayerHandler
 
     public void GlideFall(float maxGlideFallSpeed)
     {
-        //if (_hasTeleportedThisFrame)
-        //    return;
+        if (_hasTeleportedThisFrame)
+            return;
 
-        //if (_currentVelocityY < -maxGlideFallSpeed)
-        //{
-        //    _currentVelocityY = -maxGlideFallSpeed;
-        //}
-        //else
-        //{
-        //    _currentVelocityY += _gravity * Time.deltaTime;
-        //}
+        if (_controller.isGrounded && _velocity.y < 0.0f)
+        {
+            _velocity.y = -2.0f;
 
-        //_wasGrounded = _controller.isGrounded;
-
-        //Vector3 finalMovement = _currentHorizontalMove;
-        //finalMovement.y = _currentVelocityY;
-
-        //_controller.Move(finalMovement * Time.deltaTime);
-        //_currentHorizontalMove = Vector3.zero;
+            if (!_wasGrounded)
+                EventBus.Raise<OnPlayerLanded>();
+        }
+        else if (_velocity.y < -maxGlideFallSpeed)
+        {
+            _velocity.y = -maxGlideFallSpeed;
+        }
+        else
+        {
+            _velocity.y -= Time.deltaTime;
+        }
+        _wasGrounded = _controller.isGrounded;
     }
 
     public void Jump(float jumpForce)

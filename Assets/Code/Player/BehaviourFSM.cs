@@ -63,6 +63,7 @@ public class BehaviourFSM
                             _currentStateEnum == State.Climb ||
                             _currentStateEnum == State.FreeCamera ||
                             _currentStateEnum == State.SearchingPart ||
+                            _currentStateEnum == State.Glide ||
                             _currentStateEnum == State.Grab;
                     break;
                 }
@@ -73,6 +74,7 @@ public class BehaviourFSM
                                 _currentStateEnum == State.Jump ||
                                 _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump ||
+                                _currentStateEnum == State.Glide ||
                                 _currentStateEnum == State.Climb;
                     break;
                 }
