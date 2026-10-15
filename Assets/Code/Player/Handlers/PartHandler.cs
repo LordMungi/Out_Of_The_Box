@@ -16,11 +16,7 @@ public class PartHandler : PlayerHandler
     private RobotPart _grabbedPart;
     public RobotPart _equippedPartArms;
     public RobotPart _equippedPartLegs;
-    private RobotPart _grapplerGrabbedPart; 
 
-    private Vector3 _handDefaultLocalPosition;
-    private Quaternion _handDefaultLocalRotation;
-    
     public RobotPart EquippedPartArms
     {
         get => _equippedPartArms;
@@ -47,13 +43,7 @@ public class PartHandler : PlayerHandler
 
     public override void Enable()
     {
-        base.Enable();
-
-        if (_handParent)
-        {
-            _handDefaultLocalPosition = _handParent.localPosition;
-            _handDefaultLocalRotation = _handParent.localRotation;
-        }
+        base.Enable(); 
         
         EventBus.Subscribe<OnNearbyPartEntered>(OnNearbyPartEntered);
         EventBus.Subscribe<OnNearbyPartExit>(OnNearbyPartExit);
@@ -67,47 +57,6 @@ public class PartHandler : PlayerHandler
         EventBus.Unsubscribe<OnPushRequest>(OnPushRequest);
 
         base.Disable();
-    }
-
-    public void MoveHandOutward(Vector3 direction, float speed)
-    {
-        Debug.Log("Moving hand outward");
-        _handParent.position += direction * speed * Time.deltaTime;
-    }
-    
-    public bool MoveHandInward(float speed)
-    {
-        Debug.Log("Moving hand inwards");
-
-        _handParent.localPosition = Vector3.MoveTowards(_handParent.localPosition, _handDefaultLocalPosition, speed * Time.deltaTime);
-
-        if (Vector3.Distance(_handParent.localPosition, _handDefaultLocalPosition) < 0.05f)
-        {
-            _handParent.localPosition = _handDefaultLocalPosition;
-            _handParent.localRotation = _handDefaultLocalRotation;
-            
-            return true; 
-        }
-        return false;
-    }
-    
-    public void CatchPartInAir(RobotPart part)
-    {
-        _grapplerGrabbedPart = part;
-        _grapplerGrabbedPart.transform.parent = _handParent; 
-        _grapplerGrabbedPart.transform.localPosition = Vector3.zero;
-    }
-
-    public void FinalizeGrab()
-    {
-        if (_grapplerGrabbedPart)
-        {
-            if (_grabbedPart != null)
-                Release(); 
-
-            Grab(_grapplerGrabbedPart);
-            _grapplerGrabbedPart = null;
-        }
     }
     
     private void Grab(RobotPart part)
