@@ -27,7 +27,7 @@ public class FreeCameraState : PlayerState
 
     public override void Update()
     {
-        _cameraHandler.MoveCamera(_playerInput.Player.CameraMove.ReadValue<Vector3>(), _playerConfig.acceleration);
+        _cameraHandler.MoveCamera(_playerInput.Player.CameraMove.ReadValue<Vector3>(), _playerConfig.maxMoveSpeed);
     }
 
     private void OnExitStatePressed(InputAction.CallbackContext callbackContext)
