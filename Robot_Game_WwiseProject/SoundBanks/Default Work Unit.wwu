@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0A925893-2F0A-497E-9606-B09F6CD66A9D}" SchemaVersion="133">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{0A925893-2F0A-497E-9606-B09F6CD66A9D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{384BD91F-079C-409A-BF80-553A122BB60A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_595465__siliconesound__boing_sound" ID="{E5281E6A-A689-4FCE-9A7E-F4FCB39B8D24}" WorkUnitID="{450A3BD7-4FEB-4745-96BD-59AD91E10E04}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
