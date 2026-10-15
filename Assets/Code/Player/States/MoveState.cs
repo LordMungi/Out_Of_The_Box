@@ -40,9 +40,10 @@ public class MoveState : PlayerState
 
     public override void Update()
     {
-        _moveHandler.Update();
         _moveHandler.Move(_playerInput.Player.Move.ReadValue<Vector2>(), _playerConfig.moveSpeed, _playerConfig.bodyRotationSpeed);
-        _moveHandler.Fall(_playerConfig.fallSpeed);
+        _moveHandler.Update();
+        _moveHandler.UpdateGravity(_playerConfig.fallSpeed);
+        _moveHandler.UpdateFriction(_playerConfig.decelerationSpeed);
     }
 
     #region Input Callbacks

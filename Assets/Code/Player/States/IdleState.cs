@@ -43,8 +43,9 @@ public class IdleState : PlayerState
 
     public override void Update()
     {
-        _moveHandler.Fall(_playerConfig.fallSpeed);
         _moveHandler.Update();
+        _moveHandler.UpdateFriction(_playerConfig.decelerationSpeed);
+        _moveHandler.UpdateGravity(_playerConfig.fallSpeed);
     }
 
     #region Input Callbacks

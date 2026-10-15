@@ -27,8 +27,6 @@ public class MoveHandler : PlayerHandler
 
     private bool _hasTeleportedThisFrame = false;
 
-    private const float _gravity = -9.81f;
-
     #region Initialization
 
     public MoveHandler(CharacterController controller, Transform rootBone)
@@ -69,15 +67,12 @@ public class MoveHandler : PlayerHandler
         }
         _hasTeleportedThisFrame = false;
 
-        _controller.Move(_velocity * Time.deltaTime);
-        _velocity = Vector3.zero;
+        if (!_hasTeleportedThisFrame)
+            _controller.Move(_velocity * Time.deltaTime);
     }
 
     public void Move(Vector2 direction, float speed, float bodyRotationSpeed)
     {
-        if (_hasTeleportedThisFrame)
-            return;
-
         Vector3 camForward = _mainCamera.forward;
         Vector3 camRight = _mainCamera.right;
 
@@ -122,11 +117,16 @@ public class MoveHandler : PlayerHandler
         _hasTeleportedThisFrame = true;
     }
 
-    public void Fall(float fallSpeed)
+    public void UpdateFriction(float decelerationSpeed)
     {
-        if (_hasTeleportedThisFrame)
-            return;
+        _velocity.x = _velocity.x > 0 ? Mathf.Max(0, _velocity.x - decelerationSpeed * Time.deltaTime) 
+            : Mathf.Min(0, _velocity.x + decelerationSpeed * Time.deltaTime);
+        _velocity.z = _velocity.z > 0 ? Mathf.Max(0, _velocity.z - decelerationSpeed * Time.deltaTime) 
+            : Mathf.Min(0, _velocity.z + decelerationSpeed * Time.deltaTime);
+    }
 
+    public void UpdateGravity(float fallSpeed)
+    {
         if (_controller.isGrounded && _velocity.y < 0.0f)
         {
             _velocity.y = -2.0f;
@@ -136,13 +136,9 @@ public class MoveHandler : PlayerHandler
         }
         else
         {
-            _velocity.y += _gravity * Time.deltaTime;
+            _velocity.y -= fallSpeed;
         }
-
         _wasGrounded = _controller.isGrounded;
-
-        _velocity.y *= fallSpeed;
-
     }
 
     public void GlideFall(float maxGlideFallSpeed)
@@ -170,11 +166,8 @@ public class MoveHandler : PlayerHandler
 
     public void Jump(float jumpForce)
     {
-        //if (_hasTeleportedThisFrame)
-        //    return;
-
-        //_currentVelocityY = Mathf.Sqrt(jumpForce * -2f * _gravity);
-        //_controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
+        _velocity.y = Mathf.Sqrt(jumpForce * -2f * -9.8f);
+        _controller.Move(1 * _velocity.y * Time.deltaTime * Vector3.up);
     }
 
     public void StartSuperJumpCharge()
