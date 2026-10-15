@@ -45,7 +45,7 @@ public class SuperJumpState : PlayerState
         if (inputDirection != Vector2.zero)
         {
             _nextState = BehaviourFSM.State.Move;
-            _moveHandler.Move(inputDirection, _playerConfig.airborneSpeed, _playerConfig.bodyRotationSpeed);
+            _moveHandler.Move(inputDirection, _playerConfig.airborneAcceleration, _playerConfig.maxMoveSpeed, _playerConfig.bodyRotationSpeed);
         }
         else
             _nextState = BehaviourFSM.State.Idle;

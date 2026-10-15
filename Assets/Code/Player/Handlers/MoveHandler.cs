@@ -65,13 +65,14 @@ public class MoveHandler : PlayerHandler
             _superJumpTimer += Time.deltaTime;
             EventBus.Raise<OnSuperJumpChargeUpdated>(_superJumpTimer);
         }
-        _hasTeleportedThisFrame = false;
 
         if (!_hasTeleportedThisFrame)
             _controller.Move(_velocity * Time.deltaTime);
+        _hasTeleportedThisFrame = false;
+
     }
 
-    public void Move(Vector2 direction, float speed, float bodyRotationSpeed)
+    public void Move(Vector2 direction, float acceleration, float maxSpeed, float bodyRotationSpeed)
     {
         Vector3 camForward = _mainCamera.forward;
         Vector3 camRight = _mainCamera.right;
@@ -81,9 +82,14 @@ public class MoveHandler : PlayerHandler
         camForward.Normalize();
         camRight.Normalize();
 
-        Vector3 direction3D = (camForward * direction.y) + (camRight * direction.x);
-        direction3D *= speed;
-        _velocity = new Vector3(direction3D.x, _velocity.y, direction3D.z);
+        Vector3 direction3D = ((camForward * direction.y) + (camRight * direction.x)).normalized * acceleration * Time.deltaTime;
+
+        _velocity.x += direction3D.x;
+        _velocity.z += direction3D.z;
+
+        Vector3 clampedVelocity = Vector3.ClampMagnitude(new Vector3(_velocity.x, 0, _velocity.z), maxSpeed);
+        _velocity.x = clampedVelocity.x;
+        _velocity.z = clampedVelocity.z;
 
         Quaternion baseTargetRotation = Quaternion.LookRotation(direction3D.normalized);
 
@@ -119,10 +125,12 @@ public class MoveHandler : PlayerHandler
 
     public void UpdateFriction(float decelerationSpeed)
     {
-        _velocity.x = _velocity.x > 0 ? Mathf.Max(0, _velocity.x - decelerationSpeed * Time.deltaTime) 
-            : Mathf.Min(0, _velocity.x + decelerationSpeed * Time.deltaTime);
-        _velocity.z = _velocity.z > 0 ? Mathf.Max(0, _velocity.z - decelerationSpeed * Time.deltaTime) 
-            : Mathf.Min(0, _velocity.z + decelerationSpeed * Time.deltaTime);
+        Vector3 newVelocity = new Vector3(_velocity.x, 0, _velocity.z);
+
+        newVelocity = Vector3.MoveTowards(newVelocity, Vector3.zero, decelerationSpeed * Time.deltaTime);
+
+        _velocity.x = newVelocity.x;
+        _velocity.z = newVelocity.z;
     }
 
     public void UpdateGravity(float fallSpeed)

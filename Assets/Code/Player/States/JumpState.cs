@@ -36,13 +36,15 @@ public class JumpState : PlayerState
     {
         _moveHandler.Update();
         _moveHandler.UpdateGravity(_playerConfig.fallSpeed);
+        if (_playerConfig.airborneFriction)
+            _moveHandler.UpdateFriction(_playerConfig.decceleration);
 
         Vector2 inputDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 
         if (inputDirection != Vector2.zero)
         {
             _nextState = BehaviourFSM.State.Move;
-            _moveHandler.Move(inputDirection, _playerConfig.airborneSpeed, _playerConfig.bodyRotationSpeed);
+            _moveHandler.Move(inputDirection, _playerConfig.airborneAcceleration, _playerConfig.maxMoveSpeed, _playerConfig.bodyRotationSpeed);
         }
         else
             _nextState = BehaviourFSM.State.Idle;
