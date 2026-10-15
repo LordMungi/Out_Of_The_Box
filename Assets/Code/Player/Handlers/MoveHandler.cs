@@ -186,18 +186,17 @@ public class MoveHandler : PlayerHandler
 
     public void PerformSuperJump(float superJumpMaxTime, float superJumpMaxForce, float superJumpMinForce)
     {
-        //if (_hasTeleportedThisFrame)
-        //    return;
+        if (_hasTeleportedThisFrame)
+            return;
 
-        //float timePressed = Mathf.Min(superJumpMaxTime, _superJumpTimer);
+        float timePressed = Mathf.Min(superJumpMaxTime, _superJumpTimer);
 
-        //float superJumpForce = Mathf.Max(timePressed * superJumpMaxForce / superJumpMaxTime, superJumpMinForce);
+        float superJumpForce = Mathf.Max(timePressed * superJumpMaxForce / superJumpMaxTime, superJumpMinForce);
 
-        //_currentVelocityY = Mathf.Sqrt(superJumpForce * -2f * _gravity);
-        //_controller.Move(1 * _currentVelocityY * Time.deltaTime * Vector3.up);
+        Jump(superJumpForce);
 
-        //_isChargingSuperJump = false;
-        //EventBus.Raise<OnSuperJumpChargeEnded>();
+        _isChargingSuperJump = false;
+        EventBus.Raise<OnSuperJumpChargeEnded>();
     }
 
     #endregion
