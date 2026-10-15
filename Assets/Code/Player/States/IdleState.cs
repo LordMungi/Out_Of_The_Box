@@ -43,7 +43,8 @@ public class IdleState : PlayerState
 
     public override void Update()
     {
-        _moveHandler.Fall(_playerConfig.fallSpeed);
+        _moveHandler.UpdateFriction(_playerConfig.decceleration);
+        _moveHandler.UpdateGravity(_playerConfig.fallSpeed);
         _moveHandler.Update();
     }
 
