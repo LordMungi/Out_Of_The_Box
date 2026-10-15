@@ -18,6 +18,7 @@ public class BehaviourFSM
         Climb,
         FreeCamera,
         SearchingPart,
+        Grab,
         NULL
     }
 
@@ -38,6 +39,7 @@ public class BehaviourFSM
         _states.TryAdd(State.Climb, new ClimbState(ref data));
         _states.TryAdd(State.FreeCamera, new FreeCameraState(ref data));
         _states.TryAdd(State.SearchingPart, new SearchingPartState(ref data));
+        _states.TryAdd(State.Grab, new GrabberState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
@@ -60,7 +62,9 @@ public class BehaviourFSM
                             _currentStateEnum == State.SuperJump ||
                             _currentStateEnum == State.Climb ||
                             _currentStateEnum == State.FreeCamera ||
-                            _currentStateEnum == State.SearchingPart;
+                            _currentStateEnum == State.SearchingPart ||
+                            _currentStateEnum == State.Glide ||
+                            _currentStateEnum == State.Grab;
                     break;
                 }
 
@@ -70,6 +74,7 @@ public class BehaviourFSM
                                 _currentStateEnum == State.Jump ||
                                 _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump ||
+                                _currentStateEnum == State.Glide ||
                                 _currentStateEnum == State.Climb;
                     break;
                 }
@@ -117,6 +122,12 @@ public class BehaviourFSM
                 }
 
             case State.SearchingPart:
+                {
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Move;
+                    break;
+                }
+            case State.Grab:
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move;
