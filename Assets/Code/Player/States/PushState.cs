@@ -34,10 +34,17 @@ public class PushState : PlayerState
         if (inputDelta.y != 0)
         {
             Vector2 movementDelta = _interactionsHandler.DirectionVectorPushableObject * inputDelta.y * Time.deltaTime * _playerConfig.pushSpeed;
+            
+            if (inputDelta.y < 0)
+                EventBus.Raise<OnPushBack>();
+            else
+                EventBus.Raise<OnPushForward>();
 
-            if(_interactionsHandler.CanPushObject(movementDelta))
+            if (_interactionsHandler.CanPushObject(movementDelta))
                 _moveHandler.MoveLinear(movementDelta);
         }
+        else
+            EventBus.Raise<OnStopPushing>();
     }
 
     #region Input Callbacks

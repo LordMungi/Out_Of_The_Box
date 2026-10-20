@@ -21,6 +21,9 @@ public class MoveState : PlayerState
 
         EventBus.Subscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
         EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
+
+        EventBus.Raise<OnStartMoving>();
+        
         base.Enable();
     }
 

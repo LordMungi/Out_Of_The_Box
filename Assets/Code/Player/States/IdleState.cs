@@ -22,6 +22,8 @@ public class IdleState : PlayerState
         EventBus.Subscribe<OnJumpRequestAccepted>(OnJumpRequestAccepted);
         EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
 
+        EventBus.Raise<OnStartIdle>();
+
         base.Enable();
     }
 
