@@ -5,20 +5,90 @@ public class PlayerAnimator
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
     private Animator _animator;
+
+    private enum LegState
+    {
+        Idle,
+        Move,
+        ChargeJump,
+        Climb,
+        JumpDown,
+        JumpUp,
+        PushForward,
+        PushBack
+    }
+
+    private enum ArmState
+    {
+        Idle,
+        Shoot
+    }
+
     public PlayerAnimator(Animator animator)
     {
         _animator = animator;
 
-        EventBus.Subscribe<OnPlayerStateChange>(OnStateChange);
+        EventBus.Subscribe<OnStartIdle>(Idle);
+        EventBus.Subscribe<OnStartMoving>(Move);
+        EventBus.Subscribe<OnStartClimb>(Climb);
+        EventBus.Subscribe<OnPushForward>(PushForward);
+        EventBus.Subscribe<OnPushBack>(PushBack);
+        EventBus.Subscribe<OnStopPushing>(StopPush);
+        EventBus.Subscribe<OnShoot>(Shoot);
     }
 
     ~PlayerAnimator()
     {
-        EventBus.Unsubscribe<OnPlayerStateChange>(OnStateChange);
+        EventBus.Unsubscribe<OnStartIdle>(Idle);
+        EventBus.Unsubscribe<OnStartMoving>(Move);
+        EventBus.Unsubscribe<OnStartClimb>(Climb);
+        EventBus.Unsubscribe<OnPushForward>(PushForward);
+        EventBus.Unsubscribe<OnPushBack>(PushBack);
+        EventBus.Unsubscribe<OnStopPushing>(StopPush);
+        EventBus.Unsubscribe<OnShoot>(Shoot);
     }
 
-    private void OnStateChange(in OnPlayerStateChange context)
+    #region Methods
+    private void ChangeLegState(LegState state)
     {
-        _animator.SetInteger("CurrentState", (int)context.state);
+        _animator.SetInteger("LegsState", (int)state);
     }
+
+    private void ChangeArmState(ArmState state)
+    {
+        _animator.SetInteger("LegsState", (int)state);
+    } 
+    #endregion
+
+    #region Callbacks
+    private void Idle(in OnStartIdle context)
+    {
+        ChangeLegState(LegState.Idle);
+        ChangeArmState(ArmState.Idle);
+    }
+    private void Move(in OnStartMoving context)
+    {
+        ChangeLegState(LegState.Move);
+    }
+    private void Climb(in OnStartClimb context)
+    {
+        ChangeLegState(LegState.Climb);
+    }
+    private void PushForward(in OnPushForward context)
+    {
+        ChangeLegState(LegState.PushForward);
+    }
+    private void PushBack(in OnPushBack context)
+    {
+        ChangeLegState(LegState.PushBack);
+    }
+    private void StopPush(in OnStopPushing context)
+    {
+        ChangeLegState(LegState.Idle);
+    }
+    private void Shoot(in OnShoot context)
+    {
+        ChangeArmState(ArmState.Shoot);
+    }
+    #endregion
 }

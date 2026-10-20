@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class ShooterPart : RobotPart
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     [SerializeField] private Bullet bulletPrefab;
 
     private BulletManager _bulletManager;
@@ -29,6 +31,7 @@ public class ShooterPart : RobotPart
     private void Shoot(InputAction.CallbackContext callbackContext)
     {
         _bulletManager.Shoot(bulletPrefab, _parents.gunParent.transform, _config.bulletSpeed);
+        EventBus.Raise<OnShoot>();
     }
 
     private void Aim(InputAction.CallbackContext callbackContext)

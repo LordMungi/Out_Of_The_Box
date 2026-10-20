@@ -14,6 +14,8 @@ public class ClimbState : PlayerState
 
         _interactionsHandler.ClimbNearestObject();
         _moveHandler.SetPosition(_interactionsHandler.GetOffsetedPosition(_moveHandler.Position));
+
+        EventBus.Raise<OnStartClimb>();
     }
 
     public override void Disable()
