@@ -205,6 +205,16 @@ public class InteractionsHandler : PlayerHandler
         return _grabbedClimbableObject.WallPlane.ClosestPointOnPlane(position) + _grabbedClimbableObject.WallPlane.normal * _grabbedClimbableObject.OffsetFromWall;
     }
 
+    public Vector3 GetClimbingRotation()
+    {
+        return Vector3.Cross(-_grabbedClimbableObject.WallPlane.normal, Vector3.right);
+    }
+
+    public Vector3 GetTopRotation()
+    {
+        return -_grabbedClimbableObject.WallPlane.normal;
+    }
+
     public Vector3 GetOffsetedTopPosition(Vector3 position)
     {
         Vector3 newVector = _grabbedClimbableObject.WallPlane.ClosestPointOnPlane(position) + _grabbedClimbableObject.WallPlane.normal * _grabbedClimbableObject.OffsetFromTop;

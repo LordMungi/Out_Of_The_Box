@@ -123,6 +123,12 @@ public class MoveHandler : PlayerHandler
         _hasTeleportedThisFrame = true;
     }
 
+    public void SetRotation(Vector3 rotation)
+    {
+        _rootBone.transform.rotation = Quaternion.LookRotation(rotation);
+        Debug.Log("Set rotation: " + rotation);
+    }
+
     public void UpdateFriction(float decelerationSpeed)
     {
         Vector3 newVelocity = new Vector3(_velocity.x, 0, _velocity.z);

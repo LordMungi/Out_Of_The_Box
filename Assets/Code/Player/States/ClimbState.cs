@@ -14,6 +14,7 @@ public class ClimbState : PlayerState
 
         _interactionsHandler.ClimbNearestObject();
         _moveHandler.SetPosition(_interactionsHandler.GetOffsetedPosition(_moveHandler.Position));
+        _moveHandler.SetRotation(_interactionsHandler.GetClimbingRotation());
 
         EventBus.Raise<OnStartClimb>();
     }
@@ -22,6 +23,8 @@ public class ClimbState : PlayerState
     {
         if (_interactionsHandler.ShouldGetOffOnTop())
             _moveHandler.SetPosition(_interactionsHandler.GetOffsetedTopPosition(_moveHandler.Position));
+
+        _moveHandler.SetRotation(_interactionsHandler.GetTopRotation());
 
         _interactionsHandler.StopClimbing();
 
