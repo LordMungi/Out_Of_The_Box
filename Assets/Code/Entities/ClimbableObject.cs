@@ -20,6 +20,11 @@ public class ClimbableObject : MonoBehaviour
 
     private void Awake()
     {
+        UpdateValues();
+    }
+
+    public void UpdateValues()
+    {
         Vector3 offsetFromFront = transform.position - ClimbOffset.position;
         offsetFromFront = new Vector3(offsetFromFront.x, 0, offsetFromFront.z);
         _offsetFromWall = offsetFromFront.magnitude;

@@ -188,6 +188,7 @@ public class InteractionsHandler : PlayerHandler
     public void ClimbNearestObject()
     {
         _grabbedClimbableObject = FindNearestObject(_nearbyClimbableObjects);
+        _grabbedClimbableObject.UpdateValues();
     }
 
     public void StopClimbing()
