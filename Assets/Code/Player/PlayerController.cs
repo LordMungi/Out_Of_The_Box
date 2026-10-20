@@ -44,10 +44,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    {
-        if (FreeCam.IsActive)
-            return;
-        
+    {        
         _behaviourFSM.CurrentState.Update();
     }
 }
