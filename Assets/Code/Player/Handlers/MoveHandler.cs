@@ -144,7 +144,7 @@ public class MoveHandler : PlayerHandler
         }
         else
         {
-            _velocity.y -= fallSpeed;
+            _velocity.y -= fallSpeed * Time.deltaTime;
         }
         _wasGrounded = _controller.isGrounded;
     }

@@ -19,7 +19,7 @@ MonoBehaviour:
   <airborneAcceleration>k__BackingField: 20
   <airborneFriction>k__BackingField: 0
   <jumpForce>k__BackingField: 15
-  <fallSpeed>k__BackingField: 0.5
+  <fallSpeed>k__BackingField: 100
   <superJumpMinForce>k__BackingField: 20
   <superJumpMaxForce>k__BackingField: 60
   <superJumpMaxTime>k__BackingField: 1
