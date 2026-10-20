@@ -21,7 +21,6 @@ public class ToyBox : MonoBehaviour
 
     public void GrabPart(RobotPart part)
     {
-        Debug.Log("Grab " + part.type + " part");
     }
 
     private void OnPartGrabbed(in OnPartGrabbed context)

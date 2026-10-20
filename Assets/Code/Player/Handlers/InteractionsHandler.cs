@@ -86,7 +86,7 @@ public class InteractionsHandler : PlayerHandler
             return Type.Pushable;
         if (_nearbyClimbableObjects.Count > 0)
             return Type.Climbable;
-        
+
         return Type.NULL;
     }
 
@@ -103,12 +103,14 @@ public class InteractionsHandler : PlayerHandler
 
     private void AddClimbableObject(in OnClimbableObjectEntered context)
     {
-        _nearbyClimbableObjects.Add(context.climbableObject);
+        if (!_nearbyClimbableObjects.Contains(context.climbableObject))
+            _nearbyClimbableObjects.Add(context.climbableObject);
     }
 
     private void RemoveClimbableObject(in OnClimbableObjectExit context)
     {
-        _nearbyClimbableObjects.Remove(context.climbableObject);
+        if (_nearbyClimbableObjects.Contains(context.climbableObject))
+            _nearbyClimbableObjects.Remove(context.climbableObject);
     }
 
     private void ToyboxEntered(in OnToyboxEntered context)
@@ -151,7 +153,7 @@ public class InteractionsHandler : PlayerHandler
         float dotLeft = Vector3.Dot(offsetFromPushableObject, -nearestObject.transform.right);
 
         float maxDot = Mathf.Max(dotFront, dotBack, dotRight, dotLeft);
-        
+
         if (maxDot == dotFront)
             newDirection = nearestObject.transform.forward; // Front 
         else if (maxDot == dotBack)
