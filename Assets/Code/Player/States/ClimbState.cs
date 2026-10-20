@@ -35,7 +35,7 @@ public class ClimbState : PlayerState
     {
         Vector2 inputDelta = _playerInput.Player.Move.ReadValue<Vector2>();
 
-        if (!_interactionsHandler.GrabbedClimbableObject.IsPlayerOnTop)
+        if (!_interactionsHandler.GrabbedClimbableObject.IsPlayerOnTop || inputDelta.y < 0)
             _moveHandler.MoveLinear(new Vector3(0, inputDelta.y, 0) * Time.deltaTime * _playerConfig.climbSpeed);
 
         _moveHandler.Update();
