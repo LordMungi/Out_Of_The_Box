@@ -37,7 +37,6 @@ public class ToyboxUI : MonoBehaviour
         {
             if (buttons[i].type == context.part.type)
             {
-                Debug.Log("Add part " + context.part.type);
                 buttons[i].gameObject.SetActive(true);
             }
         }

@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour, IResettable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player") && !other.CompareTag("MainCamera"))
+        if (!other.CompareTag("Player") && !other.CompareTag("MainCamera") && !other.CompareTag("Area"))
             EventBus.Raise<OnBulletCollision>(this);
     }
 }

@@ -126,7 +126,6 @@ public class MoveHandler : PlayerHandler
     public void SetRotation(Quaternion rotation)
     {
         _rootBone.transform.rotation = rotation;
-        Debug.Log("Set rotation: " + rotation);
     }
 
     public void UpdateFriction(float decelerationSpeed)
