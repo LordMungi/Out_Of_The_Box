@@ -7,18 +7,12 @@ public class ClimbableObjectAreaCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player entered");
             EventBus.Raise<OnClimbableObjectEntered>(transform.parent.GetComponent<ClimbableObject>());
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player exit");
             EventBus.Raise<OnClimbableObjectExit>(transform.parent.GetComponent<ClimbableObject>());
-        }
     }
 }
