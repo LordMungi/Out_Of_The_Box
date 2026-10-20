@@ -21,7 +21,7 @@ public class BulletManager
 
     public void Shoot(Bullet bulletPrefab, Transform parent, float speed)
     {
-        _bullets.Add(_bulletPool.GetMono(bulletPrefab, parent.position, parent.forward, speed));
+        _bullets.Add(_bulletPool.GetMono(bulletPrefab, parent.position, Vector3.Cross(parent.right, Vector3.up), speed));
     }
 
     private void Destroy(Bullet bullet)

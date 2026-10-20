@@ -56,7 +56,7 @@ public class PlayerAnimator
 
     private void ChangeArmState(ArmState state)
     {
-        _animator.SetInteger("LegsState", (int)state);
+        _animator.SetInteger("ArmsState", (int)state);
     } 
     #endregion
 
@@ -88,7 +88,7 @@ public class PlayerAnimator
     }
     private void Shoot(in OnShoot context)
     {
-        ChangeArmState(ArmState.Shoot);
+        _animator.SetTrigger("ShootTrigger");
     }
     #endregion
 }
