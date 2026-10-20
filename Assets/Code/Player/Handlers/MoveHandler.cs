@@ -123,9 +123,9 @@ public class MoveHandler : PlayerHandler
         _hasTeleportedThisFrame = true;
     }
 
-    public void SetRotation(Vector3 rotation)
+    public void SetRotation(Quaternion rotation)
     {
-        _rootBone.transform.rotation = Quaternion.LookRotation(rotation);
+        _rootBone.transform.rotation = rotation;
         Debug.Log("Set rotation: " + rotation);
     }
 
