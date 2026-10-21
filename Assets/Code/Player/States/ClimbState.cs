@@ -5,7 +5,7 @@ public class ClimbState : PlayerState
 {
     private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
 
-    public ClimbState(ref PlayerData data) : base(ref data) {}
+    public ClimbState(ref PlayerData data) : base(ref data) { }
 
     public override void Enable()
     {
@@ -16,7 +16,6 @@ public class ClimbState : PlayerState
         _moveHandler.SetPosition(_interactionsHandler.GetOffsetedPosition(_moveHandler.Position));
         _moveHandler.SetRotation(_interactionsHandler.GetClimbingRotation());
 
-        EventBus.Raise<OnStartClimb>();
     }
 
     public override void Disable()
@@ -35,8 +34,13 @@ public class ClimbState : PlayerState
     {
         Vector2 inputDelta = _playerInput.Player.Move.ReadValue<Vector2>();
 
-        if (!_interactionsHandler.GrabbedClimbableObject.IsPlayerOnTop || inputDelta.y < 0)
+        if ((!_interactionsHandler.GrabbedClimbableObject.IsPlayerOnTop || inputDelta.y < 0) && inputDelta.y != 0)
+        {
+            EventBus.Raise<OnStartClimb>();
             _moveHandler.MoveLinear(new Vector3(0, inputDelta.y, 0) * Time.deltaTime * _playerConfig.climbSpeed);
+        }
+        else
+            EventBus.Raise<OnStopClimb>();
 
         _moveHandler.Update();
     }
