@@ -31,6 +31,7 @@ public class PlayerAnimator
         EventBus.Subscribe<OnStartIdle>(Idle);
         EventBus.Subscribe<OnStartMoving>(Move);
         EventBus.Subscribe<OnStartClimb>(Climb);
+        EventBus.Subscribe<OnStopClimb>(StopClimb);
         EventBus.Subscribe<OnPushForward>(PushForward);
         EventBus.Subscribe<OnPushBack>(PushBack);
         EventBus.Subscribe<OnStopPushing>(StopPush);
@@ -73,6 +74,11 @@ public class PlayerAnimator
     private void Climb(in OnStartClimb context)
     {
         ChangeLegState(LegState.Climb);
+    }
+    private void StopClimb(in OnStopClimb context)
+    {
+        ChangeLegState(LegState.Idle);
+        ChangeArmState(ArmState.Idle);
     }
     private void PushForward(in OnPushForward context)
     {
