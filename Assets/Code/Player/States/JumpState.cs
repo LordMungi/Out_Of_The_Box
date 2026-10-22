@@ -14,20 +14,25 @@ public class JumpState : PlayerState
         EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
         EventBus.Subscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
         EventBus.Subscribe<OnGlideRequestAccepted>(OnGlideRequestAccepted);
-        
+        EventBus.Subscribe<OnPlayerFall>(OnPlayerFall);
+
         _nextState = BehaviourFSM.State.Idle;
         
         if (_moveHandler.IsGrounded)
         {
             _moveHandler.Jump(_playerConfig.jumpForce);
+            EventBus.Raise<OnJumpStart>();
         }
     }
 
     public override void Disable()
     {
+        EventBus.Raise<OnLanding>();
+        
         EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
         EventBus.Unsubscribe<OnPartStateChangeAccepted>(OnPartStateChangeAccepted);
         EventBus.Unsubscribe<OnGlideRequestAccepted>(OnGlideRequestAccepted);
+        EventBus.Unsubscribe<OnPlayerFall>(OnPlayerFall);
 
         base.Disable();
     }
@@ -70,12 +75,16 @@ public class JumpState : PlayerState
     }
 
     #region Callbacks
-    
     private void OnPartStateChangeAccepted(in OnPartStateChangeAccepted onPartStateChangeAccepted)
     {
         _nextState = onPartStateChangeAccepted.state;
         EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
     
+    private void OnPlayerFall(in OnPlayerFall context)
+    {
+        EventBus.Raise<OnFallStart>();
+    }
+
     #endregion
 }

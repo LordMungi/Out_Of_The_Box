@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b19f2a8b2a153b94192685c0a9aa216b
+guid: 3b4c9ad96c989ec4ba6be3a22e19fbf6
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -31,18 +31,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: jump_up
+      name: jump_charge_start
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0
-      lastFrame: 8
+      lastFrame: 6
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
