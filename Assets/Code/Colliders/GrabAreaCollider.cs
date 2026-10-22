@@ -8,8 +8,6 @@ public class GrabAreaCollider : MonoBehaviour
     {
         if (other.CompareTag("Grabbable"))
             EventBus.Raise<OnNearbyPartEntered>(other.GetComponent<RobotPart>());
-        if (other.CompareTag("Pushable"))
-            EventBus.Raise<OnPushableObjectEntered>(other.GetComponent<PushableObject>());
         if (other.CompareTag("ToyBox"))
             EventBus.Raise<OnToyboxEntered>();
     }
@@ -18,8 +16,6 @@ public class GrabAreaCollider : MonoBehaviour
     {
         if (other.CompareTag("Grabbable"))
             EventBus.Raise<OnNearbyPartExit>(other.GetComponent<RobotPart>());
-        if (other.CompareTag("Pushable"))
-            EventBus.Raise<OnPushableObjectExit>(other.GetComponent<PushableObject>());
         if (other.CompareTag("ToyBox"))
             EventBus.Raise<OnToyboxExit>();
     }

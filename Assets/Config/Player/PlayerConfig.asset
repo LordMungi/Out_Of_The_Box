@@ -28,3 +28,4 @@ MonoBehaviour:
   <bulletSpeed>k__BackingField: 30
   <fireRate>k__BackingField: 10
   <climbSpeed>k__BackingField: 5
+  <distanceToPushable>k__BackingField: 0.75
