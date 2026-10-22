@@ -152,6 +152,9 @@ public class MoveHandler : PlayerHandler
             _velocity.y -= fallSpeed * Time.deltaTime;
         }
         _wasGrounded = _controller.isGrounded;
+
+        if (_velocity.y < 0)
+            EventBus.Raise<OnPlayerFall>();
     }
 
     public void GlideFall(float maxGlideFallSpeed)

@@ -36,6 +36,9 @@ public class PlayerAnimator
         EventBus.Subscribe<OnPushBack>(PushBack);
         EventBus.Subscribe<OnStopPushing>(StopPush);
         EventBus.Subscribe<OnShoot>(Shoot);
+        EventBus.Subscribe<OnJumpStart>(JumpStart);
+        EventBus.Subscribe<OnFallStart>(FallStart);
+        EventBus.Subscribe<OnLanding>(Land);
     }
 
     ~PlayerAnimator()
@@ -47,6 +50,9 @@ public class PlayerAnimator
         EventBus.Unsubscribe<OnPushBack>(PushBack);
         EventBus.Unsubscribe<OnStopPushing>(StopPush);
         EventBus.Unsubscribe<OnShoot>(Shoot);
+        EventBus.Unsubscribe<OnJumpStart>(JumpStart);
+        EventBus.Unsubscribe<OnFallStart>(FallStart);
+        EventBus.Unsubscribe<OnLanding>(Land);
     }
 
     #region Methods
@@ -95,6 +101,18 @@ public class PlayerAnimator
     private void Shoot(in OnShoot context)
     {
         _animator.SetTrigger("ShootTrigger");
+    }
+    private void JumpStart(in OnJumpStart context)
+    {
+        ChangeLegState(LegState.JumpUp);
+    }
+    private void FallStart(in OnFallStart context)
+    {
+        ChangeLegState(LegState.JumpDown);
+    }
+    private void Land(in OnLanding context)
+    {
+        ChangeLegState(LegState.Idle);
     }
     #endregion
 }
