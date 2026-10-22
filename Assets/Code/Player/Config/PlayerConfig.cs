@@ -20,4 +20,5 @@ public class PlayerConfig : ScriptableObject
     [field: SerializeField] public float bulletSpeed { get; private set; }
     [field: SerializeField] public float fireRate { get; private set; }
     [field: SerializeField] public float climbSpeed { get; private set; }
+    [field: SerializeField] public float distanceToPushable { get; private set; }
 }

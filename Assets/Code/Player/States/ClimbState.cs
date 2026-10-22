@@ -13,7 +13,7 @@ public class ClimbState : PlayerState
         _playerInput.Player.Release.performed += StopClimb;
 
         _interactionsHandler.ClimbNearestObject();
-        _moveHandler.SetPosition(_interactionsHandler.GetOffsetedPosition(_moveHandler.Position));
+        _moveHandler.SetPosition(_interactionsHandler.GetClimbOffsetedPosition(_moveHandler.Position));
         _moveHandler.SetRotation(_interactionsHandler.GetClimbingRotation());
 
     }
