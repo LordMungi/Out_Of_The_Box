@@ -39,6 +39,7 @@ public class PlayerAnimator
         EventBus.Subscribe<OnJumpStart>(JumpStart);
         EventBus.Subscribe<OnFallStart>(FallStart);
         EventBus.Subscribe<OnLanding>(Land);
+        EventBus.Subscribe<OnChargeStart>(StartCharge);
     }
 
     ~PlayerAnimator()
@@ -53,6 +54,7 @@ public class PlayerAnimator
         EventBus.Unsubscribe<OnJumpStart>(JumpStart);
         EventBus.Unsubscribe<OnFallStart>(FallStart);
         EventBus.Unsubscribe<OnLanding>(Land);
+        EventBus.Unsubscribe<OnChargeStart>(StartCharge);
     }
 
     #region Methods
@@ -113,6 +115,10 @@ public class PlayerAnimator
     private void Land(in OnLanding context)
     {
         ChangeLegState(LegState.Idle);
+    }
+    private void StartCharge(in OnChargeStart context)
+    {
+        ChangeLegState(LegState.ChargeJump);
     }
     #endregion
 }
