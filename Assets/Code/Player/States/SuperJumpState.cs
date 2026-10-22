@@ -19,6 +19,9 @@ public class SuperJumpState : PlayerState
         _playerInput.Player.Jump.canceled += OnJumpReleased;
 
         EventBus.Subscribe<OnPlayerLanded>(OnPlayerLanded);
+        EventBus.Subscribe<OnPlayerFall>(OnPlayerFall);
+
+        EventBus.Raise<OnChargeStart>();
 
         _nextState = BehaviourFSM.State.Idle;
         _hasLeftGround = false;
@@ -28,8 +31,11 @@ public class SuperJumpState : PlayerState
     public override void Disable()
     {
         EventBus.Unsubscribe<OnPlayerLanded>(OnPlayerLanded);
+        EventBus.Unsubscribe<OnPlayerFall>(OnPlayerFall);
 
         _playerInput.Player.Jump.canceled -= OnJumpReleased;
+
+        EventBus.Raise<OnLanding>();
 
         base.Disable();
     } 
@@ -60,6 +66,7 @@ public class SuperJumpState : PlayerState
         {
             _moveHandler.PerformSuperJump(_playerConfig.superJumpMaxTime, _playerConfig.superJumpMaxForce, _playerConfig.superJumpMinForce);
             _hasLeftGround = true;
+            EventBus.Raise<OnJumpStart>();
         }
     }
     #endregion
@@ -69,6 +76,11 @@ public class SuperJumpState : PlayerState
     {
         if (_hasLeftGround) 
             EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
+    }
+    private void OnPlayerFall(in OnPlayerFall context)
+    {
+        if (_hasLeftGround)
+            EventBus.Raise<OnFallStart>();
     }
     #endregion
 }
