@@ -21,7 +21,11 @@ public class InteractionsHandler : PlayerHandler
     private List<ClimbableObject> _nearbyClimbableObjects = new List<ClimbableObject>();
     private bool _nearToybox = false;
 
+    private PushableObject _pushableObjectToGrab;
+
     private PushableObject _grabbedPushableObejct;
+    public PushableObject GrabbedPushableObject { get { return _grabbedPushableObejct; } set { } }
+
     private Vector2 _directionVectorPushableObject;
 
     private ClimbableObject _grabbedClimbableObject;
@@ -163,14 +167,27 @@ public class InteractionsHandler : PlayerHandler
         else
             newDirection = -nearestObject.transform.right; // Left
 
+        _grabbedPushableObejct.SetPlane(newDirection); 
+
         _directionVectorPushableObject = new Vector2(newDirection.x, newDirection.z);
+    }
+
+    public Vector3 GetPushOffsetedPosition(Vector3 position, float distance)
+    {
+        Debug.Log("CPP: " + _grabbedPushableObejct.Plane.ClosestPointOnPlane(position) + " Normal: " + -_grabbedPushableObejct.Plane.normal + " HS: " + _grabbedPushableObejct.GetHalfSize() + " Dist: " + distance);
+        Vector3 a = _grabbedPushableObejct.Plane.ClosestPointOnPlane(position) + -_grabbedPushableObejct.Plane.normal * (_grabbedPushableObejct.GetHalfSize() + distance);
+        return a;
+    }
+
+    public void SetPushableObjectAsChild()
+    {
+        _grabbedPushableObejct.transform.parent = _handParent;
     }
 
     private void Grab(PushableObject pushableObject)
     {
         _grabbedPushableObejct = pushableObject;
         _grabbedPushableObejct.Grab();
-        _grabbedPushableObejct.transform.parent = _handParent;
     }
 
     public void ReleasePushableObject()
@@ -203,7 +220,7 @@ public class InteractionsHandler : PlayerHandler
         return _grabbedClimbableObject.IsPlayerOnTop;
     }
 
-    public Vector3 GetOffsetedPosition(Vector3 position)
+    public Vector3 GetClimbOffsetedPosition(Vector3 position)
     {
         return _grabbedClimbableObject.WallPlane.ClosestPointOnPlane(position) + _grabbedClimbableObject.WallPlane.normal * _grabbedClimbableObject.OffsetFromWall;
     }

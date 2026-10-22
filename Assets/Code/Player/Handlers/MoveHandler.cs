@@ -69,7 +69,6 @@ public class MoveHandler : PlayerHandler
         if (!_hasTeleportedThisFrame)
             _controller.Move(_velocity * Time.deltaTime);
         _hasTeleportedThisFrame = false;
-
     }
 
     public void Move(Vector2 direction, float acceleration, float maxSpeed, float bodyRotationSpeed)
@@ -107,9 +106,6 @@ public class MoveHandler : PlayerHandler
     }
     public void MoveLinear(Vector3 delta)
     {
-        if (_hasTeleportedThisFrame)
-            return;
-
         _controller.Move(delta);
     }
 

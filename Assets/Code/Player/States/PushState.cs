@@ -13,6 +13,9 @@ public class PushState : PlayerState
     public override void Enable()
     {
         _interactionsHandler.GrabNearestPushableObject(_moveHandler.Position);
+        _moveHandler.SetPosition(_interactionsHandler.GetPushOffsetedPosition(_moveHandler.Position, _playerConfig.distanceToPushable));
+        _moveHandler.SetRotation(Quaternion.LookRotation(_interactionsHandler.GrabbedPushableObject.Plane.normal));
+        _interactionsHandler.SetPushableObjectAsChild();
 
         _playerInput.Player.Release.performed += OnObjectReleased;
         base.Enable();
