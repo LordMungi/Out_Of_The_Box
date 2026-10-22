@@ -7387,10 +7387,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292207574123605283, guid: a4eb61d07cd78a44eb8d4c77b9b211f6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12614,10 +12610,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: musicBox
       objectReference: {fileID: 0}
-    - target: {fileID: 7566333222751553413, guid: dfd31764fa3dc1540abf276a858bfa6c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13208,10 +13200,6 @@ PrefabInstance:
     - target: {fileID: 959767674487620140, guid: 9a6636f22d1c36342b166f4d2d902dea, type: 3}
       propertyPath: m_Name
       value: walkieTalkie
-      objectReference: {fileID: 0}
-    - target: {fileID: 3828969565006439094, guid: 9a6636f22d1c36342b166f4d2d902dea, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
