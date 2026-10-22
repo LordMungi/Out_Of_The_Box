@@ -97,12 +97,14 @@ public class InteractionsHandler : PlayerHandler
     #region Callbacks
     private void AddPushableObject(in OnPushableObjectEntered context)
     {
+        if (!_nearbyPushableObjects.Contains(context.pushableObject))
         _nearbyPushableObjects.Add(context.pushableObject);
     }
 
     private void RemovePushableObject(in OnPushableObjectExit context)
     {
-        _nearbyPushableObjects.Remove(context.pushableObject);
+        if (_nearbyPushableObjects.Contains(context.pushableObject))
+            _nearbyPushableObjects.Remove(context.pushableObject);
     }
 
     private void AddClimbableObject(in OnClimbableObjectEntered context)
