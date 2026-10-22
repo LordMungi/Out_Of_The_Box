@@ -161,13 +161,25 @@ public class InteractionsHandler : PlayerHandler
         float maxDot = Mathf.Max(dotFront, dotBack, dotRight, dotLeft);
 
         if (maxDot == dotFront)
-            newDirection = nearestObject.transform.forward; // Front 
+        {
+            nearestObject.currentDirection = PushableObject.Direction.Front;
+            newDirection = nearestObject.transform.forward;
+        }
         else if (maxDot == dotBack)
-            newDirection = -nearestObject.transform.forward; // Back
+        {
+            nearestObject.currentDirection = PushableObject.Direction.Back;
+            newDirection = -nearestObject.transform.forward;
+        }
         else if (maxDot == dotRight)
-            newDirection = nearestObject.transform.right; // Right
+        {
+            nearestObject.currentDirection = PushableObject.Direction.Right;
+            newDirection = nearestObject.transform.right; 
+        }
         else
-            newDirection = -nearestObject.transform.right; // Left
+        {
+            nearestObject.currentDirection = PushableObject.Direction.Left;
+            newDirection = -nearestObject.transform.right; 
+        }
 
         _grabbedPushableObejct.SetPlane(newDirection); 
 
@@ -176,9 +188,7 @@ public class InteractionsHandler : PlayerHandler
 
     public Vector3 GetPushOffsetedPosition(Vector3 position, float distance)
     {
-        Debug.Log("CPP: " + _grabbedPushableObejct.Plane.ClosestPointOnPlane(position) + " Normal: " + -_grabbedPushableObejct.Plane.normal + " HS: " + _grabbedPushableObejct.GetHalfSize() + " Dist: " + distance);
-        Vector3 a = _grabbedPushableObejct.Plane.ClosestPointOnPlane(position) + -_grabbedPushableObejct.Plane.normal * (_grabbedPushableObejct.GetHalfSize() + distance);
-        return a;
+        return _grabbedPushableObejct.Plane.ClosestPointOnPlane(position) + -_grabbedPushableObejct.Plane.normal * (_grabbedPushableObejct.GetHalfSize() + distance);
     }
 
     public void SetPushableObjectAsChild()

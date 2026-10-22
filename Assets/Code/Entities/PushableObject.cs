@@ -12,6 +12,15 @@ public class PushableObject : MonoBehaviour
 
     private Plane _plane;
     public Plane Plane { get { return _plane; } set { } }
+    public Direction currentDirection;
+
+    public enum Direction
+    {
+        Front,
+        Back,
+        Left,
+        Right
+    }
 
     private void Awake()
     {
@@ -51,6 +60,16 @@ public class PushableObject : MonoBehaviour
 
     public float GetHalfSize()
     {
-        return _mesh.mesh.bounds.extents.x * transform.lossyScale.x;
+        switch (currentDirection)
+        {
+            case Direction.Front:
+            case Direction.Back:
+                return _mesh.mesh.bounds.extents.z * transform.lossyScale.z;
+            case Direction.Left:
+            case Direction.Right:
+                return _mesh.mesh.bounds.extents.x * transform.lossyScale.x;
+            default:
+                return 0;
+        }
     }
 }
