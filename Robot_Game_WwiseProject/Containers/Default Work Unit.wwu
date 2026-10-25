@@ -17,7 +17,7 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="PASOS" ID="{81F6D5F0-F612-4950-8DE1-15E247152E69}" ShortID="949571164">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="7"/>
+								<Property Name="Color" Type="int16" Value="26"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -164,6 +164,10 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="DISPAROS" ID="{A215D85B-E477-4D59-AC43-2F6C89EFE824}" ShortID="1011001179">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -308,6 +312,10 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="MOV PISTOLA" ID="{3D947AB7-92F2-4527-A59F-30D190594383}" ShortID="12757754">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="3"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
