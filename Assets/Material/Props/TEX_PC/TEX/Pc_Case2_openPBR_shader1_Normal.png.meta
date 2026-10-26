@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Props/TEX_PC/TEX/Pc_Case2_openPBR_shader1_Normal.png.meta
 guid: d04aa03f69bf8a740b938007f067d0f4
+========
+guid: 255188d5137b61f408c025f7ea55e68e
+>>>>>>>> origin/environment:Assets/Scenes/Scene_Nightime/Lightmap-13_comp_dir.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

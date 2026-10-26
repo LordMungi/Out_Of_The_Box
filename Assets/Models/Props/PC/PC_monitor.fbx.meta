@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/Props/PC/PC_monitor.fbx.meta
 guid: 293dc58cde3a7d14d83d204601a5cbf8
+========
+guid: 905d394eed746e14499c3945c2d53f80
+>>>>>>>> origin/environment:Assets/Models/Props/Dresser/dresser5.fbx.meta
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []

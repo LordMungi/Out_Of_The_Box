@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Props/TEX_PC/TEX monitor/PC_monitor_standardSurface2_BaseMap.png.meta
 guid: e2fe914d12c9c0c45915c920f4558289
+========
+guid: bee1d2da49334f244b053b426ae48a32
+>>>>>>>> origin/environment:Assets/Material/Props/TEX_PC/TEX monitor/PC_monitor_openPBR_shader1_BaseMap.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

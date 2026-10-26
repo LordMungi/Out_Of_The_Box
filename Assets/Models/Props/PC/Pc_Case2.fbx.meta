@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/Props/PC/Pc_Case2.fbx.meta
 guid: 91fee8e8ab4e2d241be266240411ea62
+========
+guid: 1ab724fad2b3a76428c37e0413143d18
+>>>>>>>> origin/environment:Assets/Models/Props/Escritorio/Escritorio3.fbx.meta
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
