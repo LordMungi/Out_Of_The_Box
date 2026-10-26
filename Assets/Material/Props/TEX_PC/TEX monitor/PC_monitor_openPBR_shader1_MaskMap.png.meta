@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Props/TEX_PC/TEX monitor/PC_monitor_openPBR_shader1_MaskMap.png.meta
 guid: 1baa289bc58a1e442b22e7866469dde2
+========
+guid: 15884e2b52775b24593f315ef614e02f
+>>>>>>>> origin/environment:Assets/Scenes/Scene_Nightime/Lightmap-14_comp_light.exr.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

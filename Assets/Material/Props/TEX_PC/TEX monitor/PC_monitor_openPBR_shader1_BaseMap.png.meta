@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Props/TEX_PC/TEX monitor/PC_monitor_openPBR_shader1_BaseMap.png.meta
 guid: bee1d2da49334f244b053b426ae48a32
+========
+guid: db9abf417f7a3684183c3d8a016164b1
+>>>>>>>> origin/environment:Assets/Scenes/Scene_Nightime/Lightmap-12_comp_light.exr.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

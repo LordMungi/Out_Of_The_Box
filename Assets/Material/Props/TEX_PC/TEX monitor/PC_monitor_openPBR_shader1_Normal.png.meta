@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Props/TEX_PC/TEX monitor/PC_monitor_openPBR_shader1_Normal.png.meta
 guid: 60c49caae6d5746409cf91e1a7800f0a
+========
+guid: 3356149d896036443b861403aa5aace2
+>>>>>>>> origin/environment:Assets/Models/Textures/Escritorio/Escritorio3_openPBR_shader1_Normal.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

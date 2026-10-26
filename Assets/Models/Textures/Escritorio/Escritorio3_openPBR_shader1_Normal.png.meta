@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/Textures/Escritorio/Escritorio3_openPBR_shader1_Normal.png.meta
 guid: 3356149d896036443b861403aa5aace2
+========
+guid: d14dcd470e0904b45834e99b9f170e7d
+>>>>>>>> origin/environment:Assets/Scenes/Scene_Nightime/Lightmap-12_comp_dir.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
