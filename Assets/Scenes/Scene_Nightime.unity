@@ -5138,6 +5138,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.524388
@@ -5193,6 +5197,26 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_Name
       value: dresser5 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402384838310782854, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757871253022576053, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596705613334294762, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9262,6 +9286,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.524388
@@ -9317,6 +9345,26 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_Name
       value: dresser5 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402384838310782854, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757871253022576053, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596705613334294762, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11307,6 +11355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.524388
@@ -11362,6 +11414,26 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_Name
       value: dresser5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402384838310782854, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7757871253022576053, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596705613334294762, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
