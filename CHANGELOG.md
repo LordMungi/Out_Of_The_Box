@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.7.0] - 2026-10-27
+
+### New
+
+- Window rail level with new level design and collisions.
+- New desk model and room props with textures.
+
+### Changes
+
+- Improved baked lighting across the environment.
+- Push animations now loop.
+- Parts that were missing are now shown.
+
+### Bug Fixes
+
+- Corrected jump and push animations.
+- Fixed errors from the environment merge.
+
 ## [0.6.1] - 2026-10-22
 
 ### New
