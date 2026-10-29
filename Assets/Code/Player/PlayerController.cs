@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        AkUnitySoundEngine.PostEvent(AK.EVENTS.PLAY_595465__SILICONESOUND__BOING_SOUND, gameObject);
+        //AkUnitySoundEngine.PostEvent(AK.EVENTS.PLAY_595465__SILICONESOUND__BOING_SOUND, gameObject);
         EventBus.Raise<OnPlayerInstantiated>(_playerData);
     }
 
