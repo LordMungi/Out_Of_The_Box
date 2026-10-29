@@ -3,35 +3,470 @@
 	<Containers>
 		<WorkUnit Name="Default Work Unit" ID="{AB119826-8BF1-47B8-846D-6E5945042E5D}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="595465__siliconesound__boing-sound" ID="{530BE32E-EBB9-46B2-98DA-8349CBFA30E5}" ShortID="887249395">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B75181D1-940F-4D34-A9FF-0CEE469901A5}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FB9A160C-F810-4133-B67C-348F9E0D615E}"/>
-						</Reference>
-					</ReferenceList>
+				<Folder Name="AMB" ID="{D4DD520E-1D7F-4D14-922A-486D51B98AA9}" ShortID="834813276">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+				<Folder Name="ROBOT" ID="{C30A7F24-DF1E-4561-B8D8-0D70E15FEB64}" ShortID="803341897">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="11"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
-						<AudioFileSource Name="595465__siliconesound__boing-sound" ID="{EBBB7A7D-F4CC-4836-9422-847E6BC5FFCD}">
-							<Language>SFX</Language>
-							<AudioFile>595465__siliconesound__boing-sound.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="699928076"/>
-							</MediaIDList>
-						</AudioFileSource>
-						<AudioFileSource Name="595465__siliconesound__boing-sound" ID="{B37F0F30-F8D2-4597-BD69-F007F4234D76}">
-							<Language>SFX</Language>
-							<AudioFile>595465__siliconesound__boing-sound.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="699928076"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<RandomSequenceContainer Name="PASOS" ID="{81F6D5F0-F612-4950-8DE1-15E247152E69}" ShortID="949571164">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FOL_PASOS" ID="{00ECEC91-FB23-45DA-83C0-ABDB1FAABA7A}" ShortID="429743409">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FOL_PASOS" ID="{4430A1E9-456D-4FB0-AF53-43E57AC9F5A3}">
+											<Language>SFX</Language>
+											<AudioFile>FOL_PASOS.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="836392765"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FOL_PASOS" ID="{4430A1E9-456D-4FB0-AF53-43E57AC9F5A3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FOL_PASOS_1" ID="{7519F537-CCFA-4441-8214-1683E43D63A4}" ShortID="1065833222">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FOL_PASOS_1" ID="{2432BCF4-4468-42F3-AA11-1D1B9FC1D45A}">
+											<Language>SFX</Language>
+											<AudioFile>FOL_PASOS_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="264825836"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FOL_PASOS_1" ID="{2432BCF4-4468-42F3-AA11-1D1B9FC1D45A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FOL_PASOS_2" ID="{8DD914C5-7301-448F-B811-7828E07DD9C0}" ShortID="708797784">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FOL_PASOS_2" ID="{D4FF7EEB-6B07-4521-8AB9-08CA13E0A9C9}">
+											<Language>SFX</Language>
+											<AudioFile>FOL_PASOS_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="286107648"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FOL_PASOS_2" ID="{D4FF7EEB-6B07-4521-8AB9-08CA13E0A9C9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FOL_PASOS_3" ID="{BE908E17-A52D-4B82-9CAA-389F3BE9A5A1}" ShortID="274902890">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FOL_PASOS_3" ID="{CFEFAEC9-A2C0-41DB-BD99-FB99AA417658}">
+											<Language>SFX</Language>
+											<AudioFile>FOL_PASOS_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="100447479"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FOL_PASOS_3" ID="{CFEFAEC9-A2C0-41DB-BD99-FB99AA417658}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FOL_PASOS_4" ID="{E20B44FD-9C88-42FF-8BFE-B83A4E5F0116}" ShortID="812300550">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FOL_PASOS_4" ID="{CF2D8151-B7EE-4088-B2CA-2AE929BDAE19}">
+											<Language>SFX</Language>
+											<AudioFile>FOL_PASOS_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="593481390"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FOL_PASOS_4" ID="{CF2D8151-B7EE-4088-B2CA-2AE929BDAE19}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FOL_PASOS_5" ID="{CAB5BE9D-F0CC-4784-9B2A-9D10FFDAAB3F}" ShortID="1018112019">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FOL_PASOS_5" ID="{72B49340-4AA9-4F37-A2FE-36B1A6F19038}">
+											<Language>SFX</Language>
+											<AudioFile>FOL_PASOS_5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="300593514"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FOL_PASOS_5" ID="{72B49340-4AA9-4F37-A2FE-36B1A6F19038}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="DISPAROS" ID="{A215D85B-E477-4D59-AC43-2F6C89EFE824}" ShortID="1011001179">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FX_DISPARO" ID="{4FB658DF-8F7F-4AE0-9472-94096553EB1B}" ShortID="636243137">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_DISPARO" ID="{BD6DBD60-D7D1-410A-AD7E-78221C5F4731}">
+											<Language>SFX</Language>
+											<AudioFile>FX_DISPARO.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="647090932"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_DISPARO" ID="{BD6DBD60-D7D1-410A-AD7E-78221C5F4731}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_DISPARO_1" ID="{21ED771F-9137-4A6E-AA23-C60DFCA3C097}" ShortID="244611847">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_DISPARO_1" ID="{23CEAB1D-4204-4E1C-B148-1C82E50F53BB}">
+											<Language>SFX</Language>
+											<AudioFile>FX_DISPARO_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="949959204"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_DISPARO_1" ID="{23CEAB1D-4204-4E1C-B148-1C82E50F53BB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_DISPARO_2" ID="{B1C7F9FF-361F-4F0B-A017-E7D313D12AD3}" ShortID="178436160">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_DISPARO_2" ID="{B671F7D8-1C2C-47C5-980F-D86AB013173E}">
+											<Language>SFX</Language>
+											<AudioFile>FX_DISPARO_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="770182044"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_DISPARO_2" ID="{B671F7D8-1C2C-47C5-980F-D86AB013173E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_DISPARO_3" ID="{525CD43D-0DB2-4487-9EE9-D6F9884154C7}" ShortID="946464214">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_DISPARO_3" ID="{A37B81E9-F5B2-498D-AB47-7F5E1475357E}">
+											<Language>SFX</Language>
+											<AudioFile>FX_DISPARO_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="853773697"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_DISPARO_3" ID="{A37B81E9-F5B2-498D-AB47-7F5E1475357E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_DISPARO_4" ID="{943914A7-2D17-4200-988F-A0DB9247FA41}" ShortID="256461608">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_DISPARO_4" ID="{744E461E-BF20-429C-A607-D68AC62B4B58}">
+											<Language>SFX</Language>
+											<AudioFile>FX_DISPARO_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="279371830"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_DISPARO_4" ID="{744E461E-BF20-429C-A607-D68AC62B4B58}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_DISPARO_5" ID="{7012A25A-AA99-4002-8654-5518DC9C4EF8}" ShortID="66500048">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_DISPARO_5" ID="{DDA2748F-6164-4B47-B914-24E0B844CCA3}">
+											<Language>SFX</Language>
+											<AudioFile>FX_DISPARO_5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="22448696"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_DISPARO_5" ID="{DDA2748F-6164-4B47-B914-24E0B844CCA3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="MOV PISTOLA" ID="{3D947AB7-92F2-4527-A59F-30D190594383}" ShortID="12757754">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="3"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FX_PRE DISPARO" ID="{710FA42E-F5A5-43B9-BA32-D867929D338A}" ShortID="556544903">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_PRE DISPARO" ID="{50D8DAA5-511C-4745-8FFF-61260D68E885}">
+											<Language>SFX</Language>
+											<AudioFile>FX_PRE DISPARO.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="352988948"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_PRE DISPARO" ID="{50D8DAA5-511C-4745-8FFF-61260D68E885}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_PRE DISPARO_1" ID="{0049FA2F-0FD2-4881-9420-B45363B5ABEB}" ShortID="702722759">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_PRE DISPARO_1" ID="{FBF9025A-F0E7-4DFA-A05A-9543B1D7F6CF}">
+											<Language>SFX</Language>
+											<AudioFile>FX_PRE DISPARO_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="24207428"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_PRE DISPARO_1" ID="{FBF9025A-F0E7-4DFA-A05A-9543B1D7F6CF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_PRE DISPARO_2" ID="{44578AAD-DC03-49B6-83FD-12FC870B7B7B}" ShortID="6184687">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_PRE DISPARO_2" ID="{73D91523-F442-4B80-9F33-476ED32E041C}">
+											<Language>SFX</Language>
+											<AudioFile>FX_PRE DISPARO_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="667391895"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_PRE DISPARO_2" ID="{73D91523-F442-4B80-9F33-476ED32E041C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_PRE DISPARO_3" ID="{9927C2E1-1FC0-46AE-A72A-1FB22A258938}" ShortID="701386219">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_PRE DISPARO_3" ID="{9BD165A5-74FE-40A9-99DF-D6D6B06F0BFE}">
+											<Language>SFX</Language>
+											<AudioFile>FX_PRE DISPARO_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="757005049"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_PRE DISPARO_3" ID="{9BD165A5-74FE-40A9-99DF-D6D6B06F0BFE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_PRE DISPARO_4" ID="{E3F3E118-609E-4E54-B2FD-9D3F0B888FBB}" ShortID="564581615">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_PRE DISPARO_4" ID="{F5871BA9-C27B-4354-AA37-82812CD1A31C}">
+											<Language>SFX</Language>
+											<AudioFile>FX_PRE DISPARO_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="565298649"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_PRE DISPARO_4" ID="{F5871BA9-C27B-4354-AA37-82812CD1A31C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_PRE DISPARO_5" ID="{042A86A2-3AB1-485A-8791-BEC6D05703E0}" ShortID="583704952">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_PRE DISPARO_5" ID="{BFF9BF9E-7C62-49D7-82AB-34229685791C}">
+											<Language>SFX</Language>
+											<AudioFile>FX_PRE DISPARO_5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="162490336"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_PRE DISPARO_5" ID="{BFF9BF9E-7C62-49D7-82AB-34229685791C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="595465__siliconesound__boing-sound" ID="{B37F0F30-F8D2-4597-BD69-F007F4234D76}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</Folder>
+				<Folder Name="FX" ID="{8788257C-F636-4492-8790-5AB70FDBD46A}" ShortID="554781098">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>
