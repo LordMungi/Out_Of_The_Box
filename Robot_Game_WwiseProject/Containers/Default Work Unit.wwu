@@ -151,7 +151,7 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="PASOS" ID="{81F6D5F0-F612-4950-8DE1-15E247152E69}" ShortID="949571164">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="Color" Type="int16" Value="11"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -445,9 +445,9 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="MOV PISTOLA" ID="{3D947AB7-92F2-4527-A59F-30D190594383}" ShortID="12757754">
+						<RandomSequenceContainer Name="MOV BRAZOS" ID="{3D947AB7-92F2-4527-A59F-30D190594383}" ShortID="12757754">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="3"/>
+								<Property Name="Color" Type="int16" Value="11"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -593,6 +593,128 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="AGARRA OBJETO" ID="{123F811C-355B-434D-B8EC-FB0475762BB3}" ShortID="489605063">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FX_AGARRA OBJETO" ID="{99ED1BF8-FD8D-46D8-9F36-B8FAC8ED3AB3}" ShortID="228885777">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_AGARRA OBJETO" ID="{9D2784BA-C99F-4461-9669-37D93E9DFA29}">
+											<Language>SFX</Language>
+											<AudioFile>FX_AGARRA OBJETO.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="885897334"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_AGARRA OBJETO" ID="{9D2784BA-C99F-4461-9669-37D93E9DFA29}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_AGARRA OBJETO_1" ID="{6C156074-75C4-4D20-9B35-E27872567CCA}" ShortID="771138296">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_AGARRA OBJETO_1" ID="{FF85C006-DB40-473E-8290-BE4C57DEB16A}">
+											<Language>SFX</Language>
+											<AudioFile>FX_AGARRA OBJETO_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="273451409"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_AGARRA OBJETO_1" ID="{FF85C006-DB40-473E-8290-BE4C57DEB16A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_AGARRA OBJETO_2" ID="{34B1146F-5CE8-49C0-B34E-801DC72C143D}" ShortID="39156563">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_AGARRA OBJETO_2" ID="{A88CEA50-BD17-466F-982E-7D63B2C392D1}">
+											<Language>SFX</Language>
+											<AudioFile>FX_AGARRA OBJETO_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="451352192"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_AGARRA OBJETO_2" ID="{A88CEA50-BD17-466F-982E-7D63B2C392D1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_AGARRA OBJETO_3" ID="{2E0E10D2-DE06-48F9-B1F6-7B6CE15CF280}" ShortID="120473497">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_AGARRA OBJETO_3" ID="{46752755-32D5-4B05-A4D0-CE432A0D5875}">
+											<Language>SFX</Language>
+											<AudioFile>FX_AGARRA OBJETO_3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="360520813"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_AGARRA OBJETO_3" ID="{46752755-32D5-4B05-A4D0-CE432A0D5875}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_AGARRA OBJETO_4" ID="{F4314151-0EE4-4918-A025-F3DF0D9E5975}" ShortID="167680218">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_AGARRA OBJETO_4" ID="{AC884255-1F89-413A-B6B7-224733340C78}">
+											<Language>SFX</Language>
+											<AudioFile>FX_AGARRA OBJETO_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="133525108"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_AGARRA OBJETO_4" ID="{AC884255-1F89-413A-B6B7-224733340C78}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="FX" ID="{8788257C-F636-4492-8790-5AB70FDBD46A}" ShortID="554781098">
@@ -701,6 +823,271 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="ARRASTRES" ID="{7BDBDF47-83D2-43F8-9287-EBFCD3623769}" ShortID="675428261">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FX_ARRASTRE" ID="{5D0C9D22-AA9F-4529-A9B5-7D5129C9ED65}" ShortID="533031823">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE" ID="{0BEEFAF3-9090-4154-B2CB-29EB63E1BFB4}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="345553669"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE" ID="{0BEEFAF3-9090-4154-B2CB-29EB63E1BFB4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_1" ID="{5C8AFEE1-017E-495F-89A9-6553AB985EAF}" ShortID="1016065569">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_1" ID="{268CA8A5-EF2A-46E8-8FCE-883EDF7076C5}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="165343145"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_1" ID="{268CA8A5-EF2A-46E8-8FCE-883EDF7076C5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_2" ID="{DCD13F12-1ADB-4D46-9354-3717201B224E}" ShortID="272544662">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_2" ID="{7CDC7A76-DA55-45BC-9860-6DA57B2420CE}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1029014914"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_2" ID="{7CDC7A76-DA55-45BC-9860-6DA57B2420CE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_4" ID="{D908EA8A-9975-447D-9755-704E7C0F2BA9}" ShortID="864169803">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_4" ID="{EA0685EF-04AD-40F4-BA0E-256ED3C9C997}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="469228686"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_4" ID="{EA0685EF-04AD-40F4-BA0E-256ED3C9C997}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_5" ID="{90FC8628-48B4-43BC-8A57-BD07FF0D0B47}" ShortID="440813213">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_5" ID="{15260F3C-DA7F-41A9-83A9-DB09EA5D0AB0}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="431533586"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_5" ID="{15260F3C-DA7F-41A9-83A9-DB09EA5D0AB0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_6" ID="{C84656B4-039E-4AD9-A00B-88D31E04C738}" ShortID="289513957">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_6" ID="{E4383E0C-554F-43F3-AF90-97CCF7800632}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_6.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1046216672"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_6" ID="{E4383E0C-554F-43F3-AF90-97CCF7800632}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_7" ID="{1A1D2C11-148C-43E0-8F1A-CA06178D987E}" ShortID="464495692">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_7" ID="{0770158C-87D2-4A41-B58D-AA2A1F7DA93E}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_7.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="741132120"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_7" ID="{0770158C-87D2-4A41-B58D-AA2A1F7DA93E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_ARRASTRE_LARGO" ID="{D6FCA905-5D62-4D43-9F05-C9C024881E81}" ShortID="323701315">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_ARRASTRE_LARGO" ID="{3CF86162-3460-41FA-9157-EBADC7D4499E}">
+											<Language>SFX</Language>
+											<AudioFile>FX_ARRASTRE_LARGO.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="805554083"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_ARRASTRE_LARGO" ID="{3CF86162-3460-41FA-9157-EBADC7D4499E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Folder Name="UI" ID="{AFE468A4-D5B6-426C-BA3C-3BC5A63B27DE}" ShortID="77353839">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="20"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Sound Name="FX_CLICK PARA ATRAS" ID="{4995D8AB-8581-418E-87AB-18BD294CBAE7}" ShortID="676496527">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_CLICK PARA ATRAS" ID="{DB21B1A9-A7EA-4B4F-A1F3-59982867541B}">
+											<Language>SFX</Language>
+											<AudioFile>FX_CLICK PARA ATRAS.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="676832982"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_CLICK PARA ATRAS" ID="{DB21B1A9-A7EA-4B4F-A1F3-59982867541B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_CLICK POSITIVO" ID="{1D066401-58F8-44E9-930E-912B10E2A2D6}" ShortID="365542888">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_CLICK POSITIVO" ID="{0F9F82B3-7FC4-41F0-80FC-0FDA9F55E766}">
+											<Language>SFX</Language>
+											<AudioFile>FX_CLICK POSITIVO.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="387875356"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_CLICK POSITIVO" ID="{0F9F82B3-7FC4-41F0-80FC-0FDA9F55E766}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_CLICK START GAME" ID="{697DEF94-87A5-40F9-844C-6B844BCA70FB}" ShortID="107933513">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_CLICK START GAME" ID="{E99416E3-73B8-40C2-B767-D74B47ACC2B6}">
+											<Language>SFX</Language>
+											<AudioFile>FX_CLICK START GAME.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1052570627"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_CLICK START GAME" ID="{E99416E3-73B8-40C2-B767-D74B47ACC2B6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
