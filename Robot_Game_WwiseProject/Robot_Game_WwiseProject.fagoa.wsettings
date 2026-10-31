@@ -5,7 +5,27 @@
 			<PropertyList>
 				<Property Name="AudioFileImporter\x64_FilesToImport" Type="string" Value="AAAAAAAAAAA="/>
 				<Property Name="AudioFilesImporter\DestinationFolder" Type="string" Value="C:\Users\fagoa\Desktop\IMAGE CAMPUS\ROBOTIN\Out_Of_The_Box\Robot_Game_WwiseProject\Originals\SFX\"/>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="D:\IMAGE CAMPSU\AUDIO\ROBOTIN\AUDIO\ELEMENTOS INTERACCION\"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="D:\IMAGE CAMPSU\AUDIO\ROBOTIN\AUDIO\VOZ\"/>
+				<Property Name="Event Action List\{009CE395-05CF-4A67-A1BE-0D0D66FE4F05}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{0EA14118-43D5-4D92-8163-54690016BED5}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{0F886E1F-750A-4569-90F5-8F902BBF66F0}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{1A335150-10DF-426F-AB9A-E077E33C02F4}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{1B25D575-9BD3-4637-8109-E660576D4DEB}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{22F03EC0-1DBD-47F3-8F9D-C859F322CBEF}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{4D2F4A83-88E1-4607-97AF-26D12A753B36}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{55476F90-4FC5-485E-81AE-F6EDBAC2B862}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{58604D5E-633A-4641-A2B1-A69B9FCF3301}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{604F560E-A40D-4CE8-A5B9-25102227E3CF}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{6B776127-9840-499E-A71B-45F89D5A0967}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{86AE7E80-B276-4FA6-8BA4-6B68A102A3BB}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{A38F765A-E6C9-4D98-BC7C-5A99CBC01C86}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{B136E0FF-58D8-48C1-91F7-5AD9C1B12BD3}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{C21EE019-90F1-422A-93A3-9970A8191AA8}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{C75C8D06-495F-4D11-8AA0-4844C8BDA792}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{E4B47616-CC43-4796-97FF-3A96DE72BF0F}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F3C5A9C8-FB39-4653-A050-841C1278235C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F825D256-DB1F-4F9A-AE6D-8B3F2D99F553}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F8A227F3-3734-492A-85B6-C3C68A361553}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -24,6 +44,8 @@
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
 				<Property Name="General\LatestPlatform" Type="string" Value="Windows"/>
 				<Property Name="General\SourceControlPluginID" Type="string" Value="{C403A906-0C19-4ED5-808E-748707065301}"/>
+				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value=""/>
+				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value=""/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
 				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="USDCuYPbUkihPB0Agzv0ogEA1uuYAQAAey019f5/AAAAANbTmAEAAAAAAAAAAAAA4HyL5JgBAAAAAAAAAAAAANC71uuYAQAAg+pcqf1/AACYVsTVmAEAAAAAAAAAAAAAmFbE1ZgBAABAlDSp/X8AAAYAAAAAAAAAAAAAAAAAAAABAAAAmAEAAOB8i+SYAQAA0LvW6yIp8ZcvDBRPvQRJ8C9OiQ0BANbrmAEAAHstNfX+fwAAAADW05gBAAAAAAAAAAAAAOB8i+SYAQAAAAAAAAAAAADQu9brmAEAAIPqXKn9fwAAmFbE1ZgBAAAAAAAAAAAAAJhWxNWYAQAAQJQ0qf1/AAAGAAAAAAAAAAAAAAAAAAAAAQAAAJgBAADgfIvkmAEAANC71us="/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>

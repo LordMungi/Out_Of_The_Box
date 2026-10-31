@@ -31,7 +31,7 @@
 								<ActiveSource Name="AMB_ABAJO CAMA" ID="{DF166D88-BBCA-41AF-B7E9-2A8637DFA584}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="AMB_COMPU " ID="{ACC76CEA-C382-4778-A7FB-0C483AD5BA14}" ShortID="404544777">
+						<Sound Name="AMB_COMPU" ID="{ACC76CEA-C382-4778-A7FB-0C483AD5BA14}" ShortID="404544777">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -41,7 +41,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="AMB_COMPU " ID="{39CB0289-0829-4608-8F70-0523FCFC78F3}">
+								<AudioFileSource Name="AMB_COMPU" ID="{39CB0289-0829-4608-8F70-0523FCFC78F3}">
 									<Language>SFX</Language>
 									<AudioFile>AMB_COMPU .wav</AudioFile>
 									<MediaIDList>
@@ -50,7 +50,7 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="AMB_COMPU " ID="{39CB0289-0829-4608-8F70-0523FCFC78F3}" Platform="Linked"/>
+								<ActiveSource Name="AMB_COMPU" ID="{39CB0289-0829-4608-8F70-0523FCFC78F3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="AMB_ESCRITORIO" ID="{B27945A4-85CD-4FE8-927A-9377A9724C7C}" ShortID="175687274">
@@ -603,7 +603,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="FX_AGARRA OBJETO" ID="{99ED1BF8-FD8D-46D8-9F36-B8FAC8ED3AB3}" ShortID="228885777">
+								<Sound Name="FX_AGARRA OBJETO" ID="{1B07408B-2B56-48F4-B2AD-31343B80496D}" ShortID="144774418">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -613,7 +613,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="FX_AGARRA OBJETO" ID="{9D2784BA-C99F-4461-9669-37D93E9DFA29}">
+										<AudioFileSource Name="FX_AGARRA OBJETO" ID="{398E60FB-5E51-416A-ACB1-26D7F446A8FC}">
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO.wav</AudioFile>
 											<MediaIDList>
@@ -622,10 +622,10 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="FX_AGARRA OBJETO" ID="{9D2784BA-C99F-4461-9669-37D93E9DFA29}" Platform="Linked"/>
+										<ActiveSource Name="FX_AGARRA OBJETO" ID="{398E60FB-5E51-416A-ACB1-26D7F446A8FC}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="FX_AGARRA OBJETO_1" ID="{6C156074-75C4-4D20-9B35-E27872567CCA}" ShortID="771138296">
+								<Sound Name="FX_AGARRA OBJETO_1" ID="{6D10D1CC-DA97-48B8-B513-94296F2047B4}" ShortID="304815936">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -635,7 +635,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="FX_AGARRA OBJETO_1" ID="{FF85C006-DB40-473E-8290-BE4C57DEB16A}">
+										<AudioFileSource Name="FX_AGARRA OBJETO_1" ID="{01D57008-A0D8-4C3B-BC10-0B1F465C8A79}">
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_1.wav</AudioFile>
 											<MediaIDList>
@@ -644,10 +644,10 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="FX_AGARRA OBJETO_1" ID="{FF85C006-DB40-473E-8290-BE4C57DEB16A}" Platform="Linked"/>
+										<ActiveSource Name="FX_AGARRA OBJETO_1" ID="{01D57008-A0D8-4C3B-BC10-0B1F465C8A79}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="FX_AGARRA OBJETO_2" ID="{34B1146F-5CE8-49C0-B34E-801DC72C143D}" ShortID="39156563">
+								<Sound Name="FX_AGARRA OBJETO_2" ID="{18D06D9B-6222-4738-B199-8D9422E23A93}" ShortID="694168987">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -657,7 +657,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="FX_AGARRA OBJETO_2" ID="{A88CEA50-BD17-466F-982E-7D63B2C392D1}">
+										<AudioFileSource Name="FX_AGARRA OBJETO_2" ID="{54AEEA6C-D154-47D0-A47B-79C756DB4E52}">
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_2.wav</AudioFile>
 											<MediaIDList>
@@ -666,10 +666,10 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="FX_AGARRA OBJETO_2" ID="{A88CEA50-BD17-466F-982E-7D63B2C392D1}" Platform="Linked"/>
+										<ActiveSource Name="FX_AGARRA OBJETO_2" ID="{54AEEA6C-D154-47D0-A47B-79C756DB4E52}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="FX_AGARRA OBJETO_3" ID="{2E0E10D2-DE06-48F9-B1F6-7B6CE15CF280}" ShortID="120473497">
+								<Sound Name="FX_AGARRA OBJETO_3" ID="{675AEFEC-C639-44F4-A307-A899B9905AFF}" ShortID="275501517">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -679,7 +679,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="FX_AGARRA OBJETO_3" ID="{46752755-32D5-4B05-A4D0-CE432A0D5875}">
+										<AudioFileSource Name="FX_AGARRA OBJETO_3" ID="{500F4338-24AD-4E54-9FA5-2E52F4D3BAA4}">
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_3.wav</AudioFile>
 											<MediaIDList>
@@ -688,10 +688,10 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="FX_AGARRA OBJETO_3" ID="{46752755-32D5-4B05-A4D0-CE432A0D5875}" Platform="Linked"/>
+										<ActiveSource Name="FX_AGARRA OBJETO_3" ID="{500F4338-24AD-4E54-9FA5-2E52F4D3BAA4}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="FX_AGARRA OBJETO_4" ID="{F4314151-0EE4-4918-A025-F3DF0D9E5975}" ShortID="167680218">
+								<Sound Name="FX_AGARRA OBJETO_4" ID="{53E7F460-4BCA-4B7C-8420-C0A822021A0A}" ShortID="585881814">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -701,7 +701,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="FX_AGARRA OBJETO_4" ID="{AC884255-1F89-413A-B6B7-224733340C78}">
+										<AudioFileSource Name="FX_AGARRA OBJETO_4" ID="{5B5105E8-16DB-4747-8D97-D65DAB222CF4}">
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_4.wav</AudioFile>
 											<MediaIDList>
@@ -710,7 +710,111 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="FX_AGARRA OBJETO_4" ID="{AC884255-1F89-413A-B6B7-224733340C78}" Platform="Linked"/>
+										<ActiveSource Name="FX_AGARRA OBJETO_4" ID="{5B5105E8-16DB-4747-8D97-D65DAB222CF4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="VOZ" ID="{270B2CA5-294B-4FBE-8F66-DA5F94F9512D}" ShortID="204572281">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="DIAL 1" ID="{A8A6627E-974C-408C-8B6E-C782986D6331}" ShortID="140742976">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DIAL 1" ID="{A81897DE-E63E-46CE-BEE6-BA594D3DB28D}">
+											<Language>SFX</Language>
+											<AudioFile>DIAL 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="222147873"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DIAL 1" ID="{A81897DE-E63E-46CE-BEE6-BA594D3DB28D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DIAL 2" ID="{630AC32B-1212-4707-BF71-F24B7009B128}" ShortID="403610719">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DIAL 2" ID="{376B4AD9-C40E-4EAC-83AD-434A99A08132}">
+											<Language>SFX</Language>
+											<AudioFile>DIAL 2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1050672599"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DIAL 2" ID="{376B4AD9-C40E-4EAC-83AD-434A99A08132}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DIAL 3" ID="{805BECDF-F9CA-491F-A188-813EF8C22DEB}" ShortID="581302376">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DIAL 3" ID="{DD391AF6-20EE-4EE8-8F95-1BD0015B0A13}">
+											<Language>SFX</Language>
+											<AudioFile>DIAL 3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="14027760"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DIAL 3" ID="{DD391AF6-20EE-4EE8-8F95-1BD0015B0A13}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DIAL 4" ID="{C0F40986-9CE7-4454-829C-A34CF5E66B9B}" ShortID="9343291">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DIAL 4" ID="{0555C4CB-EDF0-4E26-A083-3A4561D44DF2}">
+											<Language>SFX</Language>
+											<AudioFile>DIAL 4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="192896559"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DIAL 4" ID="{0555C4CB-EDF0-4E26-A083-3A4561D44DF2}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -1089,6 +1193,12 @@
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
+				</Folder>
+				<Folder Name="MUSICA" ID="{D2583F46-3830-4467-8B5F-FBDF7D855070}" ShortID="826977556">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 				</Folder>
 			</ChildrenList>
 		</WorkUnit>

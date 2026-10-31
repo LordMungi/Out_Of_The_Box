@@ -1,6 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{E3FC0BF0-2AF0-490E-8218-B6EB64962B4B}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{E3FC0BF0-2AF0-490E-8218-B6EB64962B4B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{E3FC0BF0-2AF0-490E-8218-B6EB64962B4B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="AMBIENTES" ID="{067830E4-0ABD-4604-976A-2A8C08541F31}" ShortID="102820841">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Play_AmbienteCAMA" ID="{C75C8D06-495F-4D11-8AA0-4844C8BDA792}">
+							<ChildrenList>
+								<Action Name="" ID="{37F1D68E-F81C-41CF-B7C6-4FF244E1B64E}" ShortID="553228415">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_ABAJO CAMA" ID="{CD184DD5-0DCB-4D2F-B1AF-DC4A90D469B8}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AmbienteGRAL" ID="{604F560E-A40D-4CE8-A5B9-25102227E3CF}">
+							<ChildrenList>
+								<Action Name="" ID="{7A501990-29CB-4F80-A1AA-4E285354DED6}" ShortID="686763114">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_MAIN" ID="{0B1FAFE2-7D9C-45C5-9A8C-2B2390D9B8A0}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{AB06BC4D-9DAE-4B61-A4DF-6B0477F9CC0B}" ShortID="415438398">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_ABAJO CAMA" ID="{CD184DD5-0DCB-4D2F-B1AF-DC4A90D469B8}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AmbienteVentanaLejos" ID="{58604D5E-633A-4641-A2B1-A69B9FCF3301}">
+							<ChildrenList>
+								<Action Name="" ID="{8088AED6-E735-478B-8986-F07F331C7075}" ShortID="795847108">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_VENTANA LEJANA" ID="{D33DE41F-75C0-4388-A440-A5B8BADF4999}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AmbienteVentanaCerca" ID="{1B25D575-9BD3-4637-8109-E660576D4DEB}">
+							<ChildrenList>
+								<Action Name="" ID="{6A55BF3F-D934-40AD-A4DF-93E8659DDEE4}" ShortID="1063169766">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_VENTANA MAIN" ID="{805FFC1C-1914-48FF-8F69-7F8B36FE2EF2}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AmbienteESCRITORIO" ID="{009CE395-05CF-4A67-A1BE-0D0D66FE4F05}">
+							<ChildrenList>
+								<Action Name="" ID="{2DD4798E-842F-4651-9D99-1A86824C7B85}" ShortID="691061979">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_COMPU" ID="{ACC76CEA-C382-4778-A7FB-0C483AD5BA14}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{DBDDE192-6C2A-4CDA-A39E-B572DB507B1C}" ShortID="463282569">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_ESCRITORIO" ID="{B27945A4-85CD-4FE8-927A-9377A9724C7C}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="ROBOT" ID="{3B88D794-8626-4119-BF1E-8C9EFBBB5F0D}" ShortID="324346778">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="11"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Play_AGARRA_OBJETO" ID="{A38F765A-E6C9-4D98-BC7C-5A99CBC01C86}">
+							<ChildrenList>
+								<Action Name="" ID="{04C17B28-F27A-437D-9BF8-1BFD6DBABABD}" ShortID="1051408616">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AGARRA OBJETO" ID="{123F811C-355B-434D-B8EC-FB0475762BB3}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MOV_BRAZOS" ID="{B136E0FF-58D8-48C1-91F7-5AD9C1B12BD3}">
+							<ChildrenList>
+								<Action Name="" ID="{06174703-FDE6-4581-9748-0A178ACBD015}" ShortID="585372350">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MOV BRAZOS" ID="{3D947AB7-92F2-4527-A59F-30D190594383}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_PASOS" ID="{22F03EC0-1DBD-47F3-8F9D-C859F322CBEF}">
+							<ChildrenList>
+								<Action Name="" ID="{87685BFB-4B46-4E39-96E6-38E88175B08E}" ShortID="65802293">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PASOS" ID="{81F6D5F0-F612-4950-8DE1-15E247152E69}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_VOZ" ID="{0EA14118-43D5-4D92-8163-54690016BED5}">
+							<ChildrenList>
+								<Action Name="" ID="{5808BF6E-D0BD-4D9E-9A18-61FB5EC08DA3}" ShortID="915703999">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VOZ" ID="{270B2CA5-294B-4FBE-8F66-DA5F94F9512D}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_DISPAROS" ID="{6B776127-9840-499E-A71B-45F89D5A0967}">
+							<ChildrenList>
+								<Action Name="" ID="{7E90489A-2C07-436C-8C1E-6CAC229694EE}" ShortID="420674392">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DISPAROS" ID="{A215D85B-E477-4D59-AC43-2F6C89EFE824}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MUSICA" ID="{94979232-8203-4CF2-B76A-B786FAAE8265}" ShortID="87262433">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
+				<Folder Name="UI" ID="{D333B733-7ABF-476B-AA75-018DB3C0F9DB}" ShortID="266426511">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="3"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Play_FX_CLICK_PARA_ATRAS" ID="{F3C5A9C8-FB39-4653-A050-841C1278235C}">
+							<ChildrenList>
+								<Action Name="" ID="{1459E70D-95C9-4B32-9CD5-D56BF01FFA8E}" ShortID="15274713">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FX_CLICK PARA ATRAS" ID="{4995D8AB-8581-418E-87AB-18BD294CBAE7}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_FX_CLICK_START_GAME" ID="{F825D256-DB1F-4F9A-AE6D-8B3F2D99F553}">
+							<ChildrenList>
+								<Action Name="" ID="{1DA42E2A-3115-4C29-B1E5-2172B587EA41}" ShortID="560924061">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FX_CLICK START GAME" ID="{697DEF94-87A5-40F9-844C-6B844BCA70FB}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_FX_CLICK_POSITIVO" ID="{E4B47616-CC43-4796-97FF-3A96DE72BF0F}">
+							<ChildrenList>
+								<Action Name="" ID="{DE559576-5535-4AF0-98F8-E2ADE5543C5D}" ShortID="367761373">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FX_CLICK POSITIVO" ID="{1D066401-58F8-44E9-930E-912B10E2A2D6}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="FX" ID="{A8A0F167-80B2-424E-8B39-5F95DC9DA7FC}" ShortID="331343577">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="Play_WALKIE_TALKIE" ID="{0F886E1F-750A-4569-90F5-8F902BBF66F0}">
+							<ChildrenList>
+								<Action Name="" ID="{BF8F5DCA-C71B-4449-86EE-8ADC79B222DD}" ShortID="329923366">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WALKIE TALKIE" ID="{1ECEC6E7-4DBE-4F90-A592-21EBD4BA9A9C}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_ARRASTRES" ID="{4D2F4A83-88E1-4607-97AF-26D12A753B36}">
+							<ChildrenList>
+								<Action Name="" ID="{A4C43EF0-A521-4635-A1F9-C0B8C3EFAEA8}" ShortID="831166225">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ARRASTRES" ID="{7BDBDF47-83D2-43F8-9287-EBFCD3623769}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
