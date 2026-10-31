@@ -5,7 +5,7 @@
 			<PropertyList>
 				<Property Name="AudioFileImporter\x64_FilesToImport" Type="string" Value="AAAAAAAAAAA="/>
 				<Property Name="AudioFilesImporter\DestinationFolder" Type="string" Value="C:\Users\fagoa\Desktop\IMAGE CAMPUS\ROBOTIN\Out_Of_The_Box\Robot_Game_WwiseProject\Originals\SFX\"/>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="D:\IMAGE CAMPSU\AUDIO\ROBOTIN\AUDIO\ARMA\"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="D:\IMAGE CAMPSU\AUDIO\ROBOTIN\AUDIO\ELEMENTOS INTERACCION\"/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="EventView\FilterMode2" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
