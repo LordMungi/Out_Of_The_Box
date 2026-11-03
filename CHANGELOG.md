@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.8.0] - 2026-11-03
+
+### New
+
+- Functional main menu.
+- Full menu workflow with win screen.
+- Loading screen to avoid lag while the game loads.
+- Desk level.
+
+### Bug Fixes
+
+- Quit from the menu now works.
+- Rail camera positioning.
+
 ## [0.7.0] - 2026-10-27
 
 ### New
