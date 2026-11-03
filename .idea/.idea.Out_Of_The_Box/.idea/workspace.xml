@@ -8,15 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f13ac32f-3b81-42d3-91e7-32e8be0247de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Out_Of_The_Box/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Out_Of_The_Box/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Menu/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Menu/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Menu/MenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Menu/MenuView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Menu/SceneTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Menu/SceneTransition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene_Nightime.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene_Nightime.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunInfo.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PerformanceTestRunSettings.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Bus.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Bus/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Event.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Event/English(US).meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Init.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.bnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.bnk.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/Main.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PlatformInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PlatformInfo.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/PluginInfo.json.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,61 +53,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000000002104" />
-      <entry key="MS500" value="1.0046196523447037" />
-      <entry key="S2" value="1.2607067786392026" />
-      <entry key="S5" value="1.584064660249009" />
-      <entry key="S10" value="1.7642412317250007" />
-      <entry key="S30" value="1.914508766635266" />
-      <entry key="S60" value="1.9715883649949149" />
-      <entry key="M2" value="2.12726080455929" />
-      <entry key="M5" value="3.8066102604949905" />
-      <entry key="M10" value="10.797899880750633" />
-      <entry key="M15" value="19.1836829585095" />
-      <entry key="M30" value="40.078303131976256" />
-      <entry key="H1" value="69.2721619201084" />
-      <entry key="H2" value="104.95287293102515" />
-      <entry key="H4" value="136.95676443175094" />
-      <entry key="D1" value="176.9701990589082" />
-      <entry key="W1" value="185.51848780100138" />
+      <entry key="MS100" value="1.6756489043707261" />
+      <entry key="MS500" value="2.7066556102344115" />
+      <entry key="S2" value="3.4883085179978814" />
+      <entry key="S5" value="3.770581450207319" />
+      <entry key="S10" value="3.880623432205238" />
+      <entry key="S30" value="3.9591143022193234" />
+      <entry key="S60" value="3.979424706231044" />
+      <entry key="M2" value="3.993938267436455" />
+      <entry key="M5" value="4.313100739630922" />
+      <entry key="M10" value="7.115124850436879" />
+      <entry key="M15" value="12.37806274294561" />
+      <entry key="M30" value="30.487416642321275" />
+      <entry key="H1" value="60.31536186450513" />
+      <entry key="H2" value="98.63002156851279" />
+      <entry key="H4" value="134.04716801794874" />
+      <entry key="D1" value="179.44987122755396" />
+      <entry key="W1" value="189.2899644324457" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="8.759506049334901E-16" />
-      <entry key="MS500" value="9.738586438985055E-4" />
-      <entry key="S2" value="0.17665420548534116" />
-      <entry key="S5" value="0.49986138978023253" />
-      <entry key="S10" value="0.7070087621665184" />
-      <entry key="S30" value="0.890857550829204" />
-      <entry key="S60" value="0.9438525048065454" />
-      <entry key="M2" value="0.9715213971038353" />
-      <entry key="M5" value="0.9951544215953141" />
-      <entry key="M10" value="1.1507262661406101" />
-      <entry key="M15" value="1.4535200004605882" />
-      <entry key="M30" value="2.3953558375196686" />
-      <entry key="H1" value="3.7082857289153357" />
-      <entry key="H2" value="5.124538672455199" />
-      <entry key="H4" value="6.2884642507077215" />
-      <entry key="D1" value="7.664608995806796" />
-      <entry key="W1" value="7.9506585889353705" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.3690020822417972E-163" />
+      <entry key="S5" value="8.908942931880101E-66" />
+      <entry key="S10" value="2.9847852404955543E-33" />
+      <entry key="S30" value="1.4398072723831223E-11" />
+      <entry key="S60" value="3.794479242773302E-6" />
+      <entry key="M2" value="0.0019479436722715467" />
+      <entry key="M5" value="0.08293542732698855" />
+      <entry key="M10" value="0.3321978605613821" />
+      <entry key="M15" value="0.6348983746796355" />
+      <entry key="M30" value="1.5831119966878437" />
+      <entry key="H1" value="3.01469923408333" />
+      <entry key="H2" value="4.620512774584898" />
+      <entry key="H4" value="5.971209333120134" />
+      <entry key="D1" value="7.598763965836154" />
+      <entry key="W1" value="7.940864983147162" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="9.669871147456978E-7" />
-      <entry key="MS500" value="0.06392091782131683" />
-      <entry key="S2" value="0.8037143476076728" />
-      <entry key="S5" value="1.6952995911800166" />
-      <entry key="S10" value="2.238957173685942" />
-      <entry key="S30" value="2.717176520528266" />
-      <entry key="S60" value="2.869713241699722" />
-      <entry key="M2" value="3.0748385953519617" />
-      <entry key="M5" value="4.787981324177646" />
-      <entry key="M10" value="11.93529257031434" />
-      <entry key="M15" value="20.623863332853006" />
-      <entry key="M30" value="42.46174199392572" />
-      <entry key="H1" value="72.9705983749878" />
-      <entry key="H2" value="110.0699286132507" />
-      <entry key="H4" value="143.24030274234292" />
-      <entry key="D1" value="184.63373649840062" />
-      <entry key="W1" value="193.4689856157198" />
+      <entry key="MS100" value="1.4052527622291522" />
+      <entry key="MS500" value="2.6300751309604844" />
+      <entry key="S2" value="3.4655996238533633" />
+      <entry key="S5" value="3.7610008610159915" />
+      <entry key="S10" value="3.875736881628593" />
+      <entry key="S30" value="3.9574626233549304" />
+      <entry key="S60" value="3.978599528532578" />
+      <entry key="M2" value="3.995423064352014" />
+      <entry key="M5" value="4.3947212370324555" />
+      <entry key="M10" value="7.443390354648303" />
+      <entry key="M15" value="13.007078922831475" />
+      <entry key="M30" value="32.06262488122324" />
+      <entry key="H1" value="63.32204014073234" />
+      <entry key="H2" value="103.24378041387882" />
+      <entry key="H4" value="140.01369646043358" />
+      <entry key="D1" value="187.04757226496747" />
+      <entry key="W1" value="197.23066875689975" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -122,6 +139,16 @@
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\Out Of The Box!.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\Out_Of_The_Box\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Out_Of_The_Box -debugCodeOptimization" />
@@ -166,7 +193,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1793661310322</updated>
-      <workItem from="1793661313878" duration="7770000" />
+      <workItem from="1793661313878" duration="8115000" />
     </task>
     <servers />
   </component>

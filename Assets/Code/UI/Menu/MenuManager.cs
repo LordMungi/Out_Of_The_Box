@@ -110,4 +110,18 @@ public class MenuManager : MonoBehaviour
         ClearStack();
         PushMenu(winMenu, playSound: false);
     }
+    
+    public void QuitGame()
+    {
+        if (sfxClickBack != null && sfxClickBack.IsValid())
+            sfxClickBack.Post(gameObject);
+
+        Debug.Log("Exiting...k");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
+    }
 }
