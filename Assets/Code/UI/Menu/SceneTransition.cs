@@ -16,7 +16,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private MenuManager manager;
 
     private bool _isLoading = false;
-
+    
     public void StartGame(string gameplaySceneName)
     {
         manager.ClearStack();
@@ -41,7 +41,7 @@ public class SceneTransition : MonoBehaviour
 
         float elapsedTime = 0.0f;
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         operation.allowSceneActivation = false;
 
         while (!operation.isDone)
@@ -75,9 +75,14 @@ public class SceneTransition : MonoBehaviour
 
     public void ReturnToMainMenu(string mainMenuSceneName)
     {
+        ServiceProvider.Instance.GetService<EventBus>()?.Clear();
+        
         if (_isLoading)
             return;
 
+        if (manager != null)
+            manager.ClearStack();
+        
         Time.timeScale = 1.0f;
         AkUnitySoundEngine.StopAll();
 

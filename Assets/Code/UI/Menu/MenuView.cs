@@ -31,19 +31,19 @@ public class MenuView : MonoBehaviour, IMenu
         gameObject.SetActive(false);
     }
 
-    public void OnEnter()
+    public virtual void OnEnter()
     {
         gameObject.SetActive(true);
         SetVisible(true);
     }
 
-    public void OnExit()
+    public virtual void OnExit()
     {
         gameObject.SetActive(false);
         SetVisible(false);
     }
 
-    public void OnPause()
+    public virtual void OnPause()
     {
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
@@ -55,7 +55,7 @@ public class MenuView : MonoBehaviour, IMenu
         }
     }
 
-    public void OnResume()
+    public virtual void OnResume()
     {
         gameObject.SetActive(true);
         SetVisible(true);

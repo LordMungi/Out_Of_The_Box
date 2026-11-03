@@ -47,4 +47,14 @@ public class PlayerController : MonoBehaviour
     {        
         _behaviourFSM.CurrentState.Update();
     }
+    
+    private void OnDestroy()
+    {
+        if (_playerData.input != null)
+        {
+            _playerData.input.Disable();
+            _playerData.input.Dispose();
+        }
+
+    }
 }

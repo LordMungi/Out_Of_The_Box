@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class MenuManager : MonoBehaviour
     
     public AK.Wwise.Event sfxClickPositive; 
     public AK.Wwise.Event sfxClickBack;
+    
+    private bool _hasWon = false;
+    
     private void Start()
     {
         if (mainMenu)
@@ -29,6 +33,39 @@ public class MenuManager : MonoBehaviour
         if (mainMenu != null)
             PushMenu(mainMenu, playSound: false);
     }
+    
+    private void Update()
+    {
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if (_hasWon)
+            {
+                if (menuStack.Count > 1)
+                    PopMenu();
+            }
+            else if (mainMenu == null)
+            {
+                TogglePauseOrBack();
+            }
+            else if (menuStack.Count > 1)
+            {
+                PopMenu();
+            }
+        }
+    }
+    
+    public void TogglePauseOrBack()
+    {
+        if (menuStack.Count == 0)
+        {
+            OpenPause(); 
+        }
+        else
+        {
+            PopMenu();  
+        }
+    }
+    
     public void PushMenu(MenuView newMenu, bool playSound = true)
     {
         if (newMenu == null) 
@@ -69,6 +106,7 @@ public class MenuManager : MonoBehaviour
     public void OpenPause() => PushMenu(pauseMenu);
     public void OpenWinScreen()
     {
+        _hasWon = true;
         ClearStack();
         PushMenu(winMenu, playSound: false);
     }
