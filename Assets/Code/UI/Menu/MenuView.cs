@@ -1,22 +1,34 @@
 using UnityEngine;
 
-public abstract class MenuView : MonoBehaviour, IMenu
+public class MenuView : MonoBehaviour, IMenu
 {
     protected CanvasGroup canvasGroup;
     protected MenuManager manager;
 
     public bool hideUnderlyingMenu;
 
+    private void EnsureCanvasGroup()
+    {
+        if (canvasGroup == null)
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+
+            if (canvasGroup == null)
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        }
+    }
+
     protected virtual void Awake()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
         hideUnderlyingMenu = true;
     }
 
     public void Initialize(MenuManager manager)
     {
         this.manager = manager;
+        EnsureCanvasGroup();
         SetVisible(false);
+        gameObject.SetActive(false);
     }
 
     public void OnEnter()
@@ -37,11 +49,15 @@ public abstract class MenuView : MonoBehaviour, IMenu
         canvasGroup.blocksRaycasts = false;
 
         if (hideUnderlyingMenu)
+        {
             canvasGroup.alpha = 0.0f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void OnResume()
     {
+        gameObject.SetActive(true);
         SetVisible(true);
     }
 

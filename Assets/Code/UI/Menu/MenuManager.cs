@@ -10,8 +10,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private MenuView pauseMenu;
     [SerializeField] private MenuView winMenu;
     
-    public int StackCount => menuStack.Count;
-    
     public AK.Wwise.Event sfxClickPositive; 
     public AK.Wwise.Event sfxClickBack;
     private void Start()
@@ -37,9 +35,7 @@ public class MenuManager : MonoBehaviour
             return;
 
         if (menuStack.Count > 0)
-        {
             menuStack.Peek().OnPause();
-        }
 
         menuStack.Push(newMenu);
         newMenu.OnEnter();
