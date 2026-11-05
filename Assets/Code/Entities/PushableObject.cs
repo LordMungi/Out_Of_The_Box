@@ -26,7 +26,7 @@ public class PushableObject : MonoBehaviour
     {
         _body = GetComponent<Rigidbody>();
         _mesh = GetComponent<MeshFilter>();
-        _minusPlayerLayer = ~(1 << LayerMask.NameToLayer("Player"));
+        _minusPlayerLayer = ~LayerMask.GetMask("Player", "Area");
 
         _meshCenter = _mesh.sharedMesh.bounds.center;
         _meshSize = _mesh.sharedMesh.bounds.size;
