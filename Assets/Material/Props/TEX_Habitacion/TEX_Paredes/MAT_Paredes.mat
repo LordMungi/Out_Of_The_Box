@@ -131,22 +131,22 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _StrokeBlendingNoiseScale: 500
-    - _StrokeBlendingNoiseStrength: 0.065
-    - _StrokeRandomness: 1
+    - _StrokeBlendingNoiseStrength: 0.157
+    - _StrokeRandomness: 0
     - _StrokeScale: 5
     - _Surface: 0
     - _UseBlendingNoise: 1
-    - _Variation: 0.472
+    - _Variation: 0.666
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.43454075, g: 0.4727366, b: 0.5943396, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _VariationColorA: {r: 0, g: 0, b: 0, a: 0}
-    - _VariationColorB: {r: 1, g: 1, b: 1, a: 0}
+    - _VariationColorA: {r: 0.36439517, g: 0.3066038, b: 1, a: 0}
+    - _VariationColorB: {r: 0.8679245, g: 0.53447264, b: 0.25792095, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &5289576032591443578
