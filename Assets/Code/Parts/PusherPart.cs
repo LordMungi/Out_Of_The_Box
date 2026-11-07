@@ -61,7 +61,6 @@ public class PusherPart : RobotPart
 
     private void RaisePushAccepted()
     {
-        Debug.Log("Push Accepted");
         EventBus.Raise<OnPartStateChangeAccepted>(BehaviourFSM.State.Push);
     }
 }

@@ -8,13 +8,11 @@ public class ClimbableObjectTopCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             IsPlayerInside = true;
-        Debug.Log(IsPlayerInside);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
             IsPlayerInside = false;
-        Debug.Log(IsPlayerInside);
     }
 }
