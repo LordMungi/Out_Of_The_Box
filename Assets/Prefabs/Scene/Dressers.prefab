@@ -44,7 +44,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_Animations.Array.size
@@ -116,11 +116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6402384838310782854, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7757871253022576053, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -128,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8596705613334294762, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
@@ -597,7 +597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_LocalScale.x
@@ -661,11 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6402384838310782854, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7757871253022576053, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8596705613334294762, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
@@ -1122,7 +1122,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_LocalScale.x
@@ -1186,11 +1186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6402384838310782854, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7757871253022576053, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1198,7 +1198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8596705613334294762, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
