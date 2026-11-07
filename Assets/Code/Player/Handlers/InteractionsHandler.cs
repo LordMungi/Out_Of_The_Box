@@ -224,6 +224,10 @@ public class InteractionsHandler : PlayerHandler
 
     public void StopClimbing()
     {
+        _grabbedClimbableObject.Release();
+        if (_nearbyClimbableObjects.Contains(_grabbedClimbableObject))
+            _nearbyClimbableObjects.Remove(_grabbedClimbableObject);
+
         _grabbedClimbableObject = null;
     }
 

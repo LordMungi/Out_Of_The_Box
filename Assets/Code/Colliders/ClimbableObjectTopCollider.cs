@@ -2,7 +2,7 @@
 
 public class ClimbableObjectTopCollider : MonoBehaviour
 {
-    public bool IsPlayerInside { get; private set; }
+    public bool IsPlayerInside;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -33,4 +33,9 @@ public class ClimbableObject : MonoBehaviour
 
         _offsetFromTop = (TopOffset.position - _wallPlane.ClosestPointOnPlane(TopOffset.position)).magnitude;
     }
+
+    public void Release()
+    {
+        _topArea.IsPlayerInside = false;
+    }
 }
