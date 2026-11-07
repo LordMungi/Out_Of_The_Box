@@ -46,6 +46,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      propertyPath: 'm_Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7400000, guid: d432e9d8b5159994eb54353e6188f1c6, type: 2}
     - target: {fileID: -4216859302048453862, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.31628108
@@ -122,7 +130,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -177,6 +186,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3802120425269545574}
+    - targetCorrespondingSourceObject: {fileID: 2047371763144490410, guid: c89ebc9e721c20543827b60084301a69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6468009679224868395}
   m_SourcePrefab: {fileID: 100100000, guid: c89ebc9e721c20543827b60084301a69, type: 3}
 --- !u!1 &3448721987647147720 stripped
 GameObject:
@@ -265,6 +277,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!111 &6468009679224868395
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3448721987647147720}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: d432e9d8b5159994eb54353e6188f1c6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d432e9d8b5159994eb54353e6188f1c6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &3788696681671157523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8709455722471484303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
@@ -646,7 +675,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1170,7 +1200,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5716681864270162303, guid: c89ebc9e721c20543827b60084301a69, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
