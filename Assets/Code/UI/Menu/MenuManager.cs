@@ -18,19 +18,12 @@ public class MenuManager : MonoBehaviour
     
     private void Start()
     {
-        if (mainMenu)
-            mainMenu.Initialize(this);
-        
-        if (creditsMenu)
-            creditsMenu.Initialize(this);
-        
-        if (pauseMenu)
-            pauseMenu.Initialize(this);
-        
-        if (winMenu) 
-            winMenu.Initialize(this);
+        mainMenu?.Initialize(this);
+        creditsMenu?.Initialize(this);
+        pauseMenu?.Initialize(this);
+        winMenu?.Initialize(this);
 
-        if (mainMenu != null)
+        if (mainMenu)
             PushMenu(mainMenu, playSound: false);
     }
     
