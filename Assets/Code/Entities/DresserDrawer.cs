@@ -3,7 +3,6 @@ using UnityEngine;
 public class DresserDrawer : MonoBehaviour
 {
     private Animator _drawerAnimator;
-    [SerializeField] private string triggerName;
 
     private void Start()
     {
