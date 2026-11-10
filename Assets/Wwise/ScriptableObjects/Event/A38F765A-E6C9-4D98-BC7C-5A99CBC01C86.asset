@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae854636e8c4b342b6db24947a5f943, type: 3}
+  m_Name: A38F765A-E6C9-4D98-BC7C-5A99CBC01C86
+  m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
+  objectName: Play_AGARRA_OBJETO
+  id: 1587890496
+  guid: A38F765A-E6C9-4D98-BC7C-5A99CBC01C86
+  IsInUserDefinedSoundBank: 0
