@@ -12,7 +12,7 @@
     <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
     <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
     <WwiseInstallationPathMac></WwiseInstallationPathMac>
-    <WwiseInstallationPathWindows>D:\AudioKinetic\Wwise_2025.1.11.9262</WwiseInstallationPathWindows>
+    <WwiseInstallationPathWindows>D:\Programas\Wwise_2025.1.11.9262</WwiseInstallationPathWindows>
     <WwiseProjectPath>../Robot_Game_WwiseProject/Robot_Game_WwiseProject.wproj</WwiseProjectPath>
     <UseWaapi>true</UseWaapi>
     <WaapiPort>8080</WaapiPort>
