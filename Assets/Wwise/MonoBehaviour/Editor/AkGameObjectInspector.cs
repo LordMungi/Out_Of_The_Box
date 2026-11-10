@@ -20,6 +20,10 @@ public class DefaultHandles
 {
 	public static bool Hidden
 	{
+#if UNITY_6000_6_OR_NEWER
+		get { return UnityEditor.Tools.hidden; }
+		set { UnityEditor.Tools.hidden = value; }
+#else
 		get
 		{
 			var type = typeof(UnityEditor.Tools);
@@ -34,6 +38,7 @@ public class DefaultHandles
 				System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
 			field.SetValue(null, value);
 		}
+#endif
 	}
 }
 

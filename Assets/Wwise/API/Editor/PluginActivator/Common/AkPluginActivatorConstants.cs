@@ -36,13 +36,6 @@ public class AkPluginActivatorConstants
 			PluginID.AkPeakLimiter,
 			PluginID.AkRoomVerb,
 			PluginID.AkReflect,
-#if !UNITY_2018_3_OR_NEWER
-			PluginID.VitaReverb,
-			PluginID.VitaCompressor,
-			PluginID.VitaDelay,
-			PluginID.VitaDistortion,
-			PluginID.VitaEQ,
-#endif
 		};
 
 	internal static readonly System.Collections.Generic.HashSet<PluginID> alwaysSkipPluginsIDs =
@@ -146,13 +139,6 @@ public class AkPluginActivatorConstants
 		SinkSystem = 0xAE0007,
 		ToneGenerator = 0x00660002, //Tone Generator
 		WwiseSilence = 0x00650002, //Wwise Silence
-#if !UNITY_2018_3_OR_NEWER
-		VitaReverb = 0x008C0003, //Vita Reverb
-		VitaCompressor = 0x008D0003, //Vita Compressor
-		VitaDelay = 0x008E0003, //Vita Delay
-		VitaDistortion = 0x008F0003, //Vita Distortion
-		VitaEQ = 0x00900003, //Vita EQ
-#endif
 
 		// Static or DLL plugins
 		AkAudioInput = 0xC80002,

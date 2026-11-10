@@ -40,7 +40,7 @@ public class AkEventCallbackMsg
 /// \sa
 /// - \ref sect_edit_mode
 /// - \ref unity_use_AkEvent_AkAmbient
-/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&amp;id=soundengine__events.html" target="_blank">Integration Details - Events</a> (Note: This is described in the Wwise SDK documentation.)
+/// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__events.html" target="_blank">Integration Details - Events</a> (Note: This is described in the Wwise SDK documentation.)
 [UnityEngine.AddComponentMenu("Wwise/AkEvent")]
 [UnityEngine.ExecuteInEditMode]
 [UnityEngine.RequireComponent(typeof(AkGameObj))]
