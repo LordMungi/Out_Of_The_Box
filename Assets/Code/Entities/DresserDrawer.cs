@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class DresserDrawer : MonoBehaviour
 {
-    private Animation _openAnimation;
+    private Animator _drawerAnimator;
+    [SerializeField] private string triggerName;
 
     private void Start()
     {
-        TryGetComponent(out _openAnimation);
+        TryGetComponent(out _drawerAnimator);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Projectile"))
-            _openAnimation.Play();
+            _drawerAnimator?.SetTrigger(triggerName);
     }
 }

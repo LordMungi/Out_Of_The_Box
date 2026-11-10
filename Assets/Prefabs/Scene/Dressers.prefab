@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &2919328280962473491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2254192564730684997, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -309,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &4308259470418732187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8358387875882394419, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -426,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &8858806818076626685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5565257775645750955, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -486,6 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1001 &6323177018641413981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &2611694718080128110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8358387875882394419, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -784,6 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &4974693630110725488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1353831419569046061, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -844,6 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!4 &5785672526465437878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -909,6 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1001 &6775875148584917007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1127,6 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &3311918075060419388 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8358387875882394419, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -1213,6 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!111 &3023474302345666806
 Animation:
   m_ObjectHideFlags: 0
@@ -1290,6 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
 --- !u!1 &5965535979312784734 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2f6d6c0892881247a33e4b38bcd01d7, type: 3}
@@ -1381,3 +1392,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70768c9843afcf049b87c7eba6eba6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DresserDrawer
+  triggerName: 
