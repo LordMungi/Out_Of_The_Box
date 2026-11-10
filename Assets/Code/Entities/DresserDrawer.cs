@@ -12,6 +12,6 @@ public class DresserDrawer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Projectile"))
-            _drawerAnimator?.SetTrigger(triggerName);
+            _drawerAnimator?.SetTrigger("Hit");
     }
 }
