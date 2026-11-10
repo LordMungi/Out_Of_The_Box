@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.9.0] - 2026-11-10
+
+### New
+
+- Bridge block.
+- Climbable object on top of the drawer.
+- Dresser drawer section.
+- Drawer trigger activated by bullets.
+
+### Changes
+
+- New models, textures and posters for the rooms.
+- Updated credits.
+- Climber and propeller parts repositioned.
+- Version text in the main menu.
+
+### Bug Fixes
+
+- Climbable objects had wrong collisions.
+- Pushable collider issues in the main scene.
+- Pushable and camera errors.
+- Camera could not be moved due to the scene bounds.
+
 ## [0.8.0] - 2026-11-03
 
 ### New
