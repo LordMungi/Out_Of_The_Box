@@ -18,6 +18,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{E77BD6E2-29D5-478E-8A3C-E2406D31ABCF}" ShortID="1051386976">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_MAIN" ID="{0B1FAFE2-7D9C-45C5-9A8C-2B2390D9B8A0}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_AmbienteGRAL" ID="{604F560E-A40D-4CE8-A5B9-25102227E3CF}">
