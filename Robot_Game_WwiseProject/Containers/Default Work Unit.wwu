@@ -10,6 +10,16 @@
 					</PropertyList>
 					<ChildrenList>
 						<Sound Name="AMB_ABAJO CAMA" ID="{CD184DD5-0DCB-4D2F-B1AF-DC4A90D469B8}" ShortID="596128491">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -20,6 +30,12 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="AMB_ABAJO CAMA" ID="{DF166D88-BBCA-41AF-B7E9-2A8637DFA584}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="7882.292"/>
+										<Property Name="LoopBegin" Type="Real64" Value="5.10078"/>
+										<Property Name="LoopEnd" Type="Real64" Value="125.88713"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>AMB_ABAJO CAMA.wav</AudioFile>
 									<MediaIDList>
@@ -32,6 +48,15 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="AMB_COMPU" ID="{ACC76CEA-C382-4778-A7FB-0C483AD5BA14}" ShortID="404544777">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -42,6 +67,12 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="AMB_COMPU" ID="{39CB0289-0829-4608-8F70-0523FCFC78F3}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="9176.25"/>
+										<Property Name="LoopBegin" Type="Real64" Value="5.15957"/>
+										<Property Name="LoopEnd" Type="Real64" Value="189.68992"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>AMB_COMPU .wav</AudioFile>
 									<MediaIDList>
@@ -54,6 +85,15 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="AMB_ESCRITORIO" ID="{B27945A4-85CD-4FE8-927A-9377A9724C7C}" ShortID="175687274">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -64,6 +104,12 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="AMB_ESCRITORIO" ID="{2DCDA4DC-9D5B-406C-8B38-0D6CB4631716}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="7013.333"/>
+										<Property Name="LoopBegin" Type="Real64" Value="6.78499"/>
+										<Property Name="LoopEnd" Type="Real64" Value="162.57885"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>AMB_ESCRITORIO.wav</AudioFile>
 									<MediaIDList>
@@ -76,6 +122,14 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="AMB_MAIN" ID="{0B1FAFE2-7D9C-45C5-9A8C-2B2390D9B8A0}" ShortID="802811399">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-14</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -86,6 +140,12 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="AMB_MAIN" ID="{6A487EEA-3737-4C23-806F-3D01927A9C0B}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="6181.875"/>
+										<Property Name="LoopBegin" Type="Real64" Value="4.49823"/>
+										<Property Name="LoopEnd" Type="Real64" Value="127.38177"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>AMB_MAIN.wav</AudioFile>
 									<MediaIDList>
@@ -97,7 +157,17 @@
 								<ActiveSource Name="AMB_MAIN" ID="{6A487EEA-3737-4C23-806F-3D01927A9C0B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="AMB_VENTANA LEJANA" ID="{D33DE41F-75C0-4388-A440-A5B8BADF4999}" ShortID="38420135">
+						<Sound Name="AMB_VENTANA" ID="{ACCCD5A6-053A-411A-90B1-B2A4389ECD64}" ShortID="23184063">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="67"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -107,19 +177,36 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="AMB_VENTANA LEJANA" ID="{9D858E1A-B498-4D29-A7B1-2D61C4C9DEE2}">
+								<AudioFileSource Name="Ambience, Suburban, Night, Evening Ambience, Cicadas, Distant Dog Barking, Distant Traffic Hum (51) (LCR Ls Rs LFE) SND76353 4" ID="{8F59BA15-0476-4CC0-84B8-E6F7F5F4226D}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="4944.001"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.42965"/>
+										<Property Name="LoopEnd" Type="Real64" Value="51.88802"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0841"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>AMB_VENTANA LEJANA.wav</AudioFile>
+									<AudioFile>Ambience, Suburban, Night, Evening Ambience, Cicadas, Distant Dog Barking, Distant Traffic Hum (51) (LCR Ls Rs LFE) SND76353 4.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="693507164"/>
+										<MediaID ID="285471666"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="AMB_VENTANA LEJANA" ID="{9D858E1A-B498-4D29-A7B1-2D61C4C9DEE2}" Platform="Linked"/>
+								<ActiveSource Name="Ambience, Suburban, Night, Evening Ambience, Cicadas, Distant Dog Barking, Distant Traffic Hum (51) (LCR Ls Rs LFE) SND76353 4" ID="{8F59BA15-0476-4CC0-84B8-E6F7F5F4226D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="AMB_VENTANA MAIN" ID="{805FFC1C-1914-48FF-8F69-7F8B36FE2EF2}" ShortID="521391125">
+						<Sound Name="AMB_VENTANA GRILLOS" ID="{F0EC14FF-17CB-439D-85EF-254C7FF86EF0}" ShortID="1026417330">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="67"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -129,16 +216,24 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="AMB_VENTANA MAIN" ID="{429ACE13-C826-4A7A-8CBD-BF4B71F755CB}">
+								<AudioFileSource Name="Animals, Insect, Crickets, Chirping In Forest, Mid Distance, Laos SND158587" ID="{154546BF-FFB4-42F9-8D72-817CD40CC1AB}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="9190.414"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="5.47152"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="5.83631"/>
+										<Property Name="LoopBegin" Type="Real64" Value="17.87357"/>
+										<Property Name="LoopEnd" Type="Real64" Value="219.58963"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>AMB_VENTANA MAIN.wav</AudioFile>
+									<AudioFile>Animals, Insect, Crickets, Chirping In Forest, Mid Distance, Laos SND158587.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="8161175"/>
+										<MediaID ID="26101135"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="AMB_VENTANA MAIN" ID="{429ACE13-C826-4A7A-8CBD-BF4B71F755CB}" Platform="Linked"/>
+								<ActiveSource Name="Animals, Insect, Crickets, Chirping In Forest, Mid Distance, Laos SND158587" ID="{154546BF-FFB4-42F9-8D72-817CD40CC1AB}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -174,6 +269,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS" ID="{4430A1E9-456D-4FB0-AF53-43E57AC9F5A3}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.03315"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.11543"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.61121"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS.wav</AudioFile>
 											<MediaIDList>
@@ -196,6 +297,14 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_1" ID="{2432BCF4-4468-42F3-AA11-1D1B9FC1D45A}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05498"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.05495"/>
+												<Property Name="LoopEnd" Type="Real64" Value="0.40082"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.10567"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.44712"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_1.wav</AudioFile>
 											<MediaIDList>
@@ -218,6 +327,14 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_2" ID="{D4FF7EEB-6B07-4521-8AB9-08CA13E0A9C9}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.06572"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.07609"/>
+												<Property Name="LoopEnd" Type="Real64" Value="0.42909"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.04625"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.47393"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_2.wav</AudioFile>
 											<MediaIDList>
@@ -240,6 +357,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_3" ID="{CFEFAEC9-A2C0-41DB-BD99-FB99AA417658}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.09226"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.07172"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.10248"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.45867"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_3.wav</AudioFile>
 											<MediaIDList>
@@ -262,6 +386,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_4" ID="{CF2D8151-B7EE-4088-B2CA-2AE929BDAE19}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05324"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.05595"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.07991"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.47333"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_4.wav</AudioFile>
 											<MediaIDList>
@@ -284,6 +415,14 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_5" ID="{72B49340-4AA9-4F37-A2FE-36B1A6F19038}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05007"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.04314"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.17874"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.15812"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.50085"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_5.wav</AudioFile>
 											<MediaIDList>
@@ -470,6 +609,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_PRE DISPARO" ID="{50D8DAA5-511C-4745-8FFF-61260D68E885}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.11676"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.1639"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.08197"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.99647"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_PRE DISPARO.wav</AudioFile>
 											<MediaIDList>
@@ -492,6 +638,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_PRE DISPARO_1" ID="{FBF9025A-F0E7-4DFA-A05A-9543B1D7F6CF}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.10843"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.1659"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.09146"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.98588"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_PRE DISPARO_1.wav</AudioFile>
 											<MediaIDList>
@@ -514,6 +667,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_PRE DISPARO_2" ID="{73D91523-F442-4B80-9F33-476ED32E041C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.09915"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.28886"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.11393"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.05635"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_PRE DISPARO_2.wav</AudioFile>
 											<MediaIDList>
@@ -536,6 +696,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_PRE DISPARO_3" ID="{9BD165A5-74FE-40A9-99DF-D6D6B06F0BFE}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.06253"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.08604"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.08717"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.6619"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_PRE DISPARO_3.wav</AudioFile>
 											<MediaIDList>
@@ -558,6 +725,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_PRE DISPARO_4" ID="{F5871BA9-C27B-4354-AA37-82812CD1A31C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.06208"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.08627"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.118"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.81306"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_PRE DISPARO_4.wav</AudioFile>
 											<MediaIDList>
@@ -580,6 +754,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_PRE DISPARO_5" ID="{BFF9BF9E-7C62-49D7-82AB-34229685791C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.11385"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.11553"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.06693"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.9411"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_PRE DISPARO_5.wav</AudioFile>
 											<MediaIDList>
@@ -614,6 +795,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_AGARRA OBJETO" ID="{398E60FB-5E51-416A-ACB1-26D7F446A8FC}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01342"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0547"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0277"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.14412"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO.wav</AudioFile>
 											<MediaIDList>
@@ -636,6 +824,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_AGARRA OBJETO_1" ID="{01D57008-A0D8-4C3B-BC10-0B1F465C8A79}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0774"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.02121"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.15803"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_1.wav</AudioFile>
 											<MediaIDList>
@@ -658,6 +852,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_AGARRA OBJETO_2" ID="{54AEEA6C-D154-47D0-A47B-79C756DB4E52}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01333"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.03317"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.04185"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.1225"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_2.wav</AudioFile>
 											<MediaIDList>
@@ -680,6 +881,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_AGARRA OBJETO_3" ID="{500F4338-24AD-4E54-9FA5-2E52F4D3BAA4}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0105"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.02251"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.02244"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.08616"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_3.wav</AudioFile>
 											<MediaIDList>
@@ -702,6 +910,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_AGARRA OBJETO_4" ID="{5B5105E8-16DB-4747-8D97-D65DAB222CF4}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01414"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.03152"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.01972"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.08761"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_AGARRA OBJETO_4.wav</AudioFile>
 											<MediaIDList>
@@ -740,6 +955,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="DIAL 1" ID="{A81897DE-E63E-46CE-BEE6-BA594D3DB28D}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.07772"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.2312"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.05825"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.06258"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>DIAL 1.wav</AudioFile>
 											<MediaIDList>
@@ -762,6 +984,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="DIAL 2" ID="{376B4AD9-C40E-4EAC-83AD-434A99A08132}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.07835"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.09796"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.06231"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.84442"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>DIAL 2.wav</AudioFile>
 											<MediaIDList>
@@ -784,6 +1013,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="DIAL 3" ID="{DD391AF6-20EE-4EE8-8F95-1BD0015B0A13}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.08503"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.11051"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.06806"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.61356"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>DIAL 3.wav</AudioFile>
 											<MediaIDList>
@@ -806,6 +1042,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="DIAL 4" ID="{0555C4CB-EDF0-4E26-A083-3A4561D44DF2}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.07282"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.15714"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.99452"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>DIAL 4.wav</AudioFile>
 											<MediaIDList>
@@ -844,6 +1086,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_SALTO 1" ID="{729B902F-B515-4F94-AE08-F6FAA20EF0E6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.06476"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.07439"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.04439"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.59816"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_SALTO 1.wav</AudioFile>
 											<MediaIDList>
@@ -866,6 +1115,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_SALTO 2" ID="{3C47B6CD-4E55-485C-B8E7-FF0485C95174}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.062"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.06944"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0806"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.63493"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_SALTO 2.wav</AudioFile>
 											<MediaIDList>
@@ -888,6 +1144,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_SALTO 3" ID="{CF4C824D-4E23-488B-9026-57B5B845C900}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.07907"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.11635"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.1909"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.77298"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_SALTO 3.wav</AudioFile>
 											<MediaIDList>
@@ -910,6 +1173,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_SALTO 4" ID="{A1CE6918-7490-4EF1-A26A-BF05498F115C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.10352"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.12488"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.15938"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.91526"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_SALTO 4.wav</AudioFile>
 											<MediaIDList>
@@ -919,6 +1189,105 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="FX_SALTO 4" ID="{A1CE6918-7490-4EF1-A26A-BF05498F115C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="CHARGE" ID="{17AC878F-4B16-4228-B82D-9A605AB76EF4}" ShortID="17057207">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FX_RECHARGE" ID="{CFAD81E2-F114-491A-A888-5685C99FD0CB}" ShortID="540048373">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_RECHARGE" ID="{A4A9181C-808C-4061-A9FE-0196A62DB560}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.10424"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.06848"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.07001"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.75161"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>FX_RECHARGE.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="780283950"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_RECHARGE" ID="{A4A9181C-808C-4061-A9FE-0196A62DB560}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_RECHARGE_1" ID="{A9E9919B-4AA8-422A-95CC-F54331E988F3}" ShortID="736897314">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_RECHARGE_1" ID="{FD7C69CE-D3DA-4629-9128-7E3726BAA8BA}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.11537"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.21858"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.06675"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.9556"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>FX_RECHARGE_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="528317145"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_RECHARGE_1" ID="{FD7C69CE-D3DA-4629-9128-7E3726BAA8BA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FX_RECHARGE_2" ID="{5CACD63C-E4DF-4A81-89F0-E3F7B8335A25}" ShortID="65120614">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FX_RECHARGE_2" ID="{24104770-12A7-493C-8C9C-0D8D6291D29C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.23663"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.16956"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.06333"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.93719"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>FX_RECHARGE_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="216946337"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="FX_RECHARGE_2" ID="{24104770-12A7-493C-8C9C-0D8D6291D29C}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -1239,6 +1608,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_CLICK PARA ATRAS" ID="{DB21B1A9-A7EA-4B4F-A1F3-59982867541B}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01618"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.01882"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.05617"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.1373"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_CLICK PARA ATRAS.wav</AudioFile>
 											<MediaIDList>
@@ -1261,6 +1637,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_CLICK POSITIVO" ID="{0F9F82B3-7FC4-41F0-80FC-0FDA9F55E766}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0162"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.03608"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.03009"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.10514"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_CLICK POSITIVO.wav</AudioFile>
 											<MediaIDList>
@@ -1283,6 +1666,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_CLICK START GAME" ID="{E99416E3-73B8-40C2-B767-D74B47ACC2B6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.04154"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.05863"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.2432"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_CLICK START GAME.wav</AudioFile>
 											<MediaIDList>
@@ -1296,36 +1685,6 @@
 								</Sound>
 							</ChildrenList>
 						</Folder>
-						<Sound Name="CHARGE" ID="{0B7D8F44-23F9-4FC1-8B14-2B260F28AF9D}" ShortID="891362396">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C9A92518-9200-4FB4-92D2-F2D60633B3FF}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="JumpChargeTemplate" ID="{0AE1FB00-E314-443C-9A28-A8B40542288B}">
-									<PropertyList>
-										<Property Name="LoopBegin" Type="Real64" Value="0.99865"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.92335"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>JumpChargeTemplate.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="849592879"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="JumpChargeTemplate" ID="{0AE1FB00-E314-443C-9A28-A8B40542288B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="MUSICA" ID="{D2583F46-3830-4467-8B5F-FBDF7D855070}" ShortID="826977556">

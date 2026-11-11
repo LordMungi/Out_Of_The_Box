@@ -41,28 +41,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_AmbienteVentanaLejos" ID="{58604D5E-633A-4641-A2B1-A69B9FCF3301}">
-							<ChildrenList>
-								<Action Name="" ID="{8088AED6-E735-478B-8986-F07F331C7075}" ShortID="795847108">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_VENTANA LEJANA" ID="{D33DE41F-75C0-4388-A440-A5B8BADF4999}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_AmbienteVentanaCerca" ID="{1B25D575-9BD3-4637-8109-E660576D4DEB}">
-							<ChildrenList>
-								<Action Name="" ID="{6A55BF3F-D934-40AD-A4DF-93E8659DDEE4}" ShortID="1063169766">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_VENTANA MAIN" ID="{805FFC1C-1914-48FF-8F69-7F8B36FE2EF2}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_AmbienteESCRITORIO" ID="{009CE395-05CF-4A67-A1BE-0D0D66FE4F05}">
 							<ChildrenList>
 								<Action Name="" ID="{2DD4798E-842F-4651-9D99-1A86824C7B85}" ShortID="691061979">
@@ -76,6 +54,24 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AMB_ESCRITORIO" ID="{B27945A4-85CD-4FE8-927A-9377A9724C7C}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AmbienteVENTANA" ID="{826432BB-E0E1-41F2-AB26-25EAC7093E2E}">
+							<ChildrenList>
+								<Action Name="" ID="{03A1A0EC-4FC3-4193-93EC-08ACF9F4A3E9}" ShortID="696311795">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_VENTANA" ID="{ACCCD5A6-053A-411A-90B1-B2A4389ECD64}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F5BB10BB-6709-42EA-974E-E26307F6C52F}" ShortID="167399322">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_VENTANA GRILLOS" ID="{F0EC14FF-17CB-439D-85EF-254C7FF86EF0}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -160,7 +156,7 @@
 								<Action Name="" ID="{9D77A817-7352-4994-89CD-FBCCE60DCBA6}" ShortID="798574355">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="CHARGE" ID="{0B7D8F44-23F9-4FC1-8B14-2B260F28AF9D}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
+											<ObjectRef Name="CHARGE" ID="{17AC878F-4B16-4228-B82D-9A605AB76EF4}" WorkUnitID="{AB119826-8BF1-47B8-846D-6E5945042E5D}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
