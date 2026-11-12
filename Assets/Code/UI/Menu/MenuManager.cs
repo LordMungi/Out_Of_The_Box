@@ -21,13 +21,13 @@ public class MenuManager : MonoBehaviour
     private void OnEnable()
     {
         EventBus.Subscribe<OnPlayerPauseRequest>(PauseIfPossible);
-        EventBus.Subscribe<OnPlayerUnpause>(Unpause);
+        EventBus.Subscribe<OnPlayerUnpauseRequest>(Unpause);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<OnPlayerPauseRequest>(PauseIfPossible);
-        EventBus.Unsubscribe<OnPlayerUnpause>(Unpause);
+        EventBus.Unsubscribe<OnPlayerUnpauseRequest>(Unpause);
     }
     private void Start()
     {
@@ -115,7 +115,7 @@ public class MenuManager : MonoBehaviour
             EventBus.Raise<OnPlayerPauseAccepted>();
         }
     }
-    private void Unpause(in OnPlayerUnpause context)
+    private void Unpause(in OnPlayerUnpauseRequest context)
     {
         PopMenu();
     }

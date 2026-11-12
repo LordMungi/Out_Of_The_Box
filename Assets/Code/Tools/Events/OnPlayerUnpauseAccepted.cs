@@ -1,4 +1,4 @@
-public struct OnPlayerUnpause : IEvent
+public struct OnPlayerUnpauseAccepted : IEvent
 {
     public void Assign(params object[] parameters)
     {
