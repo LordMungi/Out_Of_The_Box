@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PauseMenuView : MenuView
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     public override void OnEnter()
     {
         base.OnEnter();
@@ -16,5 +18,6 @@ public class PauseMenuView : MenuView
         Time.timeScale = 1.0f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        EventBus.Raise<OnPlayerUnpauseAccepted>();
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     private readonly Stack<IMenu> menuStack = new Stack<IMenu>();
     
     [SerializeField] private MenuView mainMenu;
@@ -15,7 +17,18 @@ public class MenuManager : MonoBehaviour
     public AK.Wwise.Event sfxClickBack;
     
     private bool _hasWon = false;
-    
+
+    private void OnEnable()
+    {
+        EventBus.Subscribe<OnPlayerPauseRequest>(PauseIfPossible);
+        EventBus.Subscribe<OnPlayerUnpauseRequest>(Unpause);
+    }
+
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<OnPlayerPauseRequest>(PauseIfPossible);
+        EventBus.Unsubscribe<OnPlayerUnpauseRequest>(Unpause);
+    }
     private void Start()
     {
         mainMenu?.Initialize(this);
@@ -31,31 +44,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (_hasWon)
-            {
-                if (menuStack.Count > 1)
-                    PopMenu();
-            }
-            else if (mainMenu == null)
-            {
-                TogglePauseOrBack();
-            }
-            else if (menuStack.Count > 1)
-            {
-                PopMenu();
-            }
-        }
-    }
-    
-    public void TogglePauseOrBack()
-    {
-        if (menuStack.Count == 0)
-        {
-            OpenPause(); 
-        }
-        else
-        {
-            PopMenu();  
+
         }
     }
     
@@ -116,5 +105,18 @@ public class MenuManager : MonoBehaviour
 #else
     Application.Quit();
 #endif
+    }
+
+    private void PauseIfPossible(in OnPlayerPauseRequest context)
+    {
+        if (mainMenu == null && !_hasWon)
+        {
+            OpenPause();
+            EventBus.Raise<OnPlayerPauseAccepted>();
+        }
+    }
+    private void Unpause(in OnPlayerUnpauseRequest context)
+    {
+        PopMenu();
     }
 }
