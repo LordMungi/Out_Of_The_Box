@@ -19,8 +19,11 @@ public class BehaviourFSM
         FreeCamera,
         SearchingPart,
         Grab,
+        Pause,
         NULL
     }
+
+    public static State LastState { get; private set; }
 
     public PlayerState CurrentState { get; private set; }
 
@@ -39,9 +42,11 @@ public class BehaviourFSM
         _states.TryAdd(State.Climb, new ClimbState(ref data));
         _states.TryAdd(State.FreeCamera, new FreeCameraState(ref data));
         _states.TryAdd(State.SearchingPart, new SearchingPartState(ref data));
+        _states.TryAdd(State.Pause, new PauseState(ref data));
 
         EventBus.Subscribe<OnPlayerStateChangeRequest>(TryChangeState);
         ChangeState(State.Idle);
+        LastState = State.Idle;
     }
 
     public void TryChangeState(in OnPlayerStateChangeRequest newStateEvent)
@@ -54,16 +59,17 @@ public class BehaviourFSM
                 break;
 
             case State.Idle:
-            {
-                canChange = _currentStateEnum == State.Move ||
-                            _currentStateEnum == State.Jump ||
-                            _currentStateEnum == State.Push ||
-                            _currentStateEnum == State.SuperJump ||
-                            _currentStateEnum == State.Climb ||
-                            _currentStateEnum == State.FreeCamera ||
-                            _currentStateEnum == State.SearchingPart ||
-                            _currentStateEnum == State.Glide ||
-                            _currentStateEnum == State.Grab;
+                {
+                    canChange = _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Push ||
+                                _currentStateEnum == State.SuperJump ||
+                                _currentStateEnum == State.Climb ||
+                                _currentStateEnum == State.FreeCamera ||
+                                _currentStateEnum == State.SearchingPart ||
+                                _currentStateEnum == State.Glide ||
+                                _currentStateEnum == State.Grab ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
 
@@ -74,14 +80,16 @@ public class BehaviourFSM
                                 _currentStateEnum == State.Push ||
                                 _currentStateEnum == State.SuperJump ||
                                 _currentStateEnum == State.Glide ||
-                                _currentStateEnum == State.Climb;
+                                _currentStateEnum == State.Climb ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
             case State.Jump:
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move ||
-                                _currentStateEnum == State.Glide;
+                                _currentStateEnum == State.Glide ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
 
@@ -89,49 +97,70 @@ public class BehaviourFSM
                 {
                     canChange = _currentStateEnum == State.Idle ||
                                 _currentStateEnum == State.Move ||
-                                _currentStateEnum == State.Glide;
+                                _currentStateEnum == State.Glide ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
             case State.Glide:
                 {
                     canChange = _currentStateEnum == State.Jump ||
-                                _currentStateEnum == State.Move;
-
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
 
             case State.Push:
                 {
                     canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
 
             case State.Climb:
                 {
                     canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
 
             case State.FreeCamera:
                 {
-                    canChange = _currentStateEnum == State.Idle;
+                    canChange = _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
 
             case State.SearchingPart:
                 {
                     canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
             case State.Grab:
                 {
                     canChange = _currentStateEnum == State.Idle ||
-                                _currentStateEnum == State.Move;
+                                _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Pause;
                     break;
                 }
+
+            case State.Pause:
+                {
+                    canChange = _currentStateEnum == State.Move ||
+                                _currentStateEnum == State.Idle ||
+                                _currentStateEnum == State.Jump ||
+                                _currentStateEnum == State.Push ||
+                                _currentStateEnum == State.SuperJump ||
+                                _currentStateEnum == State.Climb ||
+                                _currentStateEnum == State.FreeCamera ||
+                                _currentStateEnum == State.SearchingPart ||
+                                _currentStateEnum == State.Glide ||
+                                _currentStateEnum == State.Grab;
+                }
+                break;
         }
 
         if (canChange)
@@ -143,6 +172,7 @@ public class BehaviourFSM
 
     private void ChangeState(State newStateEnum)
     {
+        LastState = _currentStateEnum;
         CurrentState?.Disable();
 
         if (!_states.TryGetValue(newStateEnum, out PlayerState newState))
