@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class PushableObject : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class PushableObject : MonoBehaviour
     private LayerMask _minusPlayerLayer;
 
     private Plane _plane;
+    private bool _hasCollided;
+
+    public bool HasCollided
+    {
+        get { return _hasCollided; }
+        set { _hasCollided = value; }
+    }
     public Plane Plane { get { return _plane; } set { } }
     public Direction currentDirection;
 
@@ -30,6 +38,8 @@ public class PushableObject : MonoBehaviour
 
         _meshCenter = _mesh.sharedMesh.bounds.center;
         _meshSize = _mesh.sharedMesh.bounds.size;
+
+        _hasCollided = false;
     }
 
     public void Grab()
@@ -49,6 +59,9 @@ public class PushableObject : MonoBehaviour
 
     public bool CanMove(Vector2 delta)
     {
+        if (_hasCollided)
+            return false;
+
         Vector3 delta3 = new Vector3(delta.x, 0, delta.y);
         return !Physics.BoxCast(transform.TransformPoint(_meshCenter), Vector3.Scale(_meshSize, transform.lossyScale) / 2f, delta3.normalized, transform.rotation, delta3.magnitude, _minusPlayerLayer);
     }

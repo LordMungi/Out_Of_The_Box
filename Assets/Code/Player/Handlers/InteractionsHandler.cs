@@ -61,6 +61,7 @@ public class InteractionsHandler : PlayerHandler
         EventBus.Subscribe<OnClimbRequest>(OnClimbRequest);
         EventBus.Subscribe<OnToyboxEntered>(ToyboxEntered);
         EventBus.Subscribe<OnToyboxExit>(ToyboxExit);
+        EventBus.Subscribe<OnInvisibleWallCollision>(InvisibleWallCollision);
     }
 
     public override void Disable()
@@ -73,6 +74,7 @@ public class InteractionsHandler : PlayerHandler
         EventBus.Unsubscribe<OnClimbRequest>(OnClimbRequest);
         EventBus.Unsubscribe<OnToyboxEntered>(ToyboxEntered);
         EventBus.Unsubscribe<OnToyboxExit>(ToyboxExit);
+        EventBus.Unsubscribe<OnInvisibleWallCollision>(InvisibleWallCollision);
         base.Disable();
     }
     #endregion
@@ -212,6 +214,11 @@ public class InteractionsHandler : PlayerHandler
     public bool CanPushObject(Vector2 delta)
     {
         return _grabbedPushableObejct.CanMove(delta);
+    }
+
+    private void InvisibleWallCollision(in OnInvisibleWallCollision eventData)
+    {
+       eventData.pushableObject.HasCollided = !eventData.pushableObject.HasCollided;
     }
     #endregion
 
