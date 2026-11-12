@@ -202,7 +202,11 @@ public class MoveHandler : PlayerHandler
         _isChargingSuperJump = false;
         EventBus.Raise<OnSuperJumpChargeEnded>();
     }
-
+    public bool CanMove(Vector2 delta)
+    {
+        Vector3 delta3 = new Vector3(delta.x, 0, delta.y);
+        return !Physics.BoxCast(_controller.transform.position, _controller.bounds.size/2, delta3.normalized, _controller.transform.rotation, delta3.magnitude);
+    }
     #endregion
 
     #region Callbacks

@@ -43,7 +43,7 @@ public class PushState : PlayerState
             else
                 EventBus.Raise<OnPushForward>();
 
-            if (_interactionsHandler.CanPushObject(movementDelta))
+            if (_interactionsHandler.CanPushObject(movementDelta)  && _moveHandler.CanMove(movementDelta))
                 _moveHandler.MoveLinear(movementDelta);
         }
         else
