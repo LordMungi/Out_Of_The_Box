@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class PlayerState
 {
+    private EventBus EventBus => ServiceProvider.Instance.GetService<EventBus>();
+
     protected List<PlayerHandler> _handlers = new List<PlayerHandler>();
     protected BehaviourFSM.State _nextState;
 
@@ -33,6 +36,8 @@ public abstract class PlayerState
         {
             handler.Enable();
         }
+        _playerInput.Player.Pause.performed += OnPause;
+        EventBus.Subscribe<OnPlayerPauseAccepted>(OnPauseAccepted);
     }
     public virtual void Disable()
     {
@@ -40,5 +45,18 @@ public abstract class PlayerState
         {
             handler.Disable();
         }
+        _playerInput.Player.Pause.performed -= OnPause;
+        EventBus.Unsubscribe<OnPlayerPauseAccepted>(OnPauseAccepted);
+    }
+
+    protected virtual void OnPause(InputAction.CallbackContext context)
+    {
+        EventBus.Raise<OnPlayerPauseRequest>();
+    }
+
+    private void OnPauseAccepted(in OnPlayerPauseAccepted context)
+    {
+        _nextState = BehaviourFSM.State.Pause;
+        EventBus.Raise<OnPlayerStateChangeRequest>(_nextState);
     }
 }
