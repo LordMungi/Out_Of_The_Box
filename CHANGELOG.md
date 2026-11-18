@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.10.0] - 2026-11-17
+
+### New
+
+- Pause state with its events.
+- Splash screen.
+- Game audio implemented with Wwise.
+- Library furniture in the desk level.
+- New models, props and textures for the window level.
+
+### Changes
+
+- Invisible walls added to keep pushables inside the level.
+- Invisible wall added to the desk level.
+- Window rail camera collider and placement adjusted.
+
+### Bug Fixes
+
+- Window colliders.
+- Missing book collider.
+- Pushable colliders position.
+- State did not change when pressing a UI button.
+
 ## [0.9.0] - 2026-11-10
 
 ### New
