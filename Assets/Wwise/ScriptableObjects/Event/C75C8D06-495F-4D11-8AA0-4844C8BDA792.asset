@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Play_AmbienteCAMA
   id: 2230026949
   guid: C75C8D06-495F-4D11-8AA0-4844C8BDA792
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

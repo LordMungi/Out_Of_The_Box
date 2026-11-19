@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 48224531}
   m_Layer: 0
   m_Name: GENERAL
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +694,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5034,7 +5034,7 @@ GameObject:
   - component: {fileID: 543318859}
   m_Layer: 0
   m_Name: ESCRITORIO
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5098,7 +5098,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -9315,7 +9315,7 @@ GameObject:
   - component: {fileID: 1009591079}
   m_Layer: 0
   m_Name: VENTANA
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9379,7 +9379,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10538,7 +10538,7 @@ GameObject:
   - component: {fileID: 1147563979}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11346,7 +11346,7 @@ GameObject:
   - component: {fileID: 1193277905}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13434,7 +13434,7 @@ GameObject:
   - component: {fileID: 1390661133}
   m_Layer: 0
   m_Name: DEBAJO CAMA
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13467,7 +13467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
-  triggerList: f7e1664c
+  triggerList: d1bbb3b5f7e1664c
   useOtherObject: 0
   priority: 0
   reverbAuxBus:
@@ -13498,7 +13498,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -16728,7 +16728,7 @@ GameObject:
   - component: {fileID: 1726782657}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16760,7 +16760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31724284345fc874790b943ffe98df00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomPortal
-  triggerList: f7e1664c
+  triggerList: d1bbb3b5f7e1664c
   useOtherObject: 0
   initialState: 0
   closePortalTriggerList: 
@@ -16783,7 +16783,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

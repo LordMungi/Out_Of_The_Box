@@ -273,7 +273,8 @@
 												<Property Name="FadeInDuration" Type="Real64" Value="0.03315"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.11543"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.61121"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.30689"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.64788"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS.wav</AudioFile>
@@ -303,7 +304,7 @@
 												<Property Name="LoopEnd" Type="Real64" Value="0.40082"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.10567"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.44712"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.43698"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_1.wav</AudioFile>
@@ -330,10 +331,10 @@
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.06572"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.07609"/>
-												<Property Name="LoopEnd" Type="Real64" Value="0.42909"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.13286"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.04625"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.47393"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.12684"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.42026"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_2.wav</AudioFile>
@@ -358,11 +359,11 @@
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_3" ID="{CFEFAEC9-A2C0-41DB-BD99-FB99AA417658}">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.09226"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.07172"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.07869"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.05802"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.10248"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.45867"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.18098"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.45689"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_3.wav</AudioFile>
@@ -387,11 +388,12 @@
 									<ChildrenList>
 										<AudioFileSource Name="FOL_PASOS_4" ID="{CF2D8151-B7EE-4088-B2CA-2AE929BDAE19}">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.05324"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.05595"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.07801"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.03484"/>
+												<Property Name="LoopEnd" Type="Real64" Value="0.376"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.07991"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.47333"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.13681"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.38424"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_4.wav</AudioFile>
@@ -418,10 +420,9 @@
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.05007"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.04314"/>
-												<Property Name="LoopBegin" Type="Real64" Value="0.17874"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.15812"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.50085"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.26502"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.54306"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FOL_PASOS_5.wav</AudioFile>

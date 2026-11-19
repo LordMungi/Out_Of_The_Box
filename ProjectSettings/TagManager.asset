@@ -10,11 +10,12 @@ TagManager:
   - Climbable
   - ToyBox
   - Area
+  - AudioRoom
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Audio ROOM
   - Water
   - UI
   - Area
