@@ -13,10 +13,20 @@
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>23</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-1320</Value>
+									</ValueList>
+								</Property>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="25"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-11</Value>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -124,9 +134,24 @@
 						<Sound Name="AMB_MAIN" ID="{0B1FAFE2-7D9C-45C5-9A8C-2B2390D9B8A0}" ShortID="802811399">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>400</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-30</Value>
+										<Value>8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -248,6 +273,11 @@
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="11"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -441,6 +471,11 @@
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="15"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -589,6 +624,11 @@
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="11"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -776,6 +816,13 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="AGARRA OBJETO" ID="{123F811C-355B-434D-B8EC-FB0475762BB3}" ShortID="489605063">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9C56F060-2ED3-4840-AA3A-64B2CCB32EB1}"/>
@@ -1408,6 +1455,11 @@
 						<RandomSequenceContainer Name="ARRASTRES" ID="{7BDBDF47-83D2-43F8-9287-EBFCD3623769}" ShortID="675428261">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1429,6 +1481,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE" ID="{0BEEFAF3-9090-4154-B2CB-29EB63E1BFB4}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.82622"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.93603"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.95578"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE.wav</AudioFile>
 											<MediaIDList>
@@ -1451,6 +1509,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_1" ID="{268CA8A5-EF2A-46E8-8FCE-883EDF7076C5}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.99209"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.98461"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.41935"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_1.wav</AudioFile>
 											<MediaIDList>
@@ -1473,6 +1537,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_2" ID="{7CDC7A76-DA55-45BC-9860-6DA57B2420CE}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.3331"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.79941"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.21515"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_2.wav</AudioFile>
 											<MediaIDList>
@@ -1495,6 +1565,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_4" ID="{EA0685EF-04AD-40F4-BA0E-256ED3C9C997}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.32534"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.25333"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.60265"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_4.wav</AudioFile>
 											<MediaIDList>
@@ -1517,6 +1593,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_5" ID="{15260F3C-DA7F-41A9-83A9-DB09EA5D0AB0}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.31498"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.16368"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.10913"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.43631"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_5.wav</AudioFile>
 											<MediaIDList>
@@ -1539,6 +1622,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_6" ID="{E4383E0C-554F-43F3-AF90-97CCF7800632}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.34167"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.26256"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.16907"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.13295"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_6.wav</AudioFile>
 											<MediaIDList>
@@ -1561,6 +1651,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_7" ID="{0770158C-87D2-4A41-B58D-AA2A1F7DA93E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.19275"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.61742"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0588"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.84551"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_7.wav</AudioFile>
 											<MediaIDList>
@@ -1583,6 +1680,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="FX_ARRASTRE_LARGO" ID="{3CF86162-3460-41FA-9157-EBADC7D4499E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.78959"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.45324"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.25444"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>FX_ARRASTRE_LARGO.wav</AudioFile>
 											<MediaIDList>
