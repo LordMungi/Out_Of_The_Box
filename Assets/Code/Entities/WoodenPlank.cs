@@ -12,6 +12,9 @@ public class WoodenPlank : MonoBehaviour
     private void Start()
     {
         TryGetComponent(out _animator);
+
+        if (!_animator)
+            Debug.Log("estoy nulo xd");
     }
 
     private void OnBridgeFall(in OnBridgeFall context)
