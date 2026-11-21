@@ -5032,6 +5032,7 @@ GameObject:
   - component: {fileID: 543318861}
   - component: {fileID: 543318860}
   - component: {fileID: 543318859}
+  - component: {fileID: 543318863}
   m_Layer: 0
   m_Name: ESCRITORIO
   m_TagString: AudioRoom
@@ -5051,8 +5052,7 @@ Transform:
   m_LocalPosition: {x: 5.9, y: 3.8, z: -27.59}
   m_LocalScale: {x: 13.57, y: 33.26, z: 34.79}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1147563978}
+  m_Children: []
   m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &543318859
@@ -5067,7 +5067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
-  triggerList: d1bbb3b5f7e1664c
+  triggerList: d1bbb3b5
   useOtherObject: 0
   priority: 0
   reverbAuxBus:
@@ -5161,6 +5161,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543318857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &543318863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543318857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1001 &552483473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9313,6 +9325,7 @@ GameObject:
   - component: {fileID: 1009591081}
   - component: {fileID: 1009591080}
   - component: {fileID: 1009591079}
+  - component: {fileID: 1009591083}
   m_Layer: 0
   m_Name: VENTANA
   m_TagString: AudioRoom
@@ -9328,12 +9341,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009591077}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.49, y: 0.43, z: -3.67}
-  m_LocalScale: {x: 20.5, y: 38.6, z: 6.76}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.490005, y: 0.4300003, z: -3.6699963}
+  m_LocalScale: {x: 20.499998, y: 38.600002, z: 6.7599998}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1726782656}
+  m_Children: []
   m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1009591079
@@ -9442,6 +9454,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009591077}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1009591083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009591077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1 &1010287069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10536,8 +10560,9 @@ GameObject:
   - component: {fileID: 1147563981}
   - component: {fileID: 1147563980}
   - component: {fileID: 1147563979}
+  - component: {fileID: 1147563983}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: PORTAL ESCRITORIO
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10552,11 +10577,11 @@ Transform:
   m_GameObject: {fileID: 1147563977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.5335298, y: 0, z: 0}
-  m_LocalScale: {x: 1.0520264, y: 1.1371017, z: 0.69270444}
+  m_LocalPosition: {x: -1.3399992, y: 3.7999992, z: -27.59}
+  m_LocalScale: {x: 36.6, y: 37.82, z: 9.399999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543318858}
+  m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1147563979
 MonoBehaviour:
@@ -10570,10 +10595,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31724284345fc874790b943ffe98df00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomPortal
-  triggerList: f7e1664c
+  triggerList: d1bbb3b5
   useOtherObject: 0
   initialState: 0
-  closePortalTriggerList: 
+  closePortalTriggerList: cd2be4c0
   rooms:
   - {fileID: 543318859}
   - {fileID: 0}
@@ -10656,6 +10681,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147563977}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1147563983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147563977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1001 &1159674580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11344,8 +11381,9 @@ GameObject:
   - component: {fileID: 1193277907}
   - component: {fileID: 1193277906}
   - component: {fileID: 1193277905}
+  - component: {fileID: 1193277909}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SALIDA CAMA
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11359,12 +11397,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193277903}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.482, y: -0.13, z: -0.05}
-  m_LocalScale: {x: 0.19, y: 0.5, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -30.861603, y: -13.829, z: -19.41}
+  m_LocalScale: {x: 5.928, y: 6.65, z: 32.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1390661132}
+  m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1193277905
 MonoBehaviour:
@@ -11378,10 +11416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31724284345fc874790b943ffe98df00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomPortal
-  triggerList: f7e1664c
+  triggerList: d1bbb3b5
   useOtherObject: 0
   initialState: 1
-  closePortalTriggerList: 
+  closePortalTriggerList: cd2be4c0
   rooms:
   - {fileID: 1390661133}
   - {fileID: 0}
@@ -11464,6 +11502,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193277903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1193277909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193277903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!4 &1194253439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7457653723286857139, guid: bfaf4f1bae1dfc846b94c64ca1dec8eb, type: 3}
@@ -13432,6 +13482,7 @@ GameObject:
   - component: {fileID: 1390661135}
   - component: {fileID: 1390661134}
   - component: {fileID: 1390661133}
+  - component: {fileID: 1390661137}
   m_Layer: 0
   m_Name: DEBAJO CAMA
   m_TagString: AudioRoom
@@ -13451,8 +13502,7 @@ Transform:
   m_LocalPosition: {x: -45.9, y: -12.1, z: -17.8}
   m_LocalScale: {x: 31.2, y: 13.3, z: 32.2}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1193277904}
+  m_Children: []
   m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1390661133
@@ -13561,6 +13611,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390661131}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1390661137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390661131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1001 &1395253921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16726,8 +16788,9 @@ GameObject:
   - component: {fileID: 1726782659}
   - component: {fileID: 1726782658}
   - component: {fileID: 1726782657}
+  - component: {fileID: 1726782661}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: PORTAL VENTANA
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16741,12 +16804,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726782655}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -1.31}
-  m_LocalScale: {x: 1, y: 1.0018134, z: 2.01}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -14.49, y: 0.4300003, z: -12.5256}
+  m_LocalScale: {x: 20.5, y: 38.669994, z: 13.587601}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1009591078}
+  m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1726782657
 MonoBehaviour:
@@ -16760,10 +16823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31724284345fc874790b943ffe98df00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomPortal
-  triggerList: d1bbb3b5f7e1664c
+  triggerList: d1bbb3b5
   useOtherObject: 0
   initialState: 0
-  closePortalTriggerList: 
+  closePortalTriggerList: cd2be4c0
   rooms:
   - {fileID: 1009591079}
   - {fileID: 0}
@@ -16846,6 +16909,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726782655}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1726782661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726782655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1 &1744084883
 GameObject:
   m_ObjectHideFlags: 0
@@ -20987,16 +21062,25 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1193277904}
+    - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1390661132}
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 48224530}
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1009591078}
+      addedObject: {fileID: 1726782656}
+    - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1147563978}
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 543318858}
+    - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1009591078}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
 --- !u!4 &1542789688366154328 stripped
