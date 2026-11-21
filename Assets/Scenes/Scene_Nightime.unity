@@ -583,9 +583,7 @@ GameObject:
   - component: {fileID: 48224536}
   - component: {fileID: 48224535}
   - component: {fileID: 48224534}
-  - component: {fileID: 48224533}
-  - component: {fileID: 48224532}
-  - component: {fileID: 48224531}
+  - component: {fileID: 48224537}
   m_Layer: 0
   m_Name: GENERAL
   m_TagString: AudioRoom
@@ -602,83 +600,12 @@ Transform:
   m_GameObject: {fileID: 48224529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: -33.18}
-  m_LocalScale: {x: 78.17, y: 78.17, z: 78.17}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -14.8, y: 0, z: -43.03}
+  m_LocalScale: {x: 29.3, y: 54.7, z: 48.9}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1542789688366154328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &48224531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48224529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2940d5e59cde06e469d0c3b48e0fa167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomAwareObject
-  m_Collider: {fileID: 0}
---- !u!114 &48224532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48224529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52b08a0d555580d44a31bf75174c2c87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkAmbient
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4fb98dad5d211904d8cd33f7778235e5, type: 2}
-  useCallbacks: 0
-  stopSoundOnDisable: 1
-  Callbacks: []
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
-  LargeModePositions: []
-  multiPositionArray: []
---- !u!114 &48224533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48224529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b42197cfd097248ab618f71bee15f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkGameObj
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  usePositionOffsetData: 0
-  m_positionOffsetData:
-    KeepMe: 1
-    positionOffset: {x: 0, y: 0, z: 0}
-  scalingFactor: 1
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!65 &48224534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -757,6 +684,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48224529}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &48224537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48224529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
+  triggerList: d1bbb3b5f7e1664c
+  useOtherObject: 0
+  priority: 0
+  reverbAuxBus:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  reverbLevel: 1
+  transmissionLoss: 1
+  distanceBehavior: 0
+  roomToneEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4fb98dad5d211904d8cd33f7778235e5, type: 2}
+  roomToneAuxSend: 0
+  isStatic: 0
 --- !u!1 &54292245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 613a2d2788f314448b42097c33c0fd0f, type: 3}
@@ -1505,6 +1460,139 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &110319731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110319732}
+  - component: {fileID: 110319736}
+  - component: {fileID: 110319735}
+  - component: {fileID: 110319734}
+  - component: {fileID: 110319733}
+  m_Layer: 0
+  m_Name: PORTAL CAMA
+  m_TagString: AudioRoom
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &110319732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110319731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -28.2, y: -11.5, z: -24}
+  m_LocalScale: {x: 20.5, y: 12.3, z: 4.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542789688366154328}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &110319733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110319731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31724284345fc874790b943ffe98df00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomPortal
+  triggerList: d1bbb3b5
+  useOtherObject: 0
+  initialState: 0
+  closePortalTriggerList: cd2be4c0
+  rooms:
+  - {fileID: 1390661133}
+  - {fileID: 48224537}
+  isStatic: 0
+--- !u!65 &110319734
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110319731}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &110319735
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110319731}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &110319736
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110319731}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &121341120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1226459002a9d34baaa20271fff8d07, type: 3}
@@ -4684,6 +4772,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1685090508}
     m_Modifications:
     - target: {fileID: 353558098258951828, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: footstepInterval
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 353558098258951828, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: FootstepEvent.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: a333cd4b6a6449d498609c91405babb4, type: 2}
@@ -4750,8 +4842,158 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069665655}
+    - targetCorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069665654}
+    - targetCorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069665653}
   m_SourcePrefab: {fileID: 100100000, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+--- !u!1 &492228719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492228720}
+  - component: {fileID: 492228724}
+  - component: {fileID: 492228723}
+  - component: {fileID: 492228722}
+  - component: {fileID: 492228721}
+  m_Layer: 0
+  m_Name: GENERAL (1)
+  m_TagString: AudioRoom
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492228720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492228719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -43.1, y: -3.4, z: -64.7}
+  m_LocalScale: {x: 29.3, y: 72.13, z: 59.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542789688366154328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &492228721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492228719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
+  triggerList: d1bbb3b5f7e1664c
+  useOtherObject: 0
+  priority: 0
+  reverbAuxBus:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  reverbLevel: 1
+  transmissionLoss: 1
+  distanceBehavior: 0
+  roomToneEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4fb98dad5d211904d8cd33f7778235e5, type: 2}
+  roomToneAuxSend: 0
+  isStatic: 0
+--- !u!65 &492228722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492228719}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &492228723
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492228719}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &492228724
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492228719}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &523185229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5032,7 +5274,6 @@ GameObject:
   - component: {fileID: 543318861}
   - component: {fileID: 543318860}
   - component: {fileID: 543318859}
-  - component: {fileID: 543318863}
   m_Layer: 0
   m_Name: ESCRITORIO
   m_TagString: AudioRoom
@@ -5161,18 +5402,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543318857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &543318863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543318857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1001 &552483473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9325,7 +9554,6 @@ GameObject:
   - component: {fileID: 1009591081}
   - component: {fileID: 1009591080}
   - component: {fileID: 1009591079}
-  - component: {fileID: 1009591083}
   m_Layer: 0
   m_Name: VENTANA
   m_TagString: AudioRoom
@@ -9454,18 +9682,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009591077}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1009591083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009591077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1 &1010287069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10457,6 +10673,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1158617, y: 17.805695, z: 14.22167}
   m_Center: {x: 0.0000038171747, y: -0.000045770154, z: 0.20860295}
+--- !u!1 &1123202401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+  m_PrefabInstance: {fileID: 475987296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129109168
 GameObject:
   m_ObjectHideFlags: 0
@@ -10560,7 +10781,6 @@ GameObject:
   - component: {fileID: 1147563981}
   - component: {fileID: 1147563980}
   - component: {fileID: 1147563979}
-  - component: {fileID: 1147563983}
   m_Layer: 0
   m_Name: PORTAL ESCRITORIO
   m_TagString: AudioRoom
@@ -10601,7 +10821,7 @@ MonoBehaviour:
   closePortalTriggerList: cd2be4c0
   rooms:
   - {fileID: 543318859}
-  - {fileID: 0}
+  - {fileID: 48224537}
   isStatic: 0
 --- !u!65 &1147563980
 BoxCollider:
@@ -10618,7 +10838,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10681,18 +10901,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147563977}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1147563983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147563977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1001 &1159674580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11368,152 +11576,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185475178}
   m_Mesh: {fileID: 6578050055361074456, guid: 95d3ddba0ca44f7469063c4b5da69f1b, type: 3}
---- !u!1 &1193277903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1193277904}
-  - component: {fileID: 1193277908}
-  - component: {fileID: 1193277907}
-  - component: {fileID: 1193277906}
-  - component: {fileID: 1193277905}
-  - component: {fileID: 1193277909}
-  m_Layer: 0
-  m_Name: SALIDA CAMA
-  m_TagString: AudioRoom
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1193277904
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193277903}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -30.861603, y: -13.829, z: -19.41}
-  m_LocalScale: {x: 5.928, y: 6.65, z: 32.2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1542789688366154328}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1193277905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193277903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31724284345fc874790b943ffe98df00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomPortal
-  triggerList: d1bbb3b5
-  useOtherObject: 0
-  initialState: 1
-  closePortalTriggerList: cd2be4c0
-  rooms:
-  - {fileID: 1390661133}
-  - {fileID: 0}
-  isStatic: 0
---- !u!65 &1193277906
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193277903}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1193277907
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193277903}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1193277908
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193277903}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1193277909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193277903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!4 &1194253439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7457653723286857139, guid: bfaf4f1bae1dfc846b94c64ca1dec8eb, type: 3}
@@ -13482,7 +13544,6 @@ GameObject:
   - component: {fileID: 1390661135}
   - component: {fileID: 1390661134}
   - component: {fileID: 1390661133}
-  - component: {fileID: 1390661137}
   m_Layer: 0
   m_Name: DEBAJO CAMA
   m_TagString: AudioRoom
@@ -13499,7 +13560,7 @@ Transform:
   m_GameObject: {fileID: 1390661131}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.9, y: -12.1, z: -17.8}
+  m_LocalPosition: {x: -45.9, y: -12.7, z: -17.8}
   m_LocalScale: {x: 31.2, y: 13.3, z: 32.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13611,18 +13672,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390661131}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1390661137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390661131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1001 &1395253921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16788,7 +16837,6 @@ GameObject:
   - component: {fileID: 1726782659}
   - component: {fileID: 1726782658}
   - component: {fileID: 1726782657}
-  - component: {fileID: 1726782661}
   m_Layer: 0
   m_Name: PORTAL VENTANA
   m_TagString: AudioRoom
@@ -16805,7 +16853,7 @@ Transform:
   m_GameObject: {fileID: 1726782655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -14.49, y: 0.4300003, z: -12.5256}
+  m_LocalPosition: {x: -14.49, y: 0.4300003, z: -12.54}
   m_LocalScale: {x: 20.5, y: 38.669994, z: 13.587601}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16829,7 +16877,7 @@ MonoBehaviour:
   closePortalTriggerList: cd2be4c0
   rooms:
   - {fileID: 1009591079}
-  - {fileID: 0}
+  - {fileID: 48224537}
   isStatic: 0
 --- !u!65 &1726782658
 BoxCollider:
@@ -16909,18 +16957,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726782655}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1726782661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726782655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f0bd4af83f986439fd471b6f1ea1ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoloJugadorRoom
 --- !u!1 &1744084883
 GameObject:
   m_ObjectHideFlags: 0
@@ -20170,6 +20206,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1461085415636297099, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
   m_PrefabInstance: {fileID: 475987296}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2069665653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123202401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6437ac8e887d4a34fac1cfcbcbb862bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkSpatialAudioListener
+--- !u!114 &2069665654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123202401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2940d5e59cde06e469d0c3b48e0fa167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoomAwareObject
+  m_Collider: {fileID: 0}
+--- !u!114 &2069665655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123202401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2f1be4d3c6f844c9935f2e9f17704b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkAudioListener
+  isDefaultListener: 1
+  bOverrideScalingFactor: 0
+  scalingFactor: -1
+  listenerId: 0
 --- !u!1 &2076305929
 GameObject:
   m_ObjectHideFlags: 0
@@ -21062,16 +21139,19 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1193277904}
-    - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1390661132}
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 48224530}
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 492228720}
+    - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1726782656}
+    - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 110319732}
     - targetCorrespondingSourceObject: {fileID: 4172861887034767191, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1147563978}
