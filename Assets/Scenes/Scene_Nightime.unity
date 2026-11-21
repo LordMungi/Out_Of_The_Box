@@ -4773,7 +4773,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 353558098258951828, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: footstepInterval
-      value: 0.7
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 353558098258951828, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: FootstepEvent.WwiseObjectReference
@@ -21133,6 +21133,10 @@ PrefabInstance:
     - target: {fileID: 5459967656929280304, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       propertyPath: m_Name
       value: AKROOMS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459967656929280304, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
