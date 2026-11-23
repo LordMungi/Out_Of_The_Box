@@ -584,7 +584,8 @@ GameObject:
   - component: {fileID: 48224535}
   - component: {fileID: 48224534}
   - component: {fileID: 48224537}
-  m_Layer: 0
+  - component: {fileID: 48224538}
+  m_Layer: 6
   m_Name: GENERAL
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
@@ -711,7 +712,34 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4fb98dad5d211904d8cd33f7778235e5, type: 2}
   roomToneAuxSend: 0
-  isStatic: 0
+  isStatic: 1
+--- !u!54 &48224538
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48224529}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 119
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &54292245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 613a2d2788f314448b42097c33c0fd0f, type: 3}
@@ -1473,7 +1501,7 @@ GameObject:
   - component: {fileID: 110319735}
   - component: {fileID: 110319734}
   - component: {fileID: 110319733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PORTAL CAMA
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
@@ -1514,7 +1542,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 1390661133}
   - {fileID: 48224537}
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &110319734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4781,15 +4809,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a333cd4b6a6449d498609c91405babb4, type: 2}
     - target: {fileID: 1461085415636297099, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.48379
+      value: -0.019
       objectReference: {fileID: 0}
     - target: {fileID: 1461085415636297099, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.67765
+      value: 1.394
       objectReference: {fileID: 0}
     - target: {fileID: 1461085415636297099, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.67691
+      value: -0.019
       objectReference: {fileID: 0}
     - target: {fileID: 1461085415636297099, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4819,10 +4847,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4159787757842050178, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: m_Name
       value: RobotAudioPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752220843533876757, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: m_listeners.initialListenerList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752220843533876757, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: 'm_listeners.initialListenerList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2069665655}
     - target: {fileID: 7897198225895669462, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: JumpEvent.WwiseObjectReference
       value: 
@@ -4852,6 +4896,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2069665653}
+    - targetCorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069665657}
+    - targetCorrespondingSourceObject: {fileID: 6624508602673094941, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069665656}
   m_SourcePrefab: {fileID: 100100000, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
 --- !u!1 &492228719
 GameObject:
@@ -4866,13 +4916,13 @@ GameObject:
   - component: {fileID: 492228723}
   - component: {fileID: 492228722}
   - component: {fileID: 492228721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GENERAL (1)
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &492228720
 Transform:
   m_ObjectHideFlags: 0
@@ -4915,7 +4965,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4fb98dad5d211904d8cd33f7778235e5, type: 2}
   roomToneAuxSend: 0
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &492228722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5274,13 +5324,14 @@ GameObject:
   - component: {fileID: 543318861}
   - component: {fileID: 543318860}
   - component: {fileID: 543318859}
-  m_Layer: 0
+  - component: {fileID: 543318863}
+  m_Layer: 6
   m_Name: ESCRITORIO
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &543318858
 Transform:
   m_ObjectHideFlags: 0
@@ -5323,7 +5374,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5e27caf376cfbe140a12e12c7b8b84fb, type: 2}
   roomToneAuxSend: 0
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &543318860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5402,6 +5453,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543318857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &543318863
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543318857}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 119
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &552483473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9554,7 +9632,8 @@ GameObject:
   - component: {fileID: 1009591081}
   - component: {fileID: 1009591080}
   - component: {fileID: 1009591079}
-  m_Layer: 0
+  - component: {fileID: 1009591083}
+  m_Layer: 6
   m_Name: VENTANA
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
@@ -9603,7 +9682,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 06e2f99f44f490745bcea79a231b6526, type: 2}
   roomToneAuxSend: 0
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &1009591080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9682,6 +9761,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009591077}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1009591083
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009591077}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 119
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1010287069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10781,7 +10887,7 @@ GameObject:
   - component: {fileID: 1147563981}
   - component: {fileID: 1147563980}
   - component: {fileID: 1147563979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PORTAL ESCRITORIO
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
@@ -10820,9 +10926,9 @@ MonoBehaviour:
   initialState: 0
   closePortalTriggerList: cd2be4c0
   rooms:
-  - {fileID: 543318859}
+  - {fileID: 0}
   - {fileID: 48224537}
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &1147563980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13544,7 +13650,8 @@ GameObject:
   - component: {fileID: 1390661135}
   - component: {fileID: 1390661134}
   - component: {fileID: 1390661133}
-  m_Layer: 0
+  - component: {fileID: 1390661137}
+  m_Layer: 6
   m_Name: DEBAJO CAMA
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
@@ -13593,7 +13700,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: bfc041cfe73da1d4eafd20eb990b6e28, type: 2}
   roomToneAuxSend: 0
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &1390661134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13672,6 +13779,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390661131}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1390661137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390661131}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 119
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1395253921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16837,7 +16971,7 @@ GameObject:
   - component: {fileID: 1726782659}
   - component: {fileID: 1726782658}
   - component: {fileID: 1726782657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PORTAL VENTANA
   m_TagString: AudioRoom
   m_Icon: {fileID: 0}
@@ -16878,7 +17012,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 1009591079}
   - {fileID: 48224537}
-  isStatic: 0
+  isStatic: 1
 --- !u!65 &1726782658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20247,6 +20381,56 @@ MonoBehaviour:
   bOverrideScalingFactor: 0
   scalingFactor: -1
   listenerId: 0
+--- !u!54 &2069665656
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123202401}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2069665657
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123202401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2076305929
 GameObject:
   m_ObjectHideFlags: 0
@@ -21135,8 +21319,16 @@ PrefabInstance:
       value: AKROOMS
       objectReference: {fileID: 0}
     - target: {fileID: 5459967656929280304, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459967656929280304, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459967656929280304, guid: c81f63aab9811404cbf82cf8edfff2b1, type: 3}
+      propertyPath: m_TagString
+      value: AudioRoom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
