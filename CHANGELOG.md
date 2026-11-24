@@ -1,5 +1,54 @@
 # Changelog
 
+## [1.0.0] - 2026-11-24
+
+### New
+
+- Win screen.
+- Credits UI.
+- Pause menu in the game scene.
+- Parts boxes.
+- Falling wooden plank animation in the library level.
+- Bookshelf prefab in the library level.
+- Logo.
+
+### Changes
+
+- Main menu updated with new buttons.
+- New shaders, materials and models for the window and dresser levels.
+- Posters and dresser materials added.
+- VHS size adjusted.
+
+### Bug Fixes
+
+- Main colliders.
+- Parts grabbing.
+- Win screen button canvas error.
+- Pushable part bug.
+
+## [0.10.0] - 2026-11-17
+
+### New
+
+- Pause state with its events.
+- Splash screen.
+- Game audio implemented with Wwise.
+- Library furniture in the desk level.
+- New models, props and textures for the window level.
+
+### Changes
+
+- Invisible walls added to keep pushables inside the level.
+- Invisible wall added to the desk level.
+- Window rail camera collider and placement adjusted.
+
+### Bug Fixes
+
+- Window colliders.
+- Missing book collider.
+- Pushable colliders position.
+- State did not change when pressing a UI button.
+
 ## [0.9.0] - 2026-11-10
 
 ### New
