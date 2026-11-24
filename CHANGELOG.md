@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.0.0] - 2026-11-24
+
+### New
+
+- Win screen.
+- Credits UI.
+- Pause menu in the game scene.
+- Parts boxes.
+- Falling wooden plank animation in the library level.
+- Bookshelf prefab in the library level.
+- Logo.
+
+### Changes
+
+- Main menu updated with new buttons.
+- New shaders, materials and models for the window and dresser levels.
+- Posters and dresser materials added.
+- VHS size adjusted.
+
+### Bug Fixes
+
+- Main colliders.
+- Parts grabbing.
+- Win screen button canvas error.
+- Pushable part bug.
+
 ## [0.10.0] - 2026-11-17
 
 ### New

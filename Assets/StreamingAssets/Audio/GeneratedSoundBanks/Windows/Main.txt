@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	2830169400	Play_595465__siliconesound__boing_sound			\Default Work Unit\Play_595465__siliconesound__boing_sound	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	699928076	595465__siliconesound__boing-sound	.cache\F1\{F1B807C7-58CF-7A6C-638B-70782A7C6272}.wem		\Containers\Default Work Unit\595465__siliconesound__boing-sound		2907528
-

@@ -10,6 +10,7 @@ TagManager:
   - Climbable
   - ToyBox
   - Area
+  - Shelf
   layers:
   - Default
   - TransparentFX
