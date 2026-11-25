@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
-  triggerList: d1bbb3b5f7e1664c
+  triggerList: f7e1664c
   useOtherObject: 0
   priority: 0
   reverbAuxBus:
@@ -4860,8 +4860,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6752220843533876757, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
-      propertyPath: m_listeners.initialListenerList.Array.size
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752220843533876757, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: m_listeners.useDefaultListeners
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752220843533876757, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
+      propertyPath: m_listeners.initialListenerList.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6752220843533876757, guid: 740d264a133d98243b5ba68ec86a9bce, type: 3}
       propertyPath: 'm_listeners.initialListenerList.Array.data[0]'
@@ -5331,7 +5339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &543318858
 Transform:
   m_ObjectHideFlags: 0
@@ -5359,7 +5367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
-  triggerList: d1bbb3b5
+  triggerList: f7e1664c
   useOtherObject: 0
   priority: 0
   reverbAuxBus:
@@ -9649,8 +9657,8 @@ Transform:
   m_GameObject: {fileID: 1009591077}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.490005, y: 0.4300003, z: -3.6699963}
-  m_LocalScale: {x: 20.499998, y: 38.600002, z: 6.7599998}
+  m_LocalPosition: {x: -14.49, y: 0.4300003, z: -3.6699963}
+  m_LocalScale: {x: 14.793209, y: 38.600002, z: 6.7599998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1542789688366154328}
@@ -9667,7 +9675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
-  triggerList: d1bbb3b5
+  triggerList: f7e1664c
   useOtherObject: 0
   priority: 0
   reverbAuxBus:
@@ -10926,7 +10934,7 @@ MonoBehaviour:
   initialState: 0
   closePortalTriggerList: cd2be4c0
   rooms:
-  - {fileID: 0}
+  - {fileID: 543318859}
   - {fileID: 48224537}
   isStatic: 1
 --- !u!65 &1147563980
@@ -13685,7 +13693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcd97e059c56aa469e18fc9b90c7d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkRoom
-  triggerList: d1bbb3b5f7e1664c
+  triggerList: f7e1664c
   useOtherObject: 0
   priority: 0
   reverbAuxBus:
@@ -14946,6 +14954,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2012360489794539109, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2389985058300746793, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15130,6 +15142,10 @@ PrefabInstance:
       propertyPath: _playerData.config
       value: 
       objectReference: {fileID: 11400000, guid: d88a4aba90692614bbb1971ef53a0115, type: 2}
+    - target: {fileID: 4771329712461920149, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4840604938358123572, guid: 58c91a0d068678349a71d20ff6a55eff, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -16987,8 +17003,8 @@ Transform:
   m_GameObject: {fileID: 1726782655}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -14.49, y: 0.4300003, z: -12.54}
-  m_LocalScale: {x: 20.5, y: 38.669994, z: 13.587601}
+  m_LocalPosition: {x: -14.49, y: 0.4300003, z: -13.99}
+  m_LocalScale: {x: 14.79321, y: 38.669994, z: 16.881294}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1542789688366154328}
@@ -17841,7 +17857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1535672975879306125, guid: 6d9984c327459e74eadacaa7dc6fea09, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -61.05005
+      value: -61.05017
       objectReference: {fileID: 0}
     - target: {fileID: 1535672975879306125, guid: 6d9984c327459e74eadacaa7dc6fea09, type: 3}
       propertyPath: m_AnchoredPosition.y
