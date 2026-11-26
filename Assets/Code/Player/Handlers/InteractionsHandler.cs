@@ -218,6 +218,7 @@ public class InteractionsHandler : PlayerHandler
 
     private void InvisibleWallCollision(in OnInvisibleWallCollision eventData)
     {
+        Debug.Log("Collision");
        eventData.pushableObject.HasCollided = !eventData.pushableObject.HasCollided;
     }
     #endregion
